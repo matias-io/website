@@ -1,6 +1,6 @@
 # Matias Suxo
 
-Professional portfolio at [matiass.ca](https://matiass.ca/). Next.js, React and TypeScript, exported as static pages and served by a Cloudflare Worker. English, French and Spanish share the same URLs. The profile stays mounted while detail routes change.
+Professional portfolio for [matiass.ca](https://matiass.ca/). Next.js, React and TypeScript, exported as static pages and served by a Cloudflare Worker. English, French and Spanish share the same URLs. The profile stays mounted while detail routes change.
 
 ```text
 src/content + approved notes → knowledge build → AI Search
@@ -50,7 +50,9 @@ On Windows, stop the Worker preview before rebuilding. Its file watcher can lock
 | `src/shared/chat.ts`          | Browser/Worker request and response types                                   |
 | `public/`                     | Images, icons and static assets                                             |
 
-Content IDs become routes such as `/projects/altura/` and `/experience/uottawa-ai/`. Add the same ID to every translation. Use documented facts and accurate dates. The locale preference is saved in the browser; sound is opt-in and motion respects reduced-motion settings.
+Content IDs become routes such as `/projects/altura/` and `/experience/uottawa-ai/`. Add the same ID to every translation. Use documented facts and accurate dates. The profile uses Inter, with IBM Plex Mono for metadata and Zen Kaku Gothic New for the console. Font imports live in the root layout; shared sizes and spacing belong in the style tokens and component styles.
+
+The startup sequence runs on each new home document and every browser reload, including detail routes. It does not replay during client navigation; fresh deep links open directly. Reduced motion uses a brief static introduction. Sound starts enabled and remembers the visitor's mute preference. Browser autoplay rules can delay or suppress the startup cue until interaction; audio never delays navigation. Language and sound preferences are saved in the browser.
 
 The build's `postbuild` step creates flat aliases for Next's nested RSC prefetch files. Keep this step when changing deployment tooling so Cloudflare can serve client navigation from static assets.
 
@@ -71,7 +73,7 @@ Site content is indexed automatically. To add approved background that has no pu
 
 Only the exact approval flag and visibility above allow indexing. These notes can be disclosed in public AI answers and are readable in this public repository. Do not put confidential material here. Notes appear as named sources without links; page sources open the relevant route. Other repository files are not indexed.
 
-The build writes ignored Markdown to `.local/knowledge/` and a trusted citation manifest to `src/worker/generated/manifest.json`. Sync uploads changed files, waits for indexing and verifies retrieval while retaining previous documents. After successful Worker deployment, `knowledge:prune` removes stale files owned by this project. A failed deployment leaves the previous generation's evidence available. Content hashes prevent an older source from supporting a changed page. Keep the generated manifest with the release.
+The build writes ignored Markdown to `.local/knowledge/` and a trusted citation manifest to `src/worker/generated/manifest.json`. Sync has two bounded phases: it submits uploads, then polls indexing, with at most four concurrent HTTP requests in each phase. It verifies retrieval while retaining previous documents and retries transient failures with API backoff. After successful Worker deployment, `knowledge:prune` removes stale files owned by this project. A failed deployment leaves the previous generation's evidence available. Content hashes prevent an older source from supporting a changed page. Keep the generated manifest with the release.
 
 ```sh
 npm run knowledge:preview
@@ -87,7 +89,9 @@ Without credentials, preview checks the local release only. Prune never uploads;
 
 ## Cloudflare and deployment
 
-`wrangler.jsonc` defines the account, Worker, static assets and bindings. Provision AI Search `matiass-public` in the `default` namespace, AI Gateway `matiass-assistant`, a Turnstile widget and email routing/sending for the domain. Instance creation via the sync script configures multilingual BGE-M3 hybrid retrieval and required metadata. Disable AI Search public endpoints, including namespace access to this instance, so requests pass through the site's checks. Configure a blocking budget in AI Gateway before enabling chat.
+`wrangler.jsonc` targets the Matias account. Its `preview` environment deploys `matiass-preview` on workers.dev; the top-level configuration is for the later `matiass-site` production deployment. Preview repeats non-inherited bindings, uses separate rate-limit counters and has no email binding. All preview responses receive `X-Robots-Tag: noindex, follow`; canonical URLs remain on matiass.ca. Connect the domain after its account transfer; the preview requires no changes to the existing domain account.
+
+Provision AI Search `matiass-public` in the `default` namespace, AI Gateway `matiass-assistant` and a Turnstile widget. Instance creation via the sync script configures multilingual BGE-M3 hybrid retrieval and required metadata. Disable AI Search public endpoints, including namespace access to this instance. Configure a blocking gateway budget before enabling chat. Add the actual workers.dev hostname to preview `ALLOWED_HOSTNAMES` and the widget's allowed domains. The contact form stays disabled on preview; LinkedIn remains available. Enable the form after matiass.ca transfers to this account and email routing/sending is configured.
 
 | Setting                                                     | Storage                                                    |
 | ----------------------------------------------------------- | ---------------------------------------------------------- |
@@ -96,15 +100,30 @@ Without credentials, preview checks the local release only. Prune never uploads;
 | `CHAT_ENABLED`, `CONTACT_ENABLED`                           | Wrangler variables; enable after configuration is verified |
 | `AI`, `KNOWLEDGE`, `CONTACT_EMAIL`, both rate limiters      | Wrangler bindings                                          |
 
-Set Worker secrets with `npx wrangler secret put <NAME>`. The contact recipient must be verified in Cloudflare; it is never returned by the API. Contact success means the email service accepted the message, not confirmed inbox delivery. Turnstile requires a fresh token per send with action `portfolio-chat` or `portfolio-contact`.
+Set preview secrets with `npx wrangler secret put <NAME> --env preview`; omit `--env preview` for production. Secrets belong to each Worker separately. The contact recipient must be verified in Cloudflare and is never returned by the API. Contact success means provider acceptance, not inbox delivery. Turnstile requires a fresh token per send with action `portfolio-chat` or `portfolio-contact`.
 
-GitHub Actions checks pull requests and `main` pushes. Production deployment is disabled unless the repository Actions variable `PRODUCTION_DEPLOY_ENABLED` is exactly `true`. When it is unset or false, both push-triggered and manually requested deployments are skipped; a skipped workflow does not mean a site was deployed.
+GitHub Actions checks pull requests and `main` pushes. Preview deployment is main-only: pull requests never publish it, and its job also stays disabled when the production gate is enabled. Deployments run only when their repository Actions variable is exactly `true`:
 
-Enable that variable only after confirming the domain's Cloudflare account, provisioning the required resources and setting the following secrets in the GitHub `production` environment:
+| Target                      | Repository variable         | GitHub environment |
+| --------------------------- | --------------------------- | ------------------ |
+| workers.dev preview         | `PREVIEW_DEPLOY_ENABLED`    | `preview`          |
+| Later custom-domain release | `PRODUCTION_DEPLOY_ENABLED` | `production`       |
 
-- `CLOUDFLARE_API_TOKEN`: account-scoped Worker deployment token with Workers Scripts Edit. Add Zone Read when Wrangler resolves a zone; Workers Routes Edit is needed for URL-pattern routes, not the custom-domain attachment API.
-- `AI_SEARCH_API_TOKEN`: account-scoped AI Search Edit and AI Search Run permissions.
+These gates apply to main pushes and manual dispatch. Skipped deployment is not publication. Enable a target only after its resources and access are verified, with these secrets in its GitHub environment:
 
-Once enabled, `main` releases run in order: checks, export, knowledge upload and verification, Worker deployment, knowledge pruning. Missing credentials then fail deployment explicitly. Keep Cloudflare's automatic Git build off while GitHub owns deployment. Local Wrangler OAuth is separate from CI tokens; an older login may need renewal for AI Search scopes. See [Worker deployment](https://developers.cloudflare.com/workers/ci-cd/external-cicd/github-actions/) and [AI Search authentication](https://developers.cloudflare.com/ai-search/api/instances/rest-api/).
+- `CLOUDFLARE_API_TOKEN` and `AI_SEARCH_API_TOKEN`: use the approved account-scoped CI token with Workers Scripts Write, AI Search Write and Run, and Workers AI Read. It expires on 2027-09-14; renew it before that date. Add Zone Read when Wrangler resolves a zone; Workers Routes Edit is needed for URL-pattern routes, not the custom-domain attachment API.
+
+Releases run checks, export, knowledge upload/verification, Worker deployment, then pruning; missing credentials fail explicitly. Both workflows share a concurrency group. Preview currently shares `matiass-public` with the future production Worker, so preview deployment is also disabled whenever the production gate is true. Do not deploy/prune preview manually after production launches; use a separate knowledge instance if both must remain active.
+
+For a local preview release, follow the same sequence:
+
+```sh
+npm run build
+npm run knowledge:sync
+npx wrangler deploy --env preview
+npm run knowledge:prune
+```
+
+Keep Cloudflare's automatic Git build off while GitHub owns deployment. Local Wrangler OAuth is separate from CI tokens; an older login may need renewal for AI Search scopes. See [Worker deployment](https://developers.cloudflare.com/workers/ci-cd/external-cicd/github-actions/) and [AI Search authentication](https://developers.cloudflare.com/ai-search/api/instances/rest-api/).
 
 Before release, check direct route refreshes, back navigation, all three languages, keyboard navigation, reduced motion and real sourced AI answers. Unit tests cover request limits, verification gates, source integrity and contact validation. `AGENTS.md`, `docs/` and `.local/` remain local working files; this README is the developer guide kept in Git.

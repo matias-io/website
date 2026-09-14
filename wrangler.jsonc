@@ -36,4 +36,41 @@
   },
   "dev": { "port": 3301 },
   "observability": { "enabled": true, "head_sampling_rate": 0.1 },
+  "env": {
+    "preview": {
+      "name": "matiass-preview",
+      "workers_dev": true,
+      "preview_urls": false,
+      "assets": {
+        "directory": "./out",
+        "binding": "ASSETS",
+        "html_handling": "force-trailing-slash",
+        "not_found_handling": "404-page",
+        "run_worker_first": true,
+      },
+      "ai": { "binding": "AI", "remote": true },
+      "ai_search": [{ "binding": "KNOWLEDGE", "instance_name": "matiass-public", "remote": true }],
+      "ratelimits": [
+        {
+          "name": "CHAT_RATE_LIMITER",
+          "namespace_id": "1309202611",
+          "simple": { "limit": 8, "period": 60 },
+        },
+        {
+          "name": "CONTACT_RATE_LIMITER",
+          "namespace_id": "1309202612",
+          "simple": { "limit": 3, "period": 60 },
+        },
+      ],
+      "send_email": [],
+      "vars": {
+        "ENVIRONMENT": "preview",
+        "CHAT_ENABLED": "true",
+        "CONTACT_ENABLED": "false",
+        "ALLOWED_HOSTNAMES": "matiass-preview.matt-ias-suxo.workers.dev",
+        "AI_GATEWAY_ID": "matiass-assistant",
+        "TURNSTILE_SITE_KEY": "0x4AAAAAAEzerrnoR-rrYQ0u",
+      },
+    },
+  },
 }

@@ -68,7 +68,7 @@ function failure(error: RequestError, locale: ChatLocale): Response {
   return json(body, error.status, error.status === 429 ? { 'retry-after': '60' } : undefined);
 }
 
-export async function handleRequest(request: Request, env: WorkerEnv): Promise<Response> {
+async function routeRequest(request: Request, env: WorkerEnv): Promise<Response> {
   const path = new URL(request.url).pathname;
   if (path === '/api/contact' || path === '/api/contact/config') return handleContact(request, env);
   if (path === '/api/chat/config' && request.method === 'GET') {
@@ -107,6 +107,20 @@ export async function handleRequest(request: Request, env: WorkerEnv): Promise<R
     console.error('portfolio-chat upstream request failed');
     return failure(new RequestError('upstream_error', 503), locale);
   }
+}
+
+export async function handleRequest(request: Request, env: WorkerEnv): Promise<Response> {
+  const response = await routeRequest(request, env);
+  if (env.ENVIRONMENT !== 'preview') return response;
+
+  // Asset and redirect responses can have immutable headers. Preserve them by copying.
+  const headers = new Headers(response.headers);
+  headers.set('x-robots-tag', 'noindex, follow');
+  return new Response(response.body, {
+    status: response.status,
+    statusText: response.statusText,
+    headers,
+  });
 }
 
 export default { fetch: handleRequest } satisfies ExportedHandler<WorkerEnv>;

@@ -1,4 +1,4 @@
-name: Deploy site and knowledge
+name: Deploy workers.dev preview
 
 on:
   push:
@@ -14,11 +14,11 @@ concurrency:
 
 jobs:
   deploy:
-    # Keep push and manual deployments skipped until the target account and domain are ready.
-    if: github.ref == 'refs/heads/main' && vars.PRODUCTION_DEPLOY_ENABLED == 'true'
+    # Both environments share knowledge until production launches; never prune it from preview afterward.
+    if: github.ref == 'refs/heads/main' && vars.PREVIEW_DEPLOY_ENABLED == 'true' && vars.PRODUCTION_DEPLOY_ENABLED != 'true'
     runs-on: ubuntu-latest
     timeout-minutes: 45
-    environment: production
+    environment: preview
     steps:
       - uses: actions/checkout@v7
         with:
@@ -30,23 +30,23 @@ jobs:
       - run: npm ci
       - run: npm run check
       - run: npm run build
-      - name: Require deployment credentials
+      - name: Require preview deployment credentials
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           AI_SEARCH_API_TOKEN: ${{ secrets.AI_SEARCH_API_TOKEN }}
         run: |
-          node --input-type=module -e 'if (!process.env.CLOUDFLARE_API_TOKEN || !process.env.AI_SEARCH_API_TOKEN) { console.error("Set production secrets CLOUDFLARE_API_TOKEN and AI_SEARCH_API_TOKEN before deploying."); process.exit(1); }'
+          node --input-type=module -e 'if (!process.env.CLOUDFLARE_API_TOKEN || !process.env.AI_SEARCH_API_TOKEN) { console.error("Set preview secrets CLOUDFLARE_API_TOKEN and AI_SEARCH_API_TOKEN before deploying."); process.exit(1); }'
       - name: Update and verify approved knowledge
         env:
           CLOUDFLARE_ACCOUNT_ID: d017fa417783a5e8da010c5789f5c94f
           AI_SEARCH_API_TOKEN: ${{ secrets.AI_SEARCH_API_TOKEN }}
         run: npm run knowledge:sync
-      - name: Deploy the verified site and citation manifest
+      - name: Deploy the preview site and citation manifest
         env:
           CLOUDFLARE_ACCOUNT_ID: d017fa417783a5e8da010c5789f5c94f
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-        run: npx wrangler deploy
-      - name: Finalize knowledge after successful deployment
+        run: npx wrangler deploy --env preview
+      - name: Finalize knowledge after successful preview deployment
         env:
           CLOUDFLARE_ACCOUNT_ID: d017fa417783a5e8da010c5789f5c94f
           AI_SEARCH_API_TOKEN: ${{ secrets.AI_SEARCH_API_TOKEN }}
