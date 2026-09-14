@@ -30,7 +30,9 @@ export function selectEvidence(chunks: SearchChunk[], manifest: TrustedDocument[
   const evidence: Evidence[] = [];
   const notes = new Map<string, Evidence>();
   for (const chunk of chunks) {
-    if (!chunk.item || !Number.isFinite(chunk.score) || chunk.score < 0.4 || !chunk.text?.trim())
+    // AI Search applies match_threshold to vector similarity before hybrid fusion.
+    // Its returned RRF score is a rank score, not a similarity value on that scale.
+    if (!chunk.item || !Number.isFinite(chunk.score) || chunk.score <= 0 || !chunk.text?.trim())
       continue;
     const document = trusted.get(chunk.item.key);
     if (!document || (document.kind !== 'page' && document.kind !== 'note')) continue;

@@ -195,19 +195,25 @@ describe('verification and API gates', () => {
 });
 
 describe('source integrity', () => {
-  it('rejects unknown, stale, weak, and external-link evidence', () => {
+  it('rejects unknown, stale, invalid, and external-link evidence', () => {
     const external = { ...page, key: 'external', href: '//attacker.example' };
     const evidence = selectEvidence(
       [
         chunk(page, { item: { key: 'unknown' } }),
         chunk(page, { item: { key: page.key, metadata: { content_hash: 'old-hash' } } }),
         chunk(page, { score: Number.NaN }),
-        chunk(page, { score: 0.1 }),
+        chunk(page, { score: 0 }),
         chunk(external),
       ],
       [page, external],
     );
     expect(evidence).toEqual([]);
+  });
+
+  it('accepts trusted hybrid results with low reciprocal-rank scores', () => {
+    const evidence = selectEvidence([chunk(page, { score: 1 / 61 })], [page]);
+    expect(evidence).toHaveLength(1);
+    expect(evidence[0].source.title).toBe('Robot');
   });
 
   it('keeps background notes distinguishable from clickable pages', () => {
