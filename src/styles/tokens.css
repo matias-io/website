@@ -1,0 +1,50 @@
+:root {
+  --paper: #fbfcfd;
+  --surface: #ffffff;
+  --ink: #23262d;
+  --muted: #626976;
+  --faint: #6e7580;
+  --line: #e2e5ea;
+  --accent: #455d90;
+  --hover: #f0f3f7;
+  --shadow: 0 20px 70px #151e3114;
+  --font-body: 'DM Sans Variable', sans-serif;
+  --font-mono-family: 'IBM Plex Mono', monospace;
+  --selection: #aec7f56b;
+  --backdrop: #151a284a;
+  color-scheme: light;
+}
+
+:root[data-theme='dark'] {
+  --paper: #171a1f;
+  --surface: #1c2027;
+  --ink: #e5e7eb;
+  --muted: #a6acb8;
+  --faint: #929ba9;
+  --line: #343a45;
+  --accent: #afc3ef;
+  --hover: #252c36;
+  --shadow: 0 20px 70px #0004;
+  color-scheme: dark;
+}
+
+@theme inline {
+  --color-background: var(--paper);
+  --color-foreground: var(--ink);
+  --color-primary: var(--accent);
+  --color-primary-foreground: var(--surface);
+  --color-secondary: var(--hover);
+  --color-secondary-foreground: var(--ink);
+  --color-muted: var(--hover);
+  --color-muted-foreground: var(--muted);
+  --color-surface: var(--surface);
+  --color-border: var(--line);
+  --color-input: var(--line);
+  --color-ring: var(--accent);
+  --color-paper: var(--paper);
+  --color-ink: var(--ink);
+  --color-accent: var(--accent);
+  --color-faint: var(--faint);
+  --font-sans: var(--font-body);
+  --font-mono: var(--font-mono-family);
+}

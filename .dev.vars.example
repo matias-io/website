@@ -1,2 +1,7 @@
 # Local-only Worker variables for `npm run preview`.
 ENVIRONMENT=development
+CHAT_ENABLED=false
+TURNSTILE_SECRET_KEY=
+CONTACT_ENABLED=false
+CONTACT_RECIPIENT=
+CONTACT_FROM=

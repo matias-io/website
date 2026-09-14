@@ -9,9 +9,18 @@
     "educationPeriod": "Sep 2023–Dec 2027 expected",
     "educationDetails": "Dean's Honours List, 2023–present.",
     "links": [
-      { "label": "Personal site", "url": "https://matiass.ca/" },
-      { "label": "LinkedIn", "url": "https://www.linkedin.com/in/matias-suxo/" },
-      { "label": "GitHub", "url": "https://github.com/matias-io" }
+      {
+        "label": "Personal site",
+        "url": "https://matiass.ca/"
+      },
+      {
+        "label": "LinkedIn",
+        "url": "https://www.linkedin.com/in/matias-suxo/"
+      },
+      {
+        "label": "GitHub",
+        "url": "https://github.com/matias-io"
+      }
     ]
   },
   "experiences": [
@@ -140,7 +149,12 @@
         "LiveAvatar",
         "Privacy"
       ],
-      "links": [{ "label": "RMGN", "url": "https://rmgn.ca/" }],
+      "links": [
+        {
+          "label": "RMGN",
+          "url": "https://rmgn.ca/"
+        }
+      ],
       "image": "/media/elvyn-scenarios-current.webp",
       "featured": true
     },
@@ -162,13 +176,7 @@
         "Copilot Studio",
         "AG-UI"
       ],
-      "links": [
-        {
-          "label": "Project page",
-          "url": "https://devops.uottawa.ca/emerging-technologies/ai-programme/altura"
-        }
-      ],
-      "image": "/media/elvyn-preflight-current.webp",
+      "links": [],
       "featured": true
     },
     {
@@ -249,7 +257,12 @@
         "Uses Docker Compose, service discovery and a single entry point for local printer infrastructure."
       ],
       "skills": ["Docker", "Docker Compose", "OctoPrint", "Klipper", "Nginx"],
-      "links": [{ "label": "GitHub", "url": "https://github.com/matias-io/print-hub" }]
+      "links": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/matias-io/print-hub"
+        }
+      ]
     },
     {
       "id": "ai-racer",
@@ -271,7 +284,12 @@
         "RAG",
         "JWT"
       ],
-      "links": [{ "label": "GitHub", "url": "https://github.com/matias-io/ai-racer" }]
+      "links": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/matias-io/ai-racer"
+        }
+      ]
     },
     {
       "id": "rmgn",
@@ -283,8 +301,12 @@
         "The site combines an interactive sculpture, an original instrument, architectural films and the Elvyn prototype."
       ],
       "skills": ["Creative technology", "Music", "Spatial design", "Web interaction", "Three.js"],
-      "links": [{ "label": "Website", "url": "https://rmgn.ca/" }],
-      "image": "/media/house-study.webp",
+      "links": [
+        {
+          "label": "Website",
+          "url": "https://rmgn.ca/"
+        }
+      ],
       "featured": true
     },
     {
@@ -348,7 +370,12 @@
         "The original record describes a completed club initiative using KiCad PCB design and mechanical systems."
       ],
       "skills": ["PCBA", "KiCad", "EDA", "Underwater robotics"],
-      "links": [{ "label": "Kelpie Robotics", "url": "https://kelpierobotics.com/" }]
+      "links": [
+        {
+          "label": "uOttawa team profile",
+          "url": "https://www.uottawa.ca/faculty-engineering/student-hub/competitive-teams"
+        }
+      ]
     },
     {
       "id": "ornaprints",
@@ -391,7 +418,12 @@
         "CRUD",
         "Systems design"
       ],
-      "links": [{ "label": "GitHub", "url": "https://github.com/JadenF404/EAMS-Android-Project" }]
+      "links": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/JadenF404/EAMS-Android-Project"
+        }
+      ]
     },
     {
       "id": "connect4",
@@ -402,7 +434,12 @@
         "The original record describes a Java desktop application with JavaFX and MVC architecture."
       ],
       "skills": ["Java", "JavaFX", "MVC", "Desktop applications"],
-      "links": [{ "label": "GitHub", "url": "https://github.com/matias-io/Connect4-JavaFX" }]
+      "links": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/matias-io/Connect4-JavaFX"
+        }
+      ]
     },
     {
       "id": "personal-portfolio",
@@ -424,7 +461,12 @@
         "The original record describes a clean, fast and interactive word-guessing experience."
       ],
       "skills": ["Vanilla JavaScript", "SPA", "Web development"],
-      "links": [{ "label": "GitHub", "url": "https://github.com/matias-io/wordguess" }]
+      "links": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/matias-io/wordguess"
+        }
+      ]
     },
     {
       "id": "banking-spa",
@@ -486,7 +528,12 @@
         "The original record describes a responsive remote-control car built with Micro:Bit controllers and motor drivers."
       ],
       "skills": ["Micro:Bit", "TypeScript", "Motor drivers", "L293D", "18650"],
-      "links": [{ "label": "GitHub", "url": "https://github.com/matias-io/MicroBit-Tilt-RC-car" }]
+      "links": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/matias-io/MicroBit-Tilt-RC-car"
+        }
+      ]
     },
     {
       "id": "chess-board",
@@ -518,7 +565,8 @@
           "label": "Portfolio project",
           "url": "https://mattiassuxo.wixsite.com/matiasportfolio/copy-of-chess-game-pieces"
         }
-      ]
+      ],
+      "image": "/media/ring-study.webp"
     },
     {
       "id": "house-design",
@@ -534,7 +582,8 @@
           "label": "Portfolio project",
           "url": "https://mattiassuxo.wixsite.com/matiasportfolio/copy-of-ring-design"
         }
-      ]
+      ],
+      "image": "/media/house-study.webp"
     },
     {
       "id": "bus-shelter",
@@ -550,7 +599,8 @@
           "label": "Portfolio project",
           "url": "https://mattiassuxo.wixsite.com/matiasportfolio/copy-of-house-designs"
         }
-      ]
+      ],
+      "image": "/media/bus-shelter.webp"
     },
     {
       "id": "portable-monitor",

@@ -1,0 +1,361 @@
+@layer components {
+  .console-device {
+    position: relative;
+    width: 219px;
+    height: 112px;
+    border-radius: 15px;
+    background: linear-gradient(
+      155deg,
+      #f2f3f4 0%,
+      #b8bdc6 16%,
+      #e4e7eb 30%,
+      #d4d8df 67%,
+      #a3a8b0 100%
+    );
+    box-shadow:
+      0 15px 20px -13px #17223966,
+      inset 0 1px 1px 1px #fff,
+      inset 0 -2px 1px #6d748077;
+    border: 1px solid #a9afb8;
+    transform: perspective(650px) rotateX(16deg) rotateY(-12deg) rotateZ(-7deg);
+    transition:
+      transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+      box-shadow 0.4s;
+    isolation: isolate;
+  }
+  .console-device:hover,
+  .console-device:focus-visible {
+    transform: perspective(650px) rotateX(8deg) rotateY(-4deg) rotateZ(-3deg) translateY(-3px);
+    box-shadow:
+      0 22px 23px -14px #17223955,
+      inset 0 1px 1px 1px #fff,
+      inset 0 -2px 1px #6d748077;
+  }
+  .device-screen {
+    position: absolute;
+    inset: 12px 37px 15px;
+    display: block;
+    background: linear-gradient(155deg, #1b2531, #111a27 58%, #253249);
+    border: 3px solid #343b47;
+    border-radius: 5px;
+    box-shadow:
+      0 1px 1px #fff8,
+      inset 0 2px 5px #000a;
+    overflow: hidden;
+  }
+  .device-screen:after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(130deg, #fff1, transparent 42%);
+    pointer-events: none;
+  }
+  .mini-icons {
+    display: flex;
+    gap: 11px;
+    position: absolute;
+    left: 12px;
+    right: 12px;
+    top: 26px;
+    justify-content: center;
+    color: #e5edf7;
+  }
+  .mini-icons svg {
+    width: 15px;
+    height: 15px;
+    stroke-width: 1.3;
+    filter: drop-shadow(0 1px 2px #c2d9ff33);
+  }
+  .device-label {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    font: 6px var(--font-body);
+    color: #a8b9d0;
+    letter-spacing: 0.2px;
+  }
+  .device-cross {
+    position: absolute;
+    left: 9px;
+    top: 40px;
+    width: 23px;
+    height: 23px;
+    background: #424850;
+    clip-path: polygon(
+      33% 0,
+      66% 0,
+      66% 33%,
+      100% 33%,
+      100% 66%,
+      66% 66%,
+      66% 100%,
+      33% 100%,
+      33% 66%,
+      0 66%,
+      0 33%,
+      33% 33%
+    );
+    filter: drop-shadow(0 1px 1px #000);
+  }
+  .device-buttons {
+    position: absolute;
+    right: 9px;
+    top: 40px;
+    width: 23px;
+    height: 23px;
+  }
+  .device-buttons i {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    position: absolute;
+    background: linear-gradient(#858c98, #424b58);
+    box-shadow:
+      0 1px 1px #fff5,
+      inset 0 1px 1px #fff5;
+  }
+  .device-buttons i:nth-child(1) {
+    left: 8px;
+    top: 0;
+  }
+  .device-buttons i:nth-child(2) {
+    right: 0;
+    top: 8px;
+  }
+  .device-buttons i:nth-child(3) {
+    left: 8px;
+    bottom: 0;
+  }
+  .device-buttons i:nth-child(4) {
+    left: 0;
+    top: 8px;
+  }
+  .device-indicator {
+    position: absolute;
+    right: 17px;
+    bottom: 20px;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: #6e927c;
+    box-shadow: 0 0 2px #849b82;
+  }
+  .device-brand {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 3px;
+    font: 5px/1 var(--font-body);
+    color: #646d79;
+    letter-spacing: 1px;
+  }
+  .device-shoulder {
+    position: absolute;
+    top: -3px;
+    width: 39px;
+    height: 5px;
+    background: linear-gradient(#eef0f2, #757d88);
+    z-index: -1;
+    border-radius: 4px;
+  }
+  .device-shoulder.left {
+    left: 12px;
+  }
+  .device-shoulder.right {
+    right: 12px;
+  }
+  .console-dialog {
+    margin: auto;
+    padding: 0;
+    border: 1px solid #737e9366;
+    border-radius: 12px;
+    width: min(800px, 90vw);
+    background: #151d28;
+    overflow: hidden;
+    color: #e8edf4;
+    box-shadow: 0 30px 120px #0007;
+  }
+  .console-content {
+    min-height: 400px;
+    position: relative;
+    padding: 32px;
+  }
+  .console-top {
+    display: flex;
+    gap: 13px;
+    align-items: center;
+    font-size: 12px;
+    color: #a9b6c8;
+    position: relative;
+  }
+  .console-top > svg {
+    width: 28px;
+    height: 28px;
+    color: #e0e8f5;
+  }
+  .console-top button {
+    margin-left: auto;
+    padding: 6px;
+  }
+  .console-menu {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    position: relative;
+    margin-top: 80px;
+  }
+  .console-menu button {
+    color: #8c9bab;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 19px;
+    width: 128px;
+    padding: 14px 7px;
+    font-size: 13px;
+    transition:
+      color 0.2s,
+      transform 0.2s;
+  }
+  .console-menu button svg {
+    width: 36px;
+    height: 36px;
+  }
+  .console-menu button.selected {
+    color: #e5edf9;
+    transform: translateY(-4px);
+  }
+  .console-menu button.selected svg {
+    filter: drop-shadow(0 0 13px #aac9ff44);
+  }
+  .console-dialog[open] .console-menu button {
+    animation: console-icon-in 420ms both cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .console-dialog[open] .console-menu button:nth-child(2) {
+    animation-delay: 45ms;
+  }
+  .console-dialog[open] .console-menu button:nth-child(3) {
+    animation-delay: 90ms;
+  }
+  .console-dialog[open] .console-menu button:nth-child(4) {
+    animation-delay: 135ms;
+  }
+  @keyframes console-icon-in {
+    from {
+      opacity: 0;
+      filter: blur(3px);
+      translate: 0 8px;
+    }
+    to {
+      opacity: 1;
+      filter: blur(0);
+      translate: 0 0;
+    }
+  }
+  .console-device:active .device-screen {
+    animation: signal-settle 180ms steps(1) both;
+  }
+  @keyframes signal-settle {
+    0% {
+      filter: brightness(1.2);
+    }
+    30% {
+      filter: brightness(0.7);
+    }
+    60% {
+      filter: brightness(1.07);
+    }
+    100% {
+      filter: brightness(1);
+    }
+  }
+  .console-caption {
+    text-align: center;
+    font-size: 11px;
+    color: #8f9cad;
+    position: relative;
+    margin-top: 38px;
+  }
+  .console-bottom {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+    margin-top: 47px;
+    font-size: 10px;
+    color: #a1afc1;
+  }
+  .console-bottom span {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .console-bottom kbd {
+    font-size: 9px;
+    border: 1px solid #71819955;
+    border-radius: 2px;
+    padding: 0 4px;
+  }
+  .boot-sequence {
+    position: fixed;
+    inset: 0;
+    background: #101621;
+    z-index: 100;
+    animation: boot-leave 1.25s ease-in-out forwards;
+    pointer-events: none;
+    color: #eef3ff;
+  }
+  .boot-center {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 21px;
+  }
+  .boot-center svg {
+    width: 63px;
+    height: 63px;
+    animation: boot-mark 1s cubic-bezier(0.2, 0.7, 0.3, 1) both;
+  }
+  .boot-center span {
+    font: 12px var(--font-mono);
+    letter-spacing: 1.2px;
+    animation: boot-mark 0.75s 0.12s both;
+  }
+  .boot-sequence > button {
+    position: absolute;
+    bottom: 36px;
+    right: 40px;
+    pointer-events: auto;
+    font-size: 11px;
+    color: #aab5c8;
+  }
+  .boot-sequence .ribbon-scene {
+    opacity: 0.6;
+  }
+  @keyframes boot-mark {
+    0% {
+      opacity: 0;
+      filter: blur(8px);
+      transform: scale(0.9);
+    }
+    50%,
+    100% {
+      opacity: 1;
+      filter: blur(0);
+      transform: scale(1);
+    }
+  }
+  @keyframes boot-leave {
+    0%,
+    66% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+}

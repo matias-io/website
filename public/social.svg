@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#fbfcfd"/>
+  <g transform="translate(80 70)" fill="none" stroke="#23262d" stroke-width="5">
+    <path d="M0 42V0l29 29L58 0v42"/>
+    <path d="M16 42V21l13 13 13-13v21"/>
+  </g>
+  <text x="80" y="322" fill="#23262d" font-family="Arial,sans-serif" font-size="76" letter-spacing="-2">Matias Suxo<tspan fill="#455d90">.</tspan></text>
+  <text x="84" y="384" fill="#455d90" font-family="Arial,sans-serif" font-size="27">AI &amp; software development</text>
+  <path d="M80 473h1040" stroke="#e2e5ea"/>
+  <text x="84" y="535" fill="#626976" font-family="Arial,sans-serif" font-size="22">Ottawa, Canada</text>
+  <text x="1118" y="535" text-anchor="end" fill="#626976" font-family="Arial,sans-serif" font-size="22">matiass.ca</text>
+</svg>

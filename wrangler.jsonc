@@ -1,0 +1,39 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "matiass-site",
+  "account_id": "d017fa417783a5e8da010c5789f5c94f",
+  "main": "src/worker/index.ts",
+  "compatibility_date": "2026-09-13",
+  "assets": {
+    "directory": "./out",
+    "binding": "ASSETS",
+    "html_handling": "force-trailing-slash",
+    "not_found_handling": "404-page",
+    "run_worker_first": ["/api/*"],
+  },
+  "ai": { "binding": "AI", "remote": true },
+  "ai_search": [{ "binding": "KNOWLEDGE", "instance_name": "matiass-public", "remote": true }],
+  "ratelimits": [
+    {
+      "name": "CHAT_RATE_LIMITER",
+      "namespace_id": "1309202601",
+      "simple": { "limit": 8, "period": 60 },
+    },
+    {
+      "name": "CONTACT_RATE_LIMITER",
+      "namespace_id": "1309202602",
+      "simple": { "limit": 3, "period": 60 },
+    },
+  ],
+  "send_email": [{ "name": "CONTACT_EMAIL" }],
+  "vars": {
+    "ENVIRONMENT": "production",
+    "CHAT_ENABLED": "false",
+    "CONTACT_ENABLED": "false",
+    "ALLOWED_HOSTNAMES": "matiass.ca,www.matiass.ca",
+    "AI_GATEWAY_ID": "matiass-assistant",
+    "TURNSTILE_SITE_KEY": "",
+  },
+  "dev": { "port": 3301 },
+  "observability": { "enabled": true, "head_sampling_rate": 0.1 },
+}

@@ -1,0 +1,584 @@
+@import 'tailwindcss';
+@import '../styles/tokens.css';
+@import '../features/portfolio/overview.css';
+@import '../features/portfolio/detail.css';
+@import '../features/console/console.css';
+@import '../features/assistant/assistant.css';
+
+@layer base, components, responsive;
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 30px;
+  }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 15px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  button,
+  input,
+  textarea,
+  select {
+    font: inherit;
+  }
+  button,
+  a,
+  select {
+    -webkit-tap-highlight-color: transparent;
+  }
+  button {
+    cursor: pointer;
+    color: inherit;
+  }
+  button {
+    border: 0;
+    background: none;
+  }
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  button:disabled {
+    cursor: not-allowed;
+    opacity: 0.45;
+  }
+  a,
+  button,
+  input,
+  textarea,
+  select {
+    outline-offset: 5px;
+  }
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible,
+  textarea:focus-visible,
+  select:focus-visible {
+    outline: 2px solid var(--accent);
+  }
+  ::selection {
+    background: var(--selection);
+  }
+  h1,
+  h2,
+  h3,
+  p {
+    margin: 0;
+  }
+  h1,
+  h2,
+  h3 {
+    font-weight: 500;
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  svg {
+    flex-shrink: 0;
+  }
+  dialog {
+    color: var(--ink);
+  }
+  dialog::backdrop {
+    background: var(--backdrop);
+    backdrop-filter: blur(3px);
+  }
+  .skip-link {
+    position: fixed;
+    left: 20px;
+    top: -80px;
+    z-index: 200;
+    background: var(--surface);
+    padding: 10px 16px;
+    border: 1px solid var(--line);
+  }
+  .skip-link:focus {
+    top: 16px;
+  }
+  .ribbon-scene {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+}
+@layer components {
+  .site-header {
+    height: 100px;
+    max-width: 1450px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 54px;
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    font-size: 13px;
+    font-weight: 500;
+  }
+  .brand svg {
+    width: 31px;
+    height: 31px;
+  }
+  .brand span {
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+  .brand:hover span,
+  .brand:focus-visible span {
+    opacity: 1;
+  }
+  .site-settings {
+    display: flex;
+    gap: 17px;
+    align-items: center;
+    color: var(--muted);
+    font-size: 12px;
+  }
+  .site-settings button {
+    padding: 7px;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    min-height: 36px;
+  }
+  .site-settings select {
+    border: 0;
+    background: none;
+    cursor: pointer;
+    color: inherit;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    padding: 8px 2px;
+  }
+  .site-settings button:hover {
+    color: var(--ink);
+  }
+  .sound-toggle {
+    min-width: 109px;
+  }
+  .workspace {
+    max-width: 678px;
+    margin: 28px auto 120px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+    transition: max-width 0.36s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .overview-scroll {
+    min-width: 0;
+  }
+  .overview {
+    padding: 0 24px;
+  }
+  .site-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 79px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 54px 0;
+    background: linear-gradient(to bottom, transparent, var(--paper) 28%);
+    pointer-events: none;
+    z-index: 10;
+  }
+  .site-footer button {
+    pointer-events: auto;
+  }
+  .replay-button {
+    font: 10px var(--font-mono);
+    color: var(--faint);
+    padding: 10px 0;
+  }
+  .replay-button:hover {
+    color: var(--accent);
+  }
+  .assistant-launcher {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 7px;
+    padding: 11px 14px;
+    font-size: 12px;
+    box-shadow: 0 3px 10px #18202d05;
+    transition:
+      transform 0.2s,
+      border-color 0.2s;
+  }
+  .assistant-launcher:hover {
+    transform: translateY(-2px);
+    border-color: var(--faint);
+  }
+  .ai-label {
+    font: 9px var(--font-mono);
+    color: var(--faint);
+    padding-left: 8px;
+    border-left: 1px solid var(--line);
+    margin-left: 5px;
+  }
+}
+@layer responsive {
+  @media (min-width: 1500px) {
+    .workspace {
+      margin-top: 53px;
+    }
+    .workspace.detail-open {
+      margin-top: 32px;
+      height: calc(100dvh - 210px);
+    }
+  }
+  @media (max-width: 1100px) {
+    .site-header {
+      padding: 0 30px;
+      height: 82px;
+    }
+    .workspace {
+      margin-top: 20px;
+    }
+    .workspace.detail-open {
+      margin-left: 22px;
+      margin-right: 22px;
+      gap: 18px;
+      grid-template-columns: 265px minmax(0, 1fr);
+      height: calc(100dvh - 166px);
+    }
+    .detail-toolbar {
+      padding-left: 26px;
+    }
+    .detail-scroll {
+      padding-left: 26px;
+      padding-right: 14px;
+    }
+    .site-footer {
+      padding-left: 30px;
+      padding-right: 30px;
+      height: 69px;
+    }
+    .is-compact .intro-description {
+      max-width: 240px;
+    }
+  }
+  @media (max-width: 760px) {
+    .site-header {
+      padding: 0 23px;
+      height: 75px;
+    }
+    .brand span {
+      display: none;
+    }
+    .site-settings {
+      gap: 8px;
+    }
+    .sound-toggle {
+      min-width: auto;
+    }
+    .sound-toggle > span {
+      display: none;
+    }
+    .workspace {
+      margin: 17px auto 106px;
+      max-width: 620px;
+    }
+    .overview {
+      padding: 0 25px;
+    }
+    .intro {
+      padding-top: 22px;
+    }
+    .intro-device {
+      width: 184px;
+      height: 114px;
+      margin-top: 2px;
+      margin-right: -6px;
+      margin-left: 9px;
+    }
+    .console-device {
+      transform: scale(0.78) perspective(650px) rotateX(16deg) rotateY(-12deg) rotateZ(-7deg);
+    }
+    .console-device:hover {
+      transform: scale(0.78) perspective(650px) rotateX(8deg) rotateY(-4deg) rotateZ(-3deg);
+    }
+    .intro h1 {
+      font-size: 32px;
+      letter-spacing: -0.8px;
+    }
+    .intro .role {
+      font-size: 12px;
+    }
+    .location {
+      font-size: 11px;
+      max-width: 170px;
+      margin-bottom: 10px;
+    }
+    .intro-description {
+      font-size: 15px;
+      padding-top: 17px;
+    }
+    .intro-links {
+      font-size: 12px;
+      gap: 23px;
+    }
+    .overview-section {
+      margin-top: 32px;
+    }
+    .section-heading > a {
+      font-size: 11px;
+    }
+    .experience-row {
+      grid-template-columns: 28px minmax(0, 1fr);
+      gap: 12px;
+      padding: 17px 0;
+    }
+    .organization-mark {
+      width: 27px;
+      height: 28px;
+      font-size: 11px;
+    }
+    .experience-row:after {
+      left: 13px;
+      top: 47px;
+      bottom: -8px;
+    }
+    .row-period {
+      grid-column: 2;
+      margin-top: -10px;
+      order: 4;
+      font-size: 11px;
+    }
+    .row-title {
+      font-size: 13px;
+    }
+    .row-role {
+      font-size: 12px;
+    }
+    .row-summary {
+      font-size: 12px;
+    }
+    .skill-preview {
+      grid-template-columns: 1fr;
+      gap: 3px;
+      font-size: 12px;
+      padding: 12px 0;
+    }
+    .personal-line {
+      flex-direction: column;
+      gap: 5px;
+      font-size: 11px;
+    }
+    .workspace.detail-open {
+      display: block;
+      margin: 5px 0 0;
+      height: auto;
+    }
+    .detail-open .overview-scroll {
+      display: none;
+    }
+    .detail-panel {
+      border: 0;
+      height: auto;
+      overflow: visible;
+    }
+    .detail-toolbar {
+      padding: 13px 25px 24px;
+      position: sticky;
+      top: 0;
+      z-index: 5;
+      background: var(--paper);
+      border-bottom: 1px solid var(--line);
+      font-size: 11px;
+    }
+    .detail-scroll {
+      padding: 28px 25px 125px;
+      overflow: visible;
+    }
+    .detail-title {
+      font-size: 29px;
+    }
+    .detail-lead {
+      font-size: 15px;
+    }
+    .site-footer {
+      height: 76px;
+      padding: 8px 23px 0;
+    }
+    .assistant-launcher {
+      font-size: 11px;
+      padding: 10px 12px;
+      gap: 7px;
+    }
+    .replay-button {
+      font-size: 11px;
+    }
+    .ai-label {
+      font-size: 11px;
+      padding-left: 6px;
+      margin-left: 2px;
+    }
+    .console-dialog {
+      width: calc(100vw - 26px);
+    }
+    .console-content {
+      padding: 23px;
+      min-height: 350px;
+    }
+    .console-menu {
+      gap: 3px;
+      margin-top: 70px;
+    }
+    .console-menu button {
+      width: 25%;
+      gap: 18px;
+      font-size: 11px;
+      padding: 7px 2px;
+    }
+    .console-menu button svg {
+      width: 28px;
+      height: 28px;
+    }
+    .console-caption {
+      font-size: 11px;
+      margin-top: 30px;
+    }
+    .console-bottom {
+      gap: 18px;
+      margin-top: 40px;
+      font-size: 11px;
+    }
+    .console-top {
+      font-size: 11px;
+      gap: 9px;
+    }
+    .assistant-dialog {
+      right: 8px;
+      left: 8px;
+      top: 8px;
+      bottom: 8px;
+      width: calc(100vw - 16px);
+      height: calc(100dvh - 16px);
+    }
+    .contact-portrait {
+      height: 235px;
+    }
+    .project-filters {
+      font-size: 11px;
+      gap: 10px;
+    }
+    .contact-links > a,
+    .contact-links > div {
+      font-size: 12px;
+      gap: 10px;
+    }
+    .contact-links span {
+      min-width: 55px;
+    }
+    .boot-sequence > button {
+      right: 25px;
+    }
+  }
+  @media (max-width: 390px) {
+    .intro-device {
+      width: 142px;
+      margin-right: -10px;
+    }
+    .console-device {
+      transform: scale(0.66) perspective(650px) rotateX(16deg) rotateY(-12deg) rotateZ(-7deg);
+    }
+    .console-device:hover {
+      transform: scale(0.66);
+    }
+    .intro h1 {
+      font-size: 29px;
+    }
+    .intro .role {
+      max-width: 160px;
+    }
+    .site-footer {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+    .assistant-launcher {
+      max-width: 245px;
+    }
+    .replay-button {
+      max-width: 65px;
+      text-align: left;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *:before,
+    *:after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+      scroll-behavior: auto !important;
+    }
+    .boot-sequence {
+      display: none;
+    }
+    .console-device:hover {
+      transform: none;
+    }
+    .project-row:hover .project-glyph {
+      transform: none;
+    }
+  }
+  @media print {
+    .site-header,
+    .site-footer,
+    .intro-device,
+    .detail-toolbar,
+    .assistant-dialog,
+    .console-dialog,
+    .boot-sequence {
+      display: none !important;
+    }
+    .workspace,
+    .workspace.detail-open {
+      display: block;
+      max-width: none;
+      height: auto;
+      margin: 0;
+    }
+    .detail-open .overview-scroll {
+      display: none;
+    }
+    .detail-panel {
+      border: 0;
+      height: auto;
+    }
+    .detail-scroll {
+      overflow: visible;
+      padding: 20px;
+    }
+    .overview {
+      padding: 20px;
+    }
+    .row-summary,
+    .row-period {
+      color: #333;
+    }
+    body {
+      background: white;
+      color: black;
+    }
+  }
+}

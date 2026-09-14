@@ -1,0 +1,11 @@
+node_modules/
+.next/
+out/
+.local/
+.wrangler/
+docs/
+AGENTS.md
+src/worker/generated/
+package-lock.json
+public/
+next-env.d.ts

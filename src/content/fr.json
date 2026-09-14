@@ -9,9 +9,18 @@
     "educationPeriod": "Sept. 2023–déc. 2027 prévu",
     "educationDetails": "Liste d’honneur du doyen, 2023–présent.",
     "links": [
-      { "label": "Site personnel", "url": "https://matiass.ca/" },
-      { "label": "LinkedIn", "url": "https://www.linkedin.com/in/matias-suxo/" },
-      { "label": "GitHub", "url": "https://github.com/matias-io" }
+      {
+        "label": "Site personnel",
+        "url": "https://matiass.ca/"
+      },
+      {
+        "label": "LinkedIn",
+        "url": "https://www.linkedin.com/in/matias-suxo/"
+      },
+      {
+        "label": "GitHub",
+        "url": "https://github.com/matias-io"
+      }
     ]
   },
   "experiences": [
@@ -151,7 +160,12 @@
         "LiveAvatar",
         "Vie privée"
       ],
-      "links": [{ "label": "RMGN", "url": "https://rmgn.ca/" }],
+      "links": [
+        {
+          "label": "RMGN",
+          "url": "https://rmgn.ca/"
+        }
+      ],
       "image": "/media/elvyn-scenarios-current.webp",
       "featured": true
     },
@@ -173,13 +187,7 @@
         "Copilot Studio",
         "AG-UI"
       ],
-      "links": [
-        {
-          "label": "Page du projet",
-          "url": "https://devops.uottawa.ca/emerging-technologies/ai-programme/altura"
-        }
-      ],
-      "image": "/media/elvyn-preflight-current.webp",
+      "links": [],
       "featured": true
     },
     {
@@ -265,7 +273,12 @@
         "Utilise Docker Compose, la découverte de services et un point d’entrée unique pour l’infrastructure locale d’impression."
       ],
       "skills": ["Docker", "Docker Compose", "OctoPrint", "Klipper", "Nginx"],
-      "links": [{ "label": "GitHub", "url": "https://github.com/matias-io/print-hub" }]
+      "links": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/matias-io/print-hub"
+        }
+      ]
     },
     {
       "id": "ai-racer",
@@ -287,7 +300,12 @@
         "RAG",
         "JWT"
       ],
-      "links": [{ "label": "GitHub", "url": "https://github.com/matias-io/ai-racer" }]
+      "links": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/matias-io/ai-racer"
+        }
+      ]
     },
     {
       "id": "rmgn",
@@ -305,8 +323,12 @@
         "Interaction web",
         "Three.js"
       ],
-      "links": [{ "label": "Site", "url": "https://rmgn.ca/" }],
-      "image": "/media/house-study.webp",
+      "links": [
+        {
+          "label": "Site",
+          "url": "https://rmgn.ca/"
+        }
+      ],
       "featured": true
     },
     {
@@ -373,7 +395,12 @@
         "La fiche originale décrit une initiative de club réalisée avec conception de circuits dans KiCad et systèmes mécaniques."
       ],
       "skills": ["Circuits imprimés", "KiCad", "EDA", "Robotique sous-marine"],
-      "links": [{ "label": "Kelpie Robotics", "url": "https://kelpierobotics.com/" }]
+      "links": [
+        {
+          "label": "Équipe à uOttawa",
+          "url": "https://www.uottawa.ca/faculty-engineering/student-hub/competitive-teams"
+        }
+      ]
     },
     {
       "id": "ornaprints",
@@ -418,7 +445,12 @@
         "CRUD",
         "Conception de systèmes"
       ],
-      "links": [{ "label": "GitHub", "url": "https://github.com/JadenF404/EAMS-Android-Project" }]
+      "links": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/JadenF404/EAMS-Android-Project"
+        }
+      ]
     },
     {
       "id": "connect4",
@@ -429,7 +461,12 @@
         "La fiche originale décrit une application Java de bureau avec JavaFX et une architecture MVC."
       ],
       "skills": ["Java", "JavaFX", "MVC", "Applications de bureau"],
-      "links": [{ "label": "GitHub", "url": "https://github.com/matias-io/Connect4-JavaFX" }]
+      "links": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/matias-io/Connect4-JavaFX"
+        }
+      ]
     },
     {
       "id": "personal-portfolio",
@@ -451,7 +488,12 @@
         "La fiche originale décrit une expérience de devinettes de mots claire, rapide et interactive."
       ],
       "skills": ["JavaScript natif", "SPA", "Développement web"],
-      "links": [{ "label": "GitHub", "url": "https://github.com/matias-io/wordguess" }]
+      "links": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/matias-io/wordguess"
+        }
+      ]
     },
     {
       "id": "banking-spa",
@@ -513,7 +555,12 @@
         "La fiche originale décrit une voiture téléguidée réactive utilisant des contrôleurs Micro:Bit et des pilotes de moteurs."
       ],
       "skills": ["Micro:Bit", "TypeScript", "Pilotes de moteurs", "L293D", "18650"],
-      "links": [{ "label": "GitHub", "url": "https://github.com/matias-io/MicroBit-Tilt-RC-car" }]
+      "links": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/matias-io/MicroBit-Tilt-RC-car"
+        }
+      ]
     },
     {
       "id": "chess-board",
@@ -545,7 +592,8 @@
           "label": "Projet portfolio",
           "url": "https://mattiassuxo.wixsite.com/matiasportfolio/copy-of-chess-game-pieces"
         }
-      ]
+      ],
+      "image": "/media/ring-study.webp"
     },
     {
       "id": "house-design",
@@ -559,7 +607,8 @@
           "label": "Projet portfolio",
           "url": "https://mattiassuxo.wixsite.com/matiasportfolio/copy-of-ring-design"
         }
-      ]
+      ],
+      "image": "/media/house-study.webp"
     },
     {
       "id": "bus-shelter",
@@ -575,7 +624,8 @@
           "label": "Projet portfolio",
           "url": "https://mattiassuxo.wixsite.com/matiasportfolio/copy-of-house-designs"
         }
-      ]
+      ],
+      "image": "/media/bus-shelter.webp"
     },
     {
       "id": "portable-monitor",

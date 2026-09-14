@@ -1,0 +1,196 @@
+@layer components {
+  .assistant-dialog {
+    position: fixed;
+    left: auto;
+    right: 24px;
+    top: 24px;
+    bottom: 24px;
+    margin: 0;
+    width: 430px;
+    height: calc(100dvh - 48px);
+    max-height: none;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 0;
+    background: var(--surface);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+  }
+  .assistant-inner {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  .assistant-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 25px 22px 21px;
+    border-bottom: 1px solid var(--line);
+  }
+  .assistant-avatar {
+    width: 39px;
+    height: 43px;
+    border-radius: 6px;
+    background: var(--hover);
+    display: grid;
+    place-items: center;
+    color: var(--accent);
+    flex-shrink: 0;
+  }
+  .assistant-header h2 {
+    font-size: 15px;
+    line-height: 1.5;
+  }
+  .assistant-header > div > span {
+    display: block;
+    font-size: 11px;
+    line-height: 1.6;
+    color: var(--muted);
+    margin-top: 5px;
+    max-width: 262px;
+  }
+  .assistant-header > button {
+    margin-left: auto;
+    padding: 3px;
+  }
+  .chat-messages {
+    overflow-y: auto;
+    flex: 1;
+    padding: 24px 23px;
+    overscroll-behavior: contain;
+    scrollbar-width: thin;
+  }
+  .chat-welcome > p {
+    font-size: 21px;
+    margin: 20px 0 21px;
+    max-width: 260px;
+    line-height: 1.4;
+    letter-spacing: -0.4px;
+  }
+  .chat-welcome > div {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+  }
+  .chat-welcome button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    gap: 15px;
+    padding: 12px 0;
+    font-size: 13px;
+    color: var(--muted);
+    border-bottom: 1px solid var(--line);
+  }
+  .chat-welcome button:hover {
+    color: var(--accent);
+  }
+  .chat-message {
+    font-size: 13px;
+    line-height: 1.8;
+    margin-bottom: 23px;
+  }
+  .chat-message > p {
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+  }
+  .chat-message.user {
+    padding: 12px 15px;
+    background: var(--hover);
+    border-radius: 7px;
+    margin-left: 25px;
+    line-height: 1.65;
+  }
+  .chat-sources {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    margin-top: 13px;
+  }
+  .chat-sources a,
+  .note-source {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 11px;
+    color: var(--accent);
+    line-height: 1.5;
+  }
+  .chat-sources a > span,
+  .note-source > span {
+    font: 9px var(--font-mono);
+    color: var(--faint);
+  }
+  .note-source {
+    color: var(--muted);
+  }
+  .chat-status {
+    font-size: 12px;
+    color: var(--muted);
+    padding: 10px 0;
+  }
+  .chat-form {
+    padding: 14px 20px 18px;
+  }
+  .chat-composer {
+    border: 1px solid var(--line);
+    border-radius: 7px;
+    display: flex;
+    align-items: flex-end;
+    gap: 8px;
+    padding: 11px;
+  }
+  .chat-composer:focus-within {
+    border-color: var(--faint);
+  }
+  .chat-composer textarea {
+    resize: none;
+    width: 100%;
+    border: 0;
+    outline: none;
+    background: transparent;
+    color: var(--ink);
+    font-size: 13px;
+    line-height: 1.6;
+  }
+  .chat-composer button {
+    background: var(--ink);
+    color: var(--surface);
+    border-radius: 5px;
+    padding: 7px;
+    display: flex;
+  }
+  .chat-meta {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin-top: 10px;
+  }
+  .chat-meta p {
+    font-size: 10px;
+    color: var(--faint);
+    line-height: 1.5;
+  }
+  .chat-meta button {
+    margin-left: auto;
+    padding: 5px;
+  }
+  .chat-unavailable,
+  .chat-error {
+    font-size: 12px;
+    margin: 0 23px;
+    line-height: 1.65;
+    color: var(--muted);
+    padding: 14px 0;
+    border-top: 1px solid var(--line);
+  }
+  .chat-error {
+    color: #ad4a43;
+  }
+  .turnstile-container:not(:empty) {
+    margin-bottom: 8px;
+  }
+}
