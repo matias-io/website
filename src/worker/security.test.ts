@@ -277,7 +277,12 @@ describe('source integrity', () => {
           { role: 'user', content: 'What is Elvyn?' },
         ],
         ai_search_options: expect.objectContaining({
-          query_rewrite: expect.objectContaining({ enabled: true }),
+          query_rewrite: expect.objectContaining({
+            enabled: true,
+            rewrite_prompt: expect.stringContaining(
+              'CONVERSATION_JSON=[{"role":"user","content":"Tell me about robotics."}]',
+            ),
+          }),
         }),
       }),
     );

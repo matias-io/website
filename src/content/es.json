@@ -353,7 +353,9 @@
       "title": "WebVault",
       "summary": "Concepto de plataforma para guardar, organizar y recuperar marcadores.",
       "category": "Software",
-      "details": ["El registro original menciona React, Next.js, Tailwind y NoSQL/Mongo."],
+      "details": [
+        "Concepto de plataforma de marcadores. Tecnologías listadas: React, Next.js, Tailwind y NoSQL/Mongo."
+      ],
       "skills": ["React", "Next.js", "Tailwind", "NoSQL", "Mongo"],
       "links": []
     },
@@ -362,9 +364,7 @@
       "title": "Voyage",
       "summary": "Iniciativa de propulsión eléctrica y electrónica de potencia para transporte personal sostenible.",
       "category": "Robótica y hardware",
-      "details": [
-        "El registro original reúne interfaces web, propulsión eléctrica y electrónica de potencia."
-      ],
+      "details": ["Combina interfaces web, propulsión eléctrica y electrónica de potencia."],
       "skills": [
         "Propulsión eléctrica",
         "Electrónica de potencia",
@@ -378,9 +378,7 @@
       "title": "MusiK Tool",
       "summary": "Plataforma de interpretación musical en tiempo real que combina hardware ESP32 y C++.",
       "category": "Diseño y música",
-      "details": [
-        "El registro original reúne hardware ESP32, C++, PlatformIO y experiencias musicales interactivas."
-      ],
+      "details": ["Combina hardware ESP32, C++, PlatformIO y experiencias musicales interactivas."],
       "skills": ["C++", "ESP32", "PlatformIO", "Electrónica en tiempo real", "EDA"],
       "links": []
     },
@@ -390,7 +388,7 @@
       "summary": "Proyecto colaborativo de robótica submarina que cubre diseño de placas y sistemas mecánicos.",
       "category": "Robótica y hardware",
       "details": [
-        "El registro original describe una iniciativa de club completada con diseño de placas en KiCad y sistemas mecánicos."
+        "Proyecto de club completado con diseño de placas en KiCad y sistemas mecánicos."
       ],
       "skills": ["Placas de circuito", "KiCad", "EDA", "Robótica submarina"],
       "links": [
@@ -405,7 +403,7 @@
       "title": "OrnaPrints: empresa JA",
       "summary": "Empresa de Junior Achievement que combina CAD, corte láser e impresión FDM.",
       "category": "Robótica y hardware",
-      "details": ["El registro original describe adornos y diseños personalizados impresos en 3D."],
+      "details": ["Adornos y diseños personalizados impresos en 3D."],
       "skills": ["CAD", "FDM", "Impresión 3D", "Gráficos vectoriales", "Corte láser"],
       "links": []
     },
@@ -415,7 +413,7 @@
       "summary": "Plataforma de archivos cifrados entre pares con Java, Spring Boot y React.",
       "category": "Software",
       "details": [
-        "El registro original describe gestión distribuida de archivos cifrados con frontend React/Next.js y backend Java/Spring Boot."
+        "Gestión distribuida de archivos cifrados con frontend React/Next.js y backend Java/Spring Boot."
       ],
       "skills": ["Java", "Spring Boot", "React", "Next.js", "Tailwind", "P2P"],
       "links": [
@@ -431,7 +429,7 @@
       "summary": "Aplicación Android para eventos con Firebase, funciones serverless y CircleCI.",
       "category": "Software",
       "details": [
-        "El registro original describe organización móvil de eventos, gestión de datos con Firebase y automatización de compilaciones y pruebas."
+        "Organización móvil de eventos, gestión de datos con Firebase y automatización de compilaciones y pruebas."
       ],
       "skills": [
         "Android",
@@ -453,9 +451,7 @@
       "title": "Plataforma de juego Connect4",
       "summary": "Juego de escritorio con JavaFX basado en una arquitectura MVC y juego interactivo.",
       "category": "Software",
-      "details": [
-        "El registro original describe una aplicación Java de escritorio con JavaFX y arquitectura MVC."
-      ],
+      "details": ["Aplicación Java de escritorio con JavaFX y arquitectura MVC."],
       "skills": ["Java", "JavaFX", "MVC", "Aplicaciones de escritorio"],
       "links": [
         {
@@ -469,9 +465,7 @@
       "title": "Portfolio personal",
       "summary": "Sitio portfolio creado con React, Next.js, Tailwind y tecnología serverless.",
       "category": "Software",
-      "details": [
-        "El registro original describe un portfolio para presentar proyectos y habilidades web."
-      ],
+      "details": ["Portafolio para presentar proyectos y habilidades web."],
       "skills": ["React", "Next.js", "Tailwind", "Serverless", "UI/UX"],
       "links": []
     },
@@ -480,9 +474,7 @@
       "title": "Word Guess SPA",
       "summary": "Juego de palabras en JavaScript nativo diseñado para partidas rápidas y repetibles.",
       "category": "Software",
-      "details": [
-        "El registro original describe una experiencia clara, rápida e interactiva para adivinar palabras."
-      ],
+      "details": ["Experiencia interactiva de adivinar palabras diseñada para partidas rápidas."],
       "skills": ["JavaScript nativo", "SPA", "Desarrollo web"],
       "links": [
         {
@@ -496,9 +488,7 @@
       "title": "Banking SPA",
       "summary": "Simulación bancaria en JavaScript nativo con pantallas adaptables e interactivas.",
       "category": "Software",
-      "details": [
-        "El registro original describe una simulación bancaria sencilla y una interfaz dinámica y adaptable."
-      ],
+      "details": ["Simulación bancaria sencilla con una interfaz dinámica y adaptable."],
       "skills": ["JavaScript nativo", "SPA", "Diseño adaptable"],
       "links": []
     },
@@ -508,7 +498,7 @@
       "summary": "Proyecto de batería 18650 que combina soldadura por puntos, carcasa CAD e impresión 3D.",
       "category": "Robótica y hardware",
       "details": [
-        "El registro original destaca fiabilidad, diseño de carcasa y seguridad del paquete de baterías."
+        "Proyecto de paquete de baterías centrado en fiabilidad, diseño de carcasa y seguridad."
       ],
       "skills": ["Ion de litio", "18650", "Soldadura por puntos", "CAD", "Impresión 3D"],
       "links": []
@@ -519,7 +509,7 @@
       "summary": "Proyecto de mecatrónica con motores sin escobillas, gestión de batería y piezas impresas en 3D.",
       "category": "Robótica y hardware",
       "details": [
-        "El registro original describe motores CC sin escobillas, componentes diseñados en CAD y electrónica de potencia."
+        "Combina motores CC sin escobillas, componentes diseñados en CAD y electrónica de potencia."
       ],
       "skills": [
         "Mecatrónica",
@@ -537,7 +527,7 @@
       "summary": "Controlador de faros ESP32 con LED de alta potencia, Bluetooth y sensores.",
       "category": "Robótica y hardware",
       "details": [
-        "El registro original describe automatización con sensores y conectividad Bluetooth para vehículos eléctricos personales."
+        "Automatización con sensores y conectividad Bluetooth para vehículos eléctricos personales."
       ],
       "skills": ["ESP32", "C++", "PlatformIO", "Bluetooth", "Sensores", "LED de potencia"],
       "links": []
@@ -547,9 +537,7 @@
       "title": "Auto a control remoto Microbit",
       "summary": "Auto remoto con Micro:Bit, controladores de motor, TypeScript y una batería 18650.",
       "category": "Robótica y hardware",
-      "details": [
-        "El registro original describe un auto remoto con controladores Micro:Bit y controladores de motor."
-      ],
+      "details": ["Auto a control remoto con Micro:Bit y controladores de motor."],
       "skills": ["Micro:Bit", "TypeScript", "Controladores de motor", "L293D", "18650"],
       "links": [
         {
@@ -563,9 +551,7 @@
       "title": "Tablero de ajedrez",
       "summary": "Estudio de CAD paramétrico y Blender con modelado, renderizado y animación.",
       "category": "Diseño y música",
-      "details": [
-        "El registro original describe un juego de ajedrez fotorrealista con composición y animación."
-      ],
+      "details": ["Diseño de ajedrez fotorrealista con composición y animación."],
       "skills": ["CAD", "Onshape", "Blender", "Renderizado", "Composición", "Fotorrealismo"],
       "links": [
         {
@@ -579,9 +565,7 @@
       "title": "Diseño de anillo",
       "summary": "Estudio paramétrico de anillos con Onshape, Blender, mecanizado CNC e impresión 3D.",
       "category": "Diseño y música",
-      "details": [
-        "El registro original describe modelado, renderizado y fabricación de anillos personalizables."
-      ],
+      "details": ["Modelado, renderizado y fabricación de anillos personalizables."],
       "skills": ["CAD", "Onshape", "Blender", "Mecanizado CNC", "Impresión 3D", "Renderizado"],
       "links": [
         {
@@ -596,9 +580,7 @@
       "title": "Diseño de casa",
       "summary": "CAD arquitectónico y visualización fotorrealista con Fusion360 y AutoCAD.",
       "category": "Diseño y música",
-      "details": [
-        "El registro original describe casas personalizadas con animación y renderizado."
-      ],
+      "details": ["Diseños de casas personalizadas con animación y renderizado."],
       "skills": ["CAD", "Fusion360", "AutoCAD", "Blender", "Renderizado", "Arquitectura"],
       "links": [
         {
@@ -613,9 +595,7 @@
       "title": "Parada de autobús",
       "summary": "Estudio fotorrealista de CAD y Blender para infraestructura urbana rediseñada.",
       "category": "Diseño y música",
-      "details": [
-        "El registro original describe un concepto práctico de diseño urbano con composición y animación."
-      ],
+      "details": ["Concepto práctico de diseño urbano con composición y animación."],
       "skills": ["CAD", "Blender", "Renderizado", "Composición", "Fotorrealismo"],
       "links": [
         {
@@ -630,9 +610,7 @@
       "title": "Monitor portátil",
       "summary": "Estudio de carcasa compacta de monitor diseñada para impresión 3D práctica.",
       "category": "Diseño y música",
-      "details": [
-        "El registro original describe un diseño paramétrico de carcasa centrado en utilidad y portabilidad."
-      ],
+      "details": ["Diseño paramétrico de carcasa centrado en utilidad y portabilidad."],
       "skills": ["CAD", "Onshape", "Blender", "Diseño paramétrico", "Impresión 3D"],
       "links": [
         {
@@ -646,9 +624,7 @@
       "title": "Remodelación de cocina",
       "summary": "Estudio de interiores que combina Fusion360, AutoCAD y renderizado fotorrealista.",
       "category": "Diseño y música",
-      "details": [
-        "El registro original describe conceptos prácticos de remodelación con visualización arquitectónica."
-      ],
+      "details": ["Conceptos prácticos de remodelación con visualización arquitectónica."],
       "skills": ["Fusion360", "AutoCAD", "CAD", "Renderizado", "Arquitectura", "Fotorrealismo"],
       "links": [
         {

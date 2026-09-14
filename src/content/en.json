@@ -334,7 +334,7 @@
       "summary": "Bookmark platform concept built around saving, organizing and retrieving links.",
       "category": "Software",
       "details": [
-        "React, Next.js, Tailwind and NoSQL/Mongo were listed in the original project record."
+        "A bookmark platform concept. Listed technologies include React, Next.js, Tailwind and NoSQL/Mongo."
       ],
       "skills": ["React", "Next.js", "Tailwind", "NoSQL", "Mongo"],
       "links": []
@@ -344,9 +344,7 @@
       "title": "Voyage",
       "summary": "Electric-propulsion and power-electronics initiative for sustainable personal transport.",
       "category": "Robotics & hardware",
-      "details": [
-        "The original record combines web interfaces, electric propulsion and power electronics."
-      ],
+      "details": ["Combines web interfaces, electric propulsion and power electronics."],
       "skills": ["Electric propulsion", "Power electronics", "Web development", "Pitching"],
       "links": []
     },
@@ -355,9 +353,7 @@
       "title": "MusiK Tool",
       "summary": "Real-time music performance platform combining ESP32 hardware and C++.",
       "category": "Design & music",
-      "details": [
-        "The original record combines ESP32 hardware, C++, PlatformIO and interactive music experiences."
-      ],
+      "details": ["Combines ESP32 hardware, C++, PlatformIO and interactive music experiences."],
       "skills": ["C++", "ESP32", "PlatformIO", "Real-time electronics", "EDA"],
       "links": []
     },
@@ -366,9 +362,7 @@
       "title": "Kelpie Underwater Robotics",
       "summary": "Collaborative underwater-robotics project spanning PCB design and mechanical systems.",
       "category": "Robotics & hardware",
-      "details": [
-        "The original record describes a completed club initiative using KiCad PCB design and mechanical systems."
-      ],
+      "details": ["Completed club initiative using KiCad PCB design and mechanical systems."],
       "skills": ["PCBA", "KiCad", "EDA", "Underwater robotics"],
       "links": [
         {
@@ -382,7 +376,7 @@
       "title": "OrnaPrints: JA Company",
       "summary": "Junior Achievement company combining CAD, laser cutting and FDM printing.",
       "category": "Robotics & hardware",
-      "details": ["The original record describes custom 3D-printed ornaments and designs."],
+      "details": ["Custom 3D-printed ornaments and designs."],
       "skills": ["CAD", "FDM", "3D printing", "Vector graphics", "Laser cutting"],
       "links": []
     },
@@ -392,7 +386,7 @@
       "summary": "Encrypted peer-to-peer file platform using Java, Spring Boot and React.",
       "category": "Software",
       "details": [
-        "The original record describes distributed encrypted file management with a React/Next.js frontend and Java/Spring Boot backend."
+        "Distributed encrypted file management with a React/Next.js frontend and Java/Spring Boot backend."
       ],
       "skills": ["Java", "Spring Boot", "React", "Next.js", "Tailwind", "P2P"],
       "links": [
@@ -408,7 +402,7 @@
       "summary": "Android event-planning application using Firebase, serverless functions and CircleCI.",
       "category": "Software",
       "details": [
-        "The original record describes mobile event organization, Firebase data management and automated builds/tests."
+        "Mobile event organization with Firebase data management and automated builds and tests."
       ],
       "skills": [
         "Android",
@@ -430,9 +424,7 @@
       "title": "Connect4 Game Platform",
       "summary": "JavaFX desktop game built around MVC architecture and interactive play.",
       "category": "Software",
-      "details": [
-        "The original record describes a Java desktop application with JavaFX and MVC architecture."
-      ],
+      "details": ["Java desktop application with JavaFX and MVC architecture."],
       "skills": ["Java", "JavaFX", "MVC", "Desktop applications"],
       "links": [
         {
@@ -446,9 +438,7 @@
       "title": "Personal Portfolio",
       "summary": "Portfolio site built with React, Next.js, Tailwind and serverless technology.",
       "category": "Software",
-      "details": [
-        "The original record describes a portfolio for presenting web-technology projects and skills."
-      ],
+      "details": ["Portfolio for presenting web-technology projects and skills."],
       "skills": ["React", "Next.js", "Tailwind", "Serverless", "UI/UX"],
       "links": []
     },
@@ -457,9 +447,7 @@
       "title": "Word Guess SPA",
       "summary": "Vanilla JavaScript single-page word game designed for quick replayability.",
       "category": "Software",
-      "details": [
-        "The original record describes a clean, fast and interactive word-guessing experience."
-      ],
+      "details": ["Interactive word-guessing experience designed for quick replay."],
       "skills": ["Vanilla JavaScript", "SPA", "Web development"],
       "links": [
         {
@@ -473,9 +461,7 @@
       "title": "Banking SPA",
       "summary": "Vanilla JavaScript banking simulation with responsive interactive screens.",
       "category": "Software",
-      "details": [
-        "The original record describes a simplified banking simulation and dynamic responsive interface."
-      ],
+      "details": ["Simplified banking simulation with a dynamic responsive interface."],
       "skills": ["Vanilla JavaScript", "SPA", "Responsive design"],
       "links": []
     },
@@ -484,9 +470,7 @@
       "title": "Lithium ion Battery",
       "summary": "18650 battery-pack project combining spot welding, CAD enclosures and 3D printing.",
       "category": "Robotics & hardware",
-      "details": [
-        "The original record emphasizes battery-pack reliability, enclosure design and safety."
-      ],
+      "details": ["Battery-pack project covering reliability, enclosure design and safety."],
       "skills": ["Lithium-ion", "18650", "Spot welding", "CAD", "3D printing"],
       "links": []
     },
@@ -495,9 +479,7 @@
       "title": "Electric Skateboard",
       "summary": "Mechatronics build combining brushless motors, battery management and 3D-printed parts.",
       "category": "Robotics & hardware",
-      "details": [
-        "The original record describes brushless DC motors, CAD-designed components and power electronics."
-      ],
+      "details": ["Combines brushless DC motors, CAD-designed components and power electronics."],
       "skills": [
         "Mechatronics",
         "Brushless DC motors",
@@ -514,7 +496,7 @@
       "summary": "ESP32 headlight controller combining high-power LEDs, Bluetooth and sensors.",
       "category": "Robotics & hardware",
       "details": [
-        "The original record describes sensor-based automation and Bluetooth connectivity for personal electric vehicles."
+        "Sensor-based automation and Bluetooth connectivity for personal electric vehicles."
       ],
       "skills": ["ESP32", "C++", "PlatformIO", "Bluetooth", "Sensors", "Power LEDs"],
       "links": []
@@ -524,9 +506,7 @@
       "title": "Microbit RC Car",
       "summary": "Micro:Bit remote-control car using motor drivers, TypeScript and an 18650 battery.",
       "category": "Robotics & hardware",
-      "details": [
-        "The original record describes a responsive remote-control car built with Micro:Bit controllers and motor drivers."
-      ],
+      "details": ["Remote-control car using Micro:Bit controllers and motor drivers."],
       "skills": ["Micro:Bit", "TypeScript", "Motor drivers", "L293D", "18650"],
       "links": [
         {
@@ -540,9 +520,7 @@
       "title": "Chess Board",
       "summary": "Parametric CAD and Blender study combining modelling, rendering and animation.",
       "category": "Design & music",
-      "details": [
-        "The original record describes a photorealistic chess-set design with compositing and animation."
-      ],
+      "details": ["Photorealistic chess-set design with compositing and animation."],
       "skills": ["CAD", "Onshape", "Blender", "Rendering", "Compositing", "Photorealism"],
       "links": [
         {
@@ -556,9 +534,7 @@
       "title": "Ring Design",
       "summary": "Parametric ring study combining Onshape, Blender, CNC routing and 3D printing.",
       "category": "Design & music",
-      "details": [
-        "The original record describes customizable ring modelling, rendering and fabrication."
-      ],
+      "details": ["Customizable ring modelling, rendering and fabrication."],
       "skills": ["CAD", "Onshape", "Blender", "CNC routing", "3D printing", "Rendering"],
       "links": [
         {
@@ -573,9 +549,7 @@
       "title": "House Design",
       "summary": "Architectural CAD and photorealistic visualization using Fusion360 and AutoCAD.",
       "category": "Design & music",
-      "details": [
-        "The original record describes custom house designs with animation and rendering."
-      ],
+      "details": ["Custom house designs with animation and rendering."],
       "skills": ["CAD", "Fusion360", "AutoCAD", "Blender", "Rendering", "Architecture"],
       "links": [
         {
@@ -590,9 +564,7 @@
       "title": "Bus Shelter",
       "summary": "Photorealistic CAD and Blender study for redesigned urban infrastructure.",
       "category": "Design & music",
-      "details": [
-        "The original record describes a practical urban-design concept with compositing and animation."
-      ],
+      "details": ["Practical urban-design concept with compositing and animation."],
       "skills": ["CAD", "Blender", "Rendering", "Compositing", "Photorealism"],
       "links": [
         {
@@ -607,9 +579,7 @@
       "title": "Portable Monitor",
       "summary": "Compact monitor-enclosure study designed for practical 3D printing.",
       "category": "Design & music",
-      "details": [
-        "The original record describes parametric enclosure design with a focus on usability and portability."
-      ],
+      "details": ["Parametric enclosure design focused on usability and portability."],
       "skills": ["CAD", "Onshape", "Blender", "Parametric design", "3D printing"],
       "links": [
         {
@@ -623,9 +593,7 @@
       "title": "Kitchen Remodeling",
       "summary": "Interior-design study combining Fusion360, AutoCAD and photorealistic rendering.",
       "category": "Design & music",
-      "details": [
-        "The original record describes practical remodeling concepts with architectural visualization."
-      ],
+      "details": ["Practical remodeling concepts with architectural visualization."],
       "skills": ["Fusion360", "AutoCAD", "CAD", "Rendering", "Architecture", "Photorealism"],
       "links": [
         {

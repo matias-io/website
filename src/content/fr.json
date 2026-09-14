@@ -355,7 +355,9 @@
       "title": "WebVault",
       "summary": "Concept de plateforme pour enregistrer, organiser et retrouver des signets.",
       "category": "Logiciels",
-      "details": ["La fiche originale mentionne React, Next.js, Tailwind et NoSQL/Mongo."],
+      "details": [
+        "Concept de plateforme de signets. Technologies listées : React, Next.js, Tailwind et NoSQL/Mongo."
+      ],
       "skills": ["React", "Next.js", "Tailwind", "NoSQL", "Mongo"],
       "links": []
     },
@@ -364,9 +366,7 @@
       "title": "Voyage",
       "summary": "Initiative de propulsion électrique et d’électronique de puissance pour le transport personnel durable.",
       "category": "Robotique et matériel",
-      "details": [
-        "La fiche originale réunit interfaces web, propulsion électrique et électronique de puissance."
-      ],
+      "details": ["Réunit interfaces web, propulsion électrique et électronique de puissance."],
       "skills": [
         "Propulsion électrique",
         "Électronique de puissance",
@@ -380,9 +380,7 @@
       "title": "MusiK Tool",
       "summary": "Plateforme de performance musicale en temps réel réunissant matériel ESP32 et C++.",
       "category": "Design et musique",
-      "details": [
-        "La fiche originale réunit matériel ESP32, C++, PlatformIO et expériences musicales interactives."
-      ],
+      "details": ["Réunit matériel ESP32, C++, PlatformIO et expériences musicales interactives."],
       "skills": ["C++", "ESP32", "PlatformIO", "Électronique en temps réel", "EDA"],
       "links": []
     },
@@ -392,7 +390,7 @@
       "summary": "Projet collaboratif de robotique sous-marine couvrant la conception de circuits et les systèmes mécaniques.",
       "category": "Robotique et matériel",
       "details": [
-        "La fiche originale décrit une initiative de club réalisée avec conception de circuits dans KiCad et systèmes mécaniques."
+        "Projet de club réalisé avec conception de circuits dans KiCad et systèmes mécaniques."
       ],
       "skills": ["Circuits imprimés", "KiCad", "EDA", "Robotique sous-marine"],
       "links": [
@@ -407,9 +405,7 @@
       "title": "OrnaPrints : entreprise JA",
       "summary": "Entreprise de Jeunes Entreprises réunissant CAO, découpe laser et impression FDM.",
       "category": "Robotique et matériel",
-      "details": [
-        "La fiche originale décrit des ornements et designs personnalisés imprimés en 3D."
-      ],
+      "details": ["Ornements et designs personnalisés imprimés en 3D."],
       "skills": ["CAO", "FDM", "Impression 3D", "Graphisme vectoriel", "Découpe laser"],
       "links": []
     },
@@ -419,7 +415,7 @@
       "summary": "Plateforme de fichiers chiffrés pair à pair utilisant Java, Spring Boot et React.",
       "category": "Logiciels",
       "details": [
-        "La fiche originale décrit une gestion distribuée de fichiers chiffrés avec frontend React/Next.js et backend Java/Spring Boot."
+        "Gestion distribuée de fichiers chiffrés avec frontend React/Next.js et backend Java/Spring Boot."
       ],
       "skills": ["Java", "Spring Boot", "React", "Next.js", "Tailwind", "P2P"],
       "links": [
@@ -435,7 +431,7 @@
       "summary": "Application Android de planification d’événements utilisant Firebase, fonctions serverless et CircleCI.",
       "category": "Logiciels",
       "details": [
-        "La fiche originale décrit l’organisation d’événements mobiles, la gestion Firebase et l’automatisation des tests et compilations."
+        "Organisation d’événements mobiles, gestion de données avec Firebase et automatisation des tests et compilations."
       ],
       "skills": [
         "Android",
@@ -457,9 +453,7 @@
       "title": "Plateforme de jeu Connect4",
       "summary": "Jeu de bureau JavaFX fondé sur une architecture MVC et une expérience interactive.",
       "category": "Logiciels",
-      "details": [
-        "La fiche originale décrit une application Java de bureau avec JavaFX et une architecture MVC."
-      ],
+      "details": ["Application Java de bureau avec JavaFX et une architecture MVC."],
       "skills": ["Java", "JavaFX", "MVC", "Applications de bureau"],
       "links": [
         {
@@ -473,9 +467,7 @@
       "title": "Portfolio personnel",
       "summary": "Site portfolio construit avec React, Next.js, Tailwind et des technologies serverless.",
       "category": "Logiciels",
-      "details": [
-        "La fiche originale décrit un portfolio présentant des projets et compétences web."
-      ],
+      "details": ["Portfolio pour présenter des projets et compétences web."],
       "skills": ["React", "Next.js", "Tailwind", "Serverless", "UI/UX"],
       "links": []
     },
@@ -484,9 +476,7 @@
       "title": "Word Guess SPA",
       "summary": "Jeu de mots en JavaScript natif conçu pour des parties rapides et rejouables.",
       "category": "Logiciels",
-      "details": [
-        "La fiche originale décrit une expérience de devinettes de mots claire, rapide et interactive."
-      ],
+      "details": ["Expérience interactive de devinettes de mots conçue pour des parties rapides."],
       "skills": ["JavaScript natif", "SPA", "Développement web"],
       "links": [
         {
@@ -500,9 +490,7 @@
       "title": "Banking SPA",
       "summary": "Simulation bancaire en JavaScript natif avec écrans interactifs et adaptatifs.",
       "category": "Logiciels",
-      "details": [
-        "La fiche originale décrit une simulation bancaire simplifiée et une interface dynamique et adaptative."
-      ],
+      "details": ["Simulation bancaire simplifiée avec interface dynamique et adaptative."],
       "skills": ["JavaScript natif", "SPA", "Design adaptatif"],
       "links": []
     },
@@ -511,9 +499,7 @@
       "title": "Batterie lithium-ion",
       "summary": "Projet de batterie 18650 réunissant soudage par points, boîtier CAO et impression 3D.",
       "category": "Robotique et matériel",
-      "details": [
-        "La fiche originale met l’accent sur la fiabilité, la conception du boîtier et la sécurité du bloc-batterie."
-      ],
+      "details": ["Projet de bloc-batterie couvrant fiabilité, conception du boîtier et sécurité."],
       "skills": ["Lithium-ion", "18650", "Soudage par points", "CAO", "Impression 3D"],
       "links": []
     },
@@ -523,7 +509,7 @@
       "summary": "Projet mécatronique réunissant moteurs sans balais, gestion de batterie et pièces imprimées en 3D.",
       "category": "Robotique et matériel",
       "details": [
-        "La fiche originale décrit des moteurs CC sans balais, des composants conçus en CAO et de l’électronique de puissance."
+        "Réunit moteurs CC sans balais, composants conçus en CAO et électronique de puissance."
       ],
       "skills": [
         "Mécatronique",
@@ -541,7 +527,7 @@
       "summary": "Contrôleur de phare ESP32 combinant DEL haute puissance, Bluetooth et capteurs.",
       "category": "Robotique et matériel",
       "details": [
-        "La fiche originale décrit l’automatisation par capteurs et la connectivité Bluetooth pour des véhicules électriques personnels."
+        "Automatisation par capteurs et connectivité Bluetooth pour véhicules électriques personnels."
       ],
       "skills": ["ESP32", "C++", "PlatformIO", "Bluetooth", "Capteurs", "DEL de puissance"],
       "links": []
@@ -552,7 +538,7 @@
       "summary": "Voiture téléguidée Micro:Bit utilisant des pilotes de moteurs, TypeScript et une batterie 18650.",
       "category": "Robotique et matériel",
       "details": [
-        "La fiche originale décrit une voiture téléguidée réactive utilisant des contrôleurs Micro:Bit et des pilotes de moteurs."
+        "Voiture téléguidée utilisant des contrôleurs Micro:Bit et des pilotes de moteurs."
       ],
       "skills": ["Micro:Bit", "TypeScript", "Pilotes de moteurs", "L293D", "18650"],
       "links": [
@@ -567,9 +553,7 @@
       "title": "Échiquier",
       "summary": "Étude de CAO paramétrique et de Blender réunissant modélisation, rendu et animation.",
       "category": "Design et musique",
-      "details": [
-        "La fiche originale décrit un jeu d’échecs photoréaliste avec compositing et animation."
-      ],
+      "details": ["Design d’échiquier photoréaliste avec compositing et animation."],
       "skills": ["CAO", "Onshape", "Blender", "Rendu", "Compositing", "Photoréalisme"],
       "links": [
         {
@@ -583,9 +567,7 @@
       "title": "Design de bague",
       "summary": "Étude de bague paramétrique combinant Onshape, Blender, usinage CNC et impression 3D.",
       "category": "Design et musique",
-      "details": [
-        "La fiche originale décrit la modélisation, le rendu et la fabrication de bagues personnalisables."
-      ],
+      "details": ["Modélisation, rendu et fabrication de bagues personnalisables."],
       "skills": ["CAO", "Onshape", "Blender", "Usinage CNC", "Impression 3D", "Rendu"],
       "links": [
         {
@@ -600,7 +582,7 @@
       "title": "Design de maison",
       "summary": "Conception architecturale en CAO et visualisation photoréaliste avec Fusion360 et AutoCAD.",
       "category": "Design et musique",
-      "details": ["La fiche originale décrit des maisons personnalisées avec animation et rendu."],
+      "details": ["Maisons personnalisées avec animation et rendu."],
       "skills": ["CAO", "Fusion360", "AutoCAD", "Blender", "Rendu", "Architecture"],
       "links": [
         {
@@ -615,9 +597,7 @@
       "title": "Abribus",
       "summary": "Étude photoréaliste en CAO et Blender pour une infrastructure urbaine repensée.",
       "category": "Design et musique",
-      "details": [
-        "La fiche originale décrit un concept de design urbain pratique avec compositing et animation."
-      ],
+      "details": ["Concept de design urbain pratique avec compositing et animation."],
       "skills": ["CAO", "Blender", "Rendu", "Compositing", "Photoréalisme"],
       "links": [
         {
@@ -632,9 +612,7 @@
       "title": "Moniteur portatif",
       "summary": "Étude de boîtier de moniteur compact conçue pour l’impression 3D pratique.",
       "category": "Design et musique",
-      "details": [
-        "La fiche originale décrit un boîtier paramétrique axé sur l’utilisabilité et la portabilité."
-      ],
+      "details": ["Boîtier paramétrique axé sur l’utilisabilité et la portabilité."],
       "skills": ["CAO", "Onshape", "Blender", "Design paramétrique", "Impression 3D"],
       "links": [
         {
@@ -648,9 +626,7 @@
       "title": "Rénovation de cuisine",
       "summary": "Étude d’aménagement intérieur combinant Fusion360, AutoCAD et rendu photoréaliste.",
       "category": "Design et musique",
-      "details": [
-        "La fiche originale décrit des concepts de rénovation avec visualisation architecturale."
-      ],
+      "details": ["Concepts de rénovation avec visualisation architecturale."],
       "skills": ["Fusion360", "AutoCAD", "CAO", "Rendu", "Architecture", "Photoréalisme"],
       "links": [
         {
