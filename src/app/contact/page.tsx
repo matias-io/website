@@ -1,6 +1,23 @@
-import type { Metadata } from 'next';
 import { ContactPage } from '@/features/portfolio/detail-view';
-export const metadata: Metadata = { title: 'Contact' };
+import { createPageMetadata } from '@/features/seo/metadata';
+import { breadcrumbStructuredData, JsonLd } from '@/features/seo/structured-data';
+
+export const metadata = createPageMetadata({
+  title: 'Contact',
+  description: 'Contact Matias Suxo in Ottawa about AI, software, and creative technology work.',
+  path: '/contact/',
+});
+
 export default function Page() {
-  return <ContactPage />;
+  return (
+    <>
+      <JsonLd
+        data={breadcrumbStructuredData([
+          { name: 'Home', path: '/' },
+          { name: 'Contact', path: '/contact/' },
+        ])}
+      />
+      <ContactPage />
+    </>
+  );
 }
