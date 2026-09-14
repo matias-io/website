@@ -7,6 +7,11 @@ const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const output = resolve(root, '.local/knowledge');
 const manifestPath = resolve(root, 'src/worker/generated/manifest.json');
 const locales = ['en', 'fr', 'es'];
+const portfolioContext = {
+  en: "From Matias Suxo's professional portfolio.",
+  fr: 'Du portfolio professionnel de Matias Suxo.',
+  es: 'Del portafolio profesional de Matias Suxo.',
+};
 const documents = [];
 const hash = (text) => createHash('sha256').update(text).digest('hex');
 
@@ -33,7 +38,7 @@ function add(locale, category, id, title, href, body) {
   const location = href
     ? `Page: ${href}`
     : 'Source: background note approved by Matias for public answers';
-  const content = `# ${text(title)}\n\nLanguage: ${locale}\n${location}\n\n${text(body)}\n`;
+  const content = `# ${text(title)}\n\n${portfolioContext[locale]}\nLanguage: ${locale}\n${location}\n\n${text(body)}\n`;
   const contentHash = hash(content);
   const key = `portfolio-${locale}-${category}-${slug(id)}-${contentHash.slice(0, 12)}.md`;
   if (key.length > 128) throw new Error(`Knowledge filename is too long: ${key}`);
@@ -70,6 +75,12 @@ for (const locale of locales) {
     throw new Error(`Public content schema is incomplete: src/content/${locale}.json`);
   }
   const profile = source.profile;
+  const relatedProjects = (ids = []) =>
+    ids.map((id) => {
+      const project = source.projects.find((item) => item.id === id);
+      if (!project) throw new Error(`Unknown related project ${id} in ${locale} content.`);
+      return `${text(project.title)}: ${text(project.summary)}`;
+    });
   add(locale, 'profile', 'matias-suxo', profile.name, '/', [
     text(profile.role),
     text(profile.summary),
@@ -77,7 +88,7 @@ for (const locale of locales) {
     `Education: ${text(profile.education)}`,
     text(profile.educationPeriod),
     text(profile.educationDetails),
-    'Contact Matias through the contact form on the Contact page or his LinkedIn profile.',
+    'The Contact page lists currently available contact options, including his LinkedIn profile.',
     ...(profile.links ?? []).map((link) => `${text(link.label)}: ${text(link.url)}`),
   ]);
   for (const item of source.experiences) {
@@ -94,7 +105,7 @@ for (const locale of locales) {
         text(item.summary),
         text(item.details),
         `Documented skills: ${text(item.skills)}`,
-        `Related project IDs: ${text(item.projects)}`,
+        ...relatedProjects(item.projects),
       ],
     );
   }
@@ -110,7 +121,7 @@ for (const locale of locales) {
   for (const item of source.skills) {
     add(locale, 'skill', item.id, item.title, `/skills/#${slug(item.id)}`, [
       `Documented skills: ${text(item.items)}`,
-      `Projects demonstrating these skills: ${text(item.projects)}`,
+      ...relatedProjects(item.projects),
     ]);
   }
   const siteHelp = {

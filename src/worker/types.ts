@@ -23,14 +23,15 @@ export interface KnowledgeBinding {
         retrieval_type: 'hybrid';
         max_num_results: number;
         match_threshold: number;
-        return_on_failure: false;
+        keyword_match_mode: 'or';
+        return_on_failure: true;
         filters: { locale: { $eq: ChatLocale } };
       };
       query_rewrite: { enabled: false };
       reranking: { enabled: false };
       cache: { enabled: false };
     };
-  }): Promise<{ chunks: SearchChunk[] }>;
+  }): Promise<{ chunks: SearchChunk[]; errors?: unknown[] }>;
 }
 
 export interface WorkerEnv {

@@ -40,6 +40,8 @@ describe('AI Search request shape', () => {
         ai_search_options: expect.objectContaining({
           retrieval: expect.objectContaining({
             filters: { locale: { $eq: 'fr' } },
+            keyword_match_mode: 'or',
+            return_on_failure: true,
           }),
         }),
       }),

@@ -246,15 +246,13 @@ describe('source integrity', () => {
     expect(bindings.AI?.run).not.toHaveBeenCalled();
   });
 
-  it('asks retrieval to throw on service failure instead of disguising it as no evidence', async () => {
-    const bindings = env();
-    await answerQuestion(valid, bindings, [page]);
-    expect(bindings.KNOWLEDGE?.search).toHaveBeenCalledWith(
-      expect.objectContaining({
-        ai_search_options: expect.objectContaining({
-          retrieval: expect.objectContaining({ return_on_failure: false }),
-        }),
-      }),
-    );
+  it('reports an empty failed retrieval as unavailable evidence, not an unsupported question', async () => {
+    const bindings = env({
+      KNOWLEDGE: { search: vi.fn(async () => ({ chunks: [], errors: [{ code: 'timeout' }] })) },
+    });
+    await expect(answerQuestion(valid, bindings, [page])).rejects.toMatchObject({
+      code: 'upstream_error',
+    });
+    expect(bindings.AI?.run).not.toHaveBeenCalled();
   });
 });
