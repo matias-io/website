@@ -1,3 +1,5 @@
+import type { ChatLocale } from '../shared/chat';
+
 export interface TrustedDocument {
   key: string;
   title: string;
@@ -22,6 +24,7 @@ export interface KnowledgeBinding {
         max_num_results: number;
         match_threshold: number;
         return_on_failure: false;
+        filters: { locale: { $eq: ChatLocale } };
       };
       query_rewrite: { enabled: false };
       reranking: { enabled: false };

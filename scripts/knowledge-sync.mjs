@@ -2,6 +2,7 @@ import { createHash } from 'node:crypto';
 import { readFile } from 'node:fs/promises';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { runConcurrently } from './concurrency.mjs';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const args = new Set(process.argv.slice(2));
@@ -50,14 +51,34 @@ if (!token) {
 }
 
 const pause = (milliseconds) => new Promise((done) => setTimeout(done, milliseconds));
+let rateLimitedUntil = 0;
 async function request(url, options = {}, allowMissing = false) {
   for (let attempt = 0; attempt < 3; attempt += 1) {
+    while (rateLimitedUntil > Date.now()) await pause(rateLimitedUntil - Date.now());
     const headers = new Headers(options.headers);
     headers.set('authorization', `Bearer ${token}`);
-    const response = await fetch(url, { ...options, headers, signal: AbortSignal.timeout(60_000) });
+    let response;
+    try {
+      response = await fetch(url, { ...options, headers, signal: AbortSignal.timeout(60_000) });
+    } catch {
+      if (attempt < 2) {
+        await pause(1000 * 2 ** attempt);
+        continue;
+      }
+      throw new Error(
+        'Cloudflare AI Search request timed out or failed to connect after three attempts.',
+      );
+    }
     if (allowMissing && response.status === 404) return null;
     if ((response.status === 429 || response.status >= 500) && attempt < 2) {
-      await pause(Math.min(8000, 1000 * 2 ** attempt));
+      const retrySeconds = Number(response.headers.get('retry-after'));
+      const backoff = Math.max(
+        1000 * 2 ** attempt,
+        Number.isFinite(retrySeconds) ? retrySeconds * 1000 : 0,
+      );
+      if (response.status === 429)
+        rateLimitedUntil = Math.max(rateLimitedUntil, Date.now() + backoff);
+      await pause(backoff);
       continue;
     }
     const payload = await response.json();
@@ -189,7 +210,13 @@ if (dryRun) {
   process.exit(0);
 }
 
-for (const document of changed) {
+let completed = release.documents.length - changed.length;
+let accepted = completed;
+const submitted = new Map();
+if (changed.length)
+  console.log('Uploading with at most four concurrent requests, then verifying indexing.');
+await runConcurrently(changed, 4, async (document) => {
+  const started = Date.now();
   const content = await readFile(resolve(root, '.local/knowledge', document.key), 'utf8');
   if (createHash('sha256').update(content).digest('hex') !== document.contentHash) {
     throw new Error(
@@ -206,11 +233,33 @@ for (const document of changed) {
       content_hash: document.contentHash,
     }),
   );
-  form.set('wait_for_completion', 'true');
-  let item = (await request(`${base}/items`, { method: 'POST', body: form })).result;
+  // A synchronous upload can exceed the HTTP timeout while waiting for vector ingestion.
+  // Poll asynchronous jobs instead, also resuming an accepted job after an interrupted run.
+  form.set('wait_for_completion', 'false');
+  let item = current.get(document.key);
+  if (
+    item?.metadata?.content_hash !== document.contentHash ||
+    !['queued', 'running', 'outdated'].includes(item.status)
+  ) {
+    item = (await request(`${base}/items`, { method: 'POST', body: form })).result;
+  }
+  submitted.set(document.key, { item, started });
+  accepted += 1;
+  if (accepted % 25 === 0 || accepted === release.documents.length) {
+    console.log(
+      `Accepted ${accepted}/${release.documents.length} documents; indexing verification follows.`,
+    );
+  }
+});
+
+// Submit the complete batch before polling so background ingestion can proceed together.
+// Both phases settle all work before failing; no retrieval/deployment/prune can follow a failure.
+await runConcurrently(changed, 4, async (document) => {
+  const submittedDocument = submitted.get(document.key);
+  let item = submittedDocument.item;
   const deadline = Date.now() + 300_000;
   while (['queued', 'running', 'outdated'].includes(item.status) && Date.now() < deadline) {
-    await pause(2000);
+    await pause(3000);
     item = (await request(`${base}/items/${encodeURIComponent(item.id)}`)).result;
   }
   if (
@@ -222,8 +271,11 @@ for (const document of changed) {
       `Indexing did not complete with verified metadata for ${document.key}. Status: ${item.status}. Existing documents have not been pruned.`,
     );
   }
-  console.log(`Indexed ${document.key} (${item.chunks_count} chunks).`);
-}
+  completed += 1;
+  console.log(
+    `Indexed ${completed}/${release.documents.length}: ${document.key} (${item.chunks_count} chunks, ${Math.round((Date.now() - submittedDocument.started) / 1000)}s).`,
+  );
+});
 
 // Both phases require live retrieval. Normal synchronization never deletes old evidence.
 const check = await request(`${base}/search`, {
