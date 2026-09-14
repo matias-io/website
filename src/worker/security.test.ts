@@ -246,6 +246,19 @@ describe('source integrity', () => {
     expect(bindings.AI?.run).not.toHaveBeenCalled();
   });
 
+  it('disables rewriting before conversation history exists so the first question keeps its subject', async () => {
+    const bindings = env();
+    await answerQuestion(valid, bindings, [page]);
+    expect(bindings.KNOWLEDGE?.search).toHaveBeenCalledWith(
+      expect.objectContaining({
+        messages: [{ role: 'user', content: valid.message }],
+        ai_search_options: expect.objectContaining({
+          query_rewrite: expect.objectContaining({ enabled: false }),
+        }),
+      }),
+    );
+  });
+
   it('passes distinct conversation messages for native follow-up resolution', async () => {
     const bindings = env();
     await answerQuestion(
@@ -263,6 +276,9 @@ describe('source integrity', () => {
           { role: 'user', content: 'Tell me about robotics.' },
           { role: 'user', content: 'What is Elvyn?' },
         ],
+        ai_search_options: expect.objectContaining({
+          query_rewrite: expect.objectContaining({ enabled: true }),
+        }),
       }),
     );
   });

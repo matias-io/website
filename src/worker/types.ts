@@ -27,7 +27,7 @@ export interface KnowledgeBinding {
         return_on_failure: true;
         filters: { locale: { $eq: ChatLocale } };
       };
-      query_rewrite: { enabled: true; model: string; rewrite_prompt: string };
+      query_rewrite: { enabled: boolean; model: string; rewrite_prompt: string };
       reranking: { enabled: false };
       cache: { enabled: false };
     };

@@ -264,11 +264,13 @@ await runConcurrently(changed, 4, async (document) => {
 
 // Submit the complete batch before polling so background ingestion can proceed together.
 // Both phases settle all work before failing; no retrieval/deployment/prune can follow a failure.
+// Cloudflare's queue took over ten minutes for a small batch during live verification.
+// A shared deadline bounds the whole phase without expiring early items after five minutes.
+const indexingDeadline = Date.now() + 15 * 60_000;
 await runConcurrently(changed, 4, async (document) => {
   const submittedDocument = submitted.get(document.key);
   let item = submittedDocument.item;
-  const deadline = Date.now() + 300_000;
-  while (['queued', 'running', 'outdated'].includes(item.status) && Date.now() < deadline) {
+  while (['queued', 'running', 'outdated'].includes(item.status) && Date.now() < indexingDeadline) {
     await pause(3000);
     item = (await request(`${base}/items/${encodeURIComponent(item.id)}`)).result;
   }

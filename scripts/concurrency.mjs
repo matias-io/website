@@ -19,7 +19,7 @@ export async function runConcurrently(items, concurrency, task) {
   if (failures.length) {
     throw new AggregateError(
       failures,
-      `${failures.length} knowledge uploads failed. No documents were pruned.`,
+      `${failures.length} knowledge operations failed. Inspect the individual errors before retrying.`,
     );
   }
 }
