@@ -116,8 +116,9 @@ export async function answerQuestion(
     previousQuestion && input.message.length < 100
       ? `${previousQuestion}\nFollow-up question: ${input.message}`
       : input.message;
-  const result = await withDeadline(
-    env.KNOWLEDGE.search({
+  const knowledge = env.KNOWLEDGE;
+  const search = () =>
+    knowledge.search({
       query,
       ai_search_options: {
         retrieval: {
@@ -132,7 +133,14 @@ export async function answerQuestion(
         reranking: { enabled: false },
         cache: { enabled: false },
       },
-    }),
+    });
+  const result = await withDeadline(
+    (async () => {
+      const first = await search();
+      // Live AI Search occasionally returned an empty result for a populated query.
+      // Retry once with the same filters, sharing the original deadline.
+      return first.chunks.length === 0 ? search() : first;
+    })(),
     15_000,
   );
   const evidence = selectEvidence(result.chunks, manifest);
