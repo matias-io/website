@@ -1,0 +1,733 @@
+{
+  "profile": {
+    "name": "Matias Suxo",
+    "role": "Desarrollador de plataformas de IA",
+    "summary": "Creo herramientas de IA, aplicaciones web y, de vez en cuando, placas de circuito. Actualmente desarrollo plataformas de IA en la Universidad de Ottawa.",
+    "email": "",
+    "location": "Ottawa, Canadá",
+    "education": "B.Sc. con honores en Ciencias de la Computación, opción de Gestión y Emprendimiento, programa de inmersión en francés",
+    "educationPeriod": "sept. 2023–dic. 2027 previsto",
+    "educationDetails": "Lista de honor del decano, 2023–presente.",
+    "links": [
+      { "label": "Sitio personal", "url": "https://matiass.ca/" },
+      { "label": "LinkedIn", "url": "https://www.linkedin.com/in/matias-suxo/" },
+      { "label": "GitHub", "url": "https://github.com/matias-io" }
+    ]
+  },
+  "experiences": [
+    {
+      "id": "uottawa-ai",
+      "organization": "Universidad de Ottawa",
+      "role": "Desarrollador de plataformas de IA",
+      "period": "sept. 2025–presente",
+      "summary": "Desarrollo de plataformas de IA y aplicaciones con agentes para uso universitario.",
+      "details": [
+        "Trabajo de medio tiempo de sept. 2025 a ene. 2026; contrato de tiempo completo desde ene. 2026.",
+        "Trabajo en orquestación multiagente, búsqueda, flujos que respetan la privacidad e integración de plataformas.",
+        "Los proyectos públicos incluyen uOttawa Chat, Altura y la iniciativa uOGenAI."
+      ],
+      "skills": [
+        "Plataformas de IA",
+        "Sistemas multiagente",
+        "RAG",
+        "Búsqueda respetuosa de la privacidad",
+        "Gobernanza",
+        "Azure OpenAI"
+      ],
+      "projects": ["altura", "retrieval-service", "uogenai"]
+    },
+    {
+      "id": "uottawa-it",
+      "organization": "Universidad de Ottawa",
+      "role": "Desarrollo de software | Operaciones de TI",
+      "period": "mayo–sept. 2025",
+      "summary": "Desarrollo de software full-stack y operaciones de TI para sistemas institucionales.",
+      "details": [
+        "Desarrollo full-stack con Laravel, Next.js, NestJS y Docker.",
+        "Apoyo a operaciones de TI locales junto con el desarrollo de software."
+      ],
+      "skills": ["Laravel", "Next.js", "NestJS", "Docker", "Operaciones de TI"],
+      "projects": []
+    },
+    {
+      "id": "kelpie",
+      "organization": "Kelpie Robotics",
+      "role": "Desarrollador eléctrico y de sistemas embebidos",
+      "period": "sept. 2024–presente",
+      "summary": "Desarrollo eléctrico y embebido para un club de robótica submarina.",
+      "details": [
+        "Trabajo en EDA y fabricación de placas para sistemas de robótica submarina.",
+        "Integra diseño eléctrico, desarrollo embebido y mecánica en un proyecto colaborativo del club."
+      ],
+      "skills": ["EDA", "Placas de circuito", "KiCad", "Sistemas embebidos", "Robótica submarina"],
+      "projects": ["kelpie"]
+    },
+    {
+      "id": "uosu",
+      "organization": "Federación de Estudiantes de la Universidad de Ottawa",
+      "role": "Miembro de la junta directiva",
+      "period": "feb. 2025–presente",
+      "summary": "Representante electo de Ingeniería que participa en la gobernanza estudiantil.",
+      "details": [
+        "Representa al puesto de la Facultad de Ingeniería en la junta electa.",
+        "Su trabajo en comités incluye finanzas, servicios y clubes."
+      ],
+      "skills": ["Gobernanza", "Finanzas", "Servicios", "Clubes"],
+      "projects": []
+    },
+    {
+      "id": "voyage",
+      "organization": "Voyage",
+      "role": "Fundador",
+      "period": "mayo 2024–mar. 2025",
+      "summary": "Iniciativa personal de vehículos eléctricos que reúne hardware, software y transporte sostenible.",
+      "details": [
+        "Exploró propulsión eléctrica, electrónica de potencia, interfaces web y vehículos eléctricos personales.",
+        "Se pausó en marzo de 2025 por oportunidades de investigación y estudios.",
+        "Finalista de RevUp24."
+      ],
+      "skills": [
+        "Propulsión eléctrica",
+        "Electrónica de potencia",
+        "Desarrollo web",
+        "Emprendimiento"
+      ],
+      "projects": ["voyage", "electric-skateboard", "pev-headlight", "lithium-battery"]
+    },
+    {
+      "id": "capital-tech",
+      "organization": "Capital Technology Network",
+      "role": "Director general",
+      "period": "abr. 2026–presente",
+      "summary": "Miembro de la junta como director general para el mandato 2026–2027.",
+      "details": [
+        "Forma parte de la junta de Capital Technology Network durante el mandato 2026–2027."
+      ],
+      "skills": ["Servicio en juntas", "Comunidad tecnológica"],
+      "projects": []
+    },
+    {
+      "id": "city-ottawa",
+      "organization": "Ciudad de Ottawa",
+      "role": "Salvavidas / instructor",
+      "period": "dic. 2021–dic. 2023",
+      "summary": "Prestó servicios de seguridad acuática, instrucción y atención al público en Ottawa.",
+      "details": ["Trabajó como salvavidas e instructor de dic. 2021 a dic. 2023."],
+      "skills": ["Instrucción", "Seguridad pública", "Comunicación"],
+      "projects": []
+    },
+    {
+      "id": "stem-outreach",
+      "organization": "Campamento STEM de la Universidad de Ottawa",
+      "role": "Asistente",
+      "period": "jul.–ago. 2022",
+      "summary": "Participó como voluntario en un campamento STEM universitario durante el verano de 2022.",
+      "details": [
+        "Apoyó el Campamento STEM de la Universidad de Ottawa como asistente voluntario."
+      ],
+      "skills": ["Divulgación STEM", "Instrucción", "Trabajo en equipo"],
+      "projects": []
+    }
+  ],
+  "projects": [
+    {
+      "id": "elvyn",
+      "title": "Elvyn",
+      "summary": "Plataforma bilingüe de simulación de pacientes para formación de enfermería e investigación.",
+      "category": "IA y software",
+      "details": [
+        "Prototipo educativo y de investigación de RMGN para practicar entrevistas de enfermería en inglés y francés.",
+        "Los estudiantes preparan escenarios, hablan con pacientes simulados y envían comentarios estructurados.",
+        "El proyecto no es software clínico, una herramienta de diagnóstico ni un expediente de paciente."
+      ],
+      "skills": [
+        "Next.js",
+        "TypeScript",
+        "Cloudflare Workers",
+        "D1",
+        "Clerk",
+        "LiveAvatar",
+        "Privacidad"
+      ],
+      "links": [{ "label": "RMGN", "url": "https://rmgn.ca/" }],
+      "image": "/media/elvyn-scenarios-current.webp",
+      "featured": true
+    },
+    {
+      "id": "altura",
+      "title": "Altura / uOttawa Chat",
+      "summary": "Asistente multiagente supervisado para servicios, estudios y preguntas de la comunidad de Ottawa.",
+      "category": "IA y software",
+      "details": [
+        "Interfaz de chat en desarrollo activo con un agente principal supervisado y cinco agentes especialistas.",
+        "Usa Microsoft Agent Framework y Azure OpenAI para el agente principal, Study Coach y Software Finder, junto con especialistas de Copilot Studio.",
+        "Los usuarios aprueban las transferencias a especialistas; las herramientas de datos públicos son de solo lectura."
+      ],
+      "skills": [
+        "Python",
+        "Next.js",
+        "Microsoft Agent Framework",
+        "Azure OpenAI",
+        "Copilot Studio",
+        "AG-UI"
+      ],
+      "links": [
+        {
+          "label": "Página del proyecto",
+          "url": "https://devops.uottawa.ca/emerging-technologies/ai-programme/altura"
+        }
+      ],
+      "image": "/media/elvyn-preflight-current.webp",
+      "featured": true
+    },
+    {
+      "id": "retrieval-service",
+      "title": "Servicio de búsqueda de conocimiento",
+      "summary": "Servicio de búsqueda para bases privadas con procesos separados de consulta e indexación.",
+      "category": "IA y software",
+      "details": [
+        "API de NestJS y proceso de indexación para bases de conocimiento privadas en Qdrant.",
+        "La API de NestJS y el proceso de indexación comparten un flujo de análisis, segmentación, embeddings y actualización.",
+        "Admite consultas de texto y vectores con acceso de lectura por colección. Las actualizaciones publican generaciones completas después de validarlas."
+      ],
+      "skills": [
+        "NestJS",
+        "TypeScript",
+        "Qdrant",
+        "Redis",
+        "BullMQ",
+        "AWS Bedrock",
+        "Azure OpenAI",
+        "JWT"
+      ],
+      "links": [],
+      "featured": true
+    },
+    {
+      "id": "uogenai",
+      "title": "uOGenAI",
+      "summary": "Trabajo en una plataforma de IA generativa de la Universidad de Ottawa presentado en una cumbre de IA médica aplicada.",
+      "category": "IA y software",
+      "details": [
+        "Plataforma de IA generativa de la Universidad de Ottawa con herramientas para estudiantes, interfaces con agentes y recursos controlados.",
+        "La iniciativa abarca RAG, búsqueda que respeta la privacidad, gobernanza e integración de plataformas.",
+        "Una presentación pública relacionó este trabajo con la Ottawa Applied Medical AI Summit."
+      ],
+      "skills": ["RAG", "IA médica", "Privacidad", "Gobernanza", "Integración de sistemas"],
+      "links": [
+        {
+          "label": "Publicación de la presentación",
+          "url": "https://www.linkedin.com/feed/update/urn:li:activity:7464726694080311296/"
+        }
+      ],
+      "featured": true
+    },
+    {
+      "id": "focusify",
+      "title": "Focusify",
+      "summary": "Plataforma de tareas Layer2 Ethereum, ganadora de UOttaHack7 2025.",
+      "category": "IA y software",
+      "details": [
+        "Plataforma descentralizada de tareas construida sobre Layer2 Ethereum.",
+        "Ganadora de UOttaHack7 2025."
+      ],
+      "skills": ["Ethereum", "Layer2", "Aplicaciones descentralizadas", "Desarrollo de productos"],
+      "links": [],
+      "featured": true
+    },
+    {
+      "id": "nbc-bullorbust",
+      "title": "NBC BullorBust",
+      "summary": "Simulador de alfabetización financiera con IA y titulares de mercado; finalista de QHacks 2025.",
+      "category": "IA y software",
+      "details": [
+        "Simulador de IA para alfabetización financiera mediante escenarios basados en titulares de mercado.",
+        "Finalista de QHacks 2025."
+      ],
+      "skills": [
+        "Aplicaciones de IA",
+        "Alfabetización financiera",
+        "Simulación",
+        "Desarrollo de productos"
+      ],
+      "links": [],
+      "featured": true
+    },
+    {
+      "id": "print-hub",
+      "title": "Print Hub",
+      "summary": "Panel Docker para gestionar varios servicios de impresión 3D desde un solo punto de entrada.",
+      "category": "Robótica y hardware",
+      "details": [
+        "Centraliza servicios de impresoras OctoPrint, Klipper y Bambu en un solo panel.",
+        "Usa Docker Compose, descubrimiento de servicios y un punto de entrada único para la infraestructura local de impresión."
+      ],
+      "skills": ["Docker", "Docker Compose", "OctoPrint", "Klipper", "Nginx"],
+      "links": [{ "label": "GitHub", "url": "https://github.com/matias-io/print-hub" }]
+    },
+    {
+      "id": "ai-racer",
+      "title": "AI RACER",
+      "summary": "Plataforma en tiempo real para evaluar IA de forma adversarial, experimentar con RAG y competir.",
+      "category": "IA y software",
+      "details": [
+        "Combina conversaciones LLM con estado, búsqueda y reranking, carreras en vivo y espectadores.",
+        "Usa Cloudflare Workers, D1, Vectorize, Workers AI, Durable Objects y WebSockets.",
+        "Incluye autenticación JWT, chat general y una tabla de posiciones."
+      ],
+      "skills": [
+        "Cloudflare Workers",
+        "D1",
+        "Vectorize",
+        "Workers AI",
+        "Durable Objects",
+        "WebSockets",
+        "RAG",
+        "JWT"
+      ],
+      "links": [{ "label": "GitHub", "url": "https://github.com/matias-io/ai-racer" }]
+    },
+    {
+      "id": "rmgn",
+      "title": "Reimagine Media",
+      "summary": "Práctica creativa independiente que reúne tecnología, música y diseño espacial.",
+      "category": "Diseño y música",
+      "details": [
+        "Espacio público dedicado a tecnología, música, diseño espacial y proyectos en desarrollo.",
+        "El sitio reúne una escultura interactiva, un instrumento original, películas arquitectónicas y el prototipo Elvyn."
+      ],
+      "skills": ["Tecnología creativa", "Música", "Diseño espacial", "Interacción web", "Three.js"],
+      "links": [{ "label": "Sitio web", "url": "https://rmgn.ca/" }],
+      "image": "/media/house-study.webp",
+      "featured": true
+    },
+    {
+      "id": "planit",
+      "title": "PlanIt: plataforma de gestión turística",
+      "summary": "Concepto turístico que reúne diseño de producto, modelo de negocio y presentación de proyectos.",
+      "category": "Diseño y música",
+      "details": [
+        "Concepto de plataforma turística para atracciones, eventos y nichos poco representados.",
+        "Reunió Figma, maquetas UI/UX, presentaciones de modelos de negocio y trabajo de pitch para una startup.",
+        "La fuente pública lo identifica como ganador de SolutionsLabTourism2024."
+      ],
+      "skills": [
+        "Figma",
+        "UI/UX",
+        "Modelos de negocio",
+        "Presentaciones",
+        "Desarrollo de startups"
+      ],
+      "links": [
+        {
+          "label": "Publicación del proyecto",
+          "url": "https://www.linkedin.com/feed/update/urn:li:activity:7263767273868324864/"
+        }
+      ],
+      "featured": true
+    },
+    {
+      "id": "webvault",
+      "title": "WebVault",
+      "summary": "Concepto de plataforma para guardar, organizar y recuperar marcadores.",
+      "category": "IA y software",
+      "details": ["El registro original menciona React, Next.js, Tailwind y NoSQL/Mongo."],
+      "skills": ["React", "Next.js", "Tailwind", "NoSQL", "Mongo"],
+      "links": []
+    },
+    {
+      "id": "voyage",
+      "title": "Voyage",
+      "summary": "Iniciativa de propulsión eléctrica y electrónica de potencia para transporte personal sostenible.",
+      "category": "Robótica y hardware",
+      "details": [
+        "El registro original reúne interfaces web, propulsión eléctrica y electrónica de potencia."
+      ],
+      "skills": [
+        "Propulsión eléctrica",
+        "Electrónica de potencia",
+        "Desarrollo web",
+        "Presentaciones"
+      ],
+      "links": []
+    },
+    {
+      "id": "musik-tool",
+      "title": "MusiK Tool",
+      "summary": "Plataforma de interpretación musical en tiempo real que combina hardware ESP32 y C++.",
+      "category": "Diseño y música",
+      "details": [
+        "El registro original reúne hardware ESP32, C++, PlatformIO y experiencias musicales interactivas."
+      ],
+      "skills": ["C++", "ESP32", "PlatformIO", "Electrónica en tiempo real", "EDA"],
+      "links": []
+    },
+    {
+      "id": "kelpie",
+      "title": "Kelpie Underwater Robotics",
+      "summary": "Proyecto colaborativo de robótica submarina que cubre diseño de placas y sistemas mecánicos.",
+      "category": "Robótica y hardware",
+      "details": [
+        "El registro original describe una iniciativa de club completada con diseño de placas en KiCad y sistemas mecánicos."
+      ],
+      "skills": ["Placas de circuito", "KiCad", "EDA", "Robótica submarina"],
+      "links": [{ "label": "Kelpie Robotics", "url": "https://kelpierobotics.com/" }]
+    },
+    {
+      "id": "ornaprints",
+      "title": "OrnaPrints: empresa JA",
+      "summary": "Empresa de Junior Achievement que combina CAD, corte láser e impresión FDM.",
+      "category": "Robótica y hardware",
+      "details": ["El registro original describe adornos y diseños personalizados impresos en 3D."],
+      "skills": ["CAD", "FDM", "Impresión 3D", "Gráficos vectoriales", "Corte láser"],
+      "links": []
+    },
+    {
+      "id": "p2p-file-sharing",
+      "title": "Plataforma de intercambio de archivos P2P",
+      "summary": "Plataforma de archivos cifrados entre pares con Java, Spring Boot y React.",
+      "category": "IA y software",
+      "details": [
+        "El registro original describe gestión distribuida de archivos cifrados con frontend React/Next.js y backend Java/Spring Boot."
+      ],
+      "skills": ["Java", "Spring Boot", "React", "Next.js", "Tailwind", "P2P"],
+      "links": [
+        {
+          "label": "Devpost",
+          "url": "https://devpost.com/software/distributed-encrypted-peer-to-peer-file-management-platform"
+        }
+      ]
+    },
+    {
+      "id": "event-planner",
+      "title": "Sistema de gestión de eventos",
+      "summary": "Aplicación Android para eventos con Firebase, funciones serverless y CircleCI.",
+      "category": "IA y software",
+      "details": [
+        "El registro original describe organización móvil de eventos, gestión de datos con Firebase y automatización de compilaciones y pruebas."
+      ],
+      "skills": [
+        "Android",
+        "Firebase",
+        "Funciones serverless",
+        "CircleCI",
+        "CRUD",
+        "Diseño de sistemas"
+      ],
+      "links": [{ "label": "GitHub", "url": "https://github.com/JadenF404/EAMS-Android-Project" }]
+    },
+    {
+      "id": "connect4",
+      "title": "Plataforma de juego Connect4",
+      "summary": "Juego de escritorio con JavaFX basado en una arquitectura MVC y juego interactivo.",
+      "category": "IA y software",
+      "details": [
+        "El registro original describe una aplicación Java de escritorio con JavaFX y arquitectura MVC."
+      ],
+      "skills": ["Java", "JavaFX", "MVC", "Aplicaciones de escritorio"],
+      "links": [{ "label": "GitHub", "url": "https://github.com/matias-io/Connect4-JavaFX" }]
+    },
+    {
+      "id": "personal-portfolio",
+      "title": "Portfolio personal",
+      "summary": "Sitio portfolio creado con React, Next.js, Tailwind y tecnología serverless.",
+      "category": "IA y software",
+      "details": [
+        "El registro original describe un portfolio para presentar proyectos y habilidades web."
+      ],
+      "skills": ["React", "Next.js", "Tailwind", "Serverless", "UI/UX"],
+      "links": []
+    },
+    {
+      "id": "word-guess",
+      "title": "Word Guess SPA",
+      "summary": "Juego de palabras en JavaScript nativo diseñado para partidas rápidas y repetibles.",
+      "category": "IA y software",
+      "details": [
+        "El registro original describe una experiencia clara, rápida e interactiva para adivinar palabras."
+      ],
+      "skills": ["JavaScript nativo", "SPA", "Desarrollo web"],
+      "links": [{ "label": "GitHub", "url": "https://github.com/matias-io/wordguess" }]
+    },
+    {
+      "id": "banking-spa",
+      "title": "Banking SPA",
+      "summary": "Simulación bancaria en JavaScript nativo con pantallas adaptables e interactivas.",
+      "category": "IA y software",
+      "details": [
+        "El registro original describe una simulación bancaria sencilla y una interfaz dinámica y adaptable."
+      ],
+      "skills": ["JavaScript nativo", "SPA", "Diseño adaptable"],
+      "links": []
+    },
+    {
+      "id": "lithium-battery",
+      "title": "Batería de ion de litio",
+      "summary": "Proyecto de batería 18650 que combina soldadura por puntos, carcasa CAD e impresión 3D.",
+      "category": "Robótica y hardware",
+      "details": [
+        "El registro original destaca fiabilidad, diseño de carcasa y seguridad del paquete de baterías."
+      ],
+      "skills": ["Ion de litio", "18650", "Soldadura por puntos", "CAD", "Impresión 3D"],
+      "links": []
+    },
+    {
+      "id": "electric-skateboard",
+      "title": "Patineta eléctrica",
+      "summary": "Proyecto de mecatrónica con motores sin escobillas, gestión de batería y piezas impresas en 3D.",
+      "category": "Robótica y hardware",
+      "details": [
+        "El registro original describe motores CC sin escobillas, componentes diseñados en CAD y electrónica de potencia."
+      ],
+      "skills": [
+        "Mecatrónica",
+        "Motores CC sin escobillas",
+        "Ion de litio",
+        "Soldadura",
+        "CAD",
+        "Impresión 3D"
+      ],
+      "links": []
+    },
+    {
+      "id": "pev-headlight",
+      "title": "Sistema de faros para VEP",
+      "summary": "Controlador de faros ESP32 con LED de alta potencia, Bluetooth y sensores.",
+      "category": "Robótica y hardware",
+      "details": [
+        "El registro original describe automatización con sensores y conectividad Bluetooth para vehículos eléctricos personales."
+      ],
+      "skills": ["ESP32", "C++", "PlatformIO", "Bluetooth", "Sensores", "LED de potencia"],
+      "links": []
+    },
+    {
+      "id": "microbit-rc-car",
+      "title": "Auto a control remoto Microbit",
+      "summary": "Auto remoto con Micro:Bit, controladores de motor, TypeScript y una batería 18650.",
+      "category": "Robótica y hardware",
+      "details": [
+        "El registro original describe un auto remoto con controladores Micro:Bit y controladores de motor."
+      ],
+      "skills": ["Micro:Bit", "TypeScript", "Controladores de motor", "L293D", "18650"],
+      "links": [{ "label": "GitHub", "url": "https://github.com/matias-io/MicroBit-Tilt-RC-car" }]
+    },
+    {
+      "id": "chess-board",
+      "title": "Tablero de ajedrez",
+      "summary": "Estudio de CAD paramétrico y Blender con modelado, renderizado y animación.",
+      "category": "Diseño y música",
+      "details": [
+        "El registro original describe un juego de ajedrez fotorrealista con composición y animación."
+      ],
+      "skills": ["CAD", "Onshape", "Blender", "Renderizado", "Composición", "Fotorrealismo"],
+      "links": [
+        {
+          "label": "Proyecto del portfolio",
+          "url": "https://mattiassuxo.wixsite.com/matiasportfolio/single-project"
+        }
+      ]
+    },
+    {
+      "id": "ring-design",
+      "title": "Diseño de anillo",
+      "summary": "Estudio paramétrico de anillos con Onshape, Blender, mecanizado CNC e impresión 3D.",
+      "category": "Diseño y música",
+      "details": [
+        "El registro original describe modelado, renderizado y fabricación de anillos personalizables."
+      ],
+      "skills": ["CAD", "Onshape", "Blender", "Mecanizado CNC", "Impresión 3D", "Renderizado"],
+      "links": [
+        {
+          "label": "Proyecto del portfolio",
+          "url": "https://mattiassuxo.wixsite.com/matiasportfolio/copy-of-chess-game-pieces"
+        }
+      ]
+    },
+    {
+      "id": "house-design",
+      "title": "Diseño de casa",
+      "summary": "CAD arquitectónico y visualización fotorrealista con Fusion360 y AutoCAD.",
+      "category": "Diseño y música",
+      "details": [
+        "El registro original describe casas personalizadas con animación y renderizado."
+      ],
+      "skills": ["CAD", "Fusion360", "AutoCAD", "Blender", "Renderizado", "Arquitectura"],
+      "links": [
+        {
+          "label": "Proyecto del portfolio",
+          "url": "https://mattiassuxo.wixsite.com/matiasportfolio/copy-of-ring-design"
+        }
+      ]
+    },
+    {
+      "id": "bus-shelter",
+      "title": "Parada de autobús",
+      "summary": "Estudio fotorrealista de CAD y Blender para infraestructura urbana rediseñada.",
+      "category": "Diseño y música",
+      "details": [
+        "El registro original describe un concepto práctico de diseño urbano con composición y animación."
+      ],
+      "skills": ["CAD", "Blender", "Renderizado", "Composición", "Fotorrealismo"],
+      "links": [
+        {
+          "label": "Proyecto del portfolio",
+          "url": "https://mattiassuxo.wixsite.com/matiasportfolio/copy-of-house-designs"
+        }
+      ]
+    },
+    {
+      "id": "portable-monitor",
+      "title": "Monitor portátil",
+      "summary": "Estudio de carcasa compacta de monitor diseñada para impresión 3D práctica.",
+      "category": "Diseño y música",
+      "details": [
+        "El registro original describe un diseño paramétrico de carcasa centrado en utilidad y portabilidad."
+      ],
+      "skills": ["CAD", "Onshape", "Blender", "Diseño paramétrico", "Impresión 3D"],
+      "links": [
+        {
+          "label": "Proyecto del portfolio",
+          "url": "https://mattiassuxo.wixsite.com/matiasportfolio/copy-of-bus-shelter"
+        }
+      ]
+    },
+    {
+      "id": "kitchen-remodeling",
+      "title": "Remodelación de cocina",
+      "summary": "Estudio de interiores que combina Fusion360, AutoCAD y renderizado fotorrealista.",
+      "category": "Diseño y música",
+      "details": [
+        "El registro original describe conceptos prácticos de remodelación con visualización arquitectónica."
+      ],
+      "skills": ["Fusion360", "AutoCAD", "CAD", "Renderizado", "Arquitectura", "Fotorrealismo"],
+      "links": [
+        {
+          "label": "Proyecto del portfolio",
+          "url": "https://mattiassuxo.wixsite.com/matiasportfolio/copy-of-diy-monitor"
+        }
+      ],
+      "image": "/media/kitchen-overview.webp"
+    }
+  ],
+  "skills": [
+    {
+      "id": "ai-platforms",
+      "title": "Plataformas de IA",
+      "items": [
+        "Desarrollo de plataformas de IA",
+        "Sistemas multiagente",
+        "RAG",
+        "Búsqueda respetuosa de la privacidad",
+        "Gobernanza",
+        "Azure OpenAI"
+      ],
+      "projects": ["elvyn", "altura", "retrieval-service", "uogenai", "focusify", "nbc-bullorbust"]
+    },
+    {
+      "id": "web-applications",
+      "title": "Aplicaciones web",
+      "items": ["TypeScript", "React", "Next.js", "Node.js", "Laravel", "NestJS", "Docker"],
+      "projects": [
+        "elvyn",
+        "altura",
+        "retrieval-service",
+        "webvault",
+        "p2p-file-sharing",
+        "event-planner",
+        "personal-portfolio"
+      ]
+    },
+    {
+      "id": "retrieval-data",
+      "title": "Búsqueda y datos",
+      "items": [
+        "Qdrant",
+        "Vectores",
+        "Redis",
+        "BullMQ",
+        "Acceso por colección",
+        "Actualizaciones atómicas"
+      ],
+      "projects": ["retrieval-service", "uogenai", "elvyn"]
+    },
+    {
+      "id": "embedded-robotics",
+      "title": "Sistemas embebidos y robótica",
+      "items": [
+        "KiCad",
+        "EDA",
+        "Placas de circuito",
+        "ESP32",
+        "C++",
+        "PlatformIO",
+        "Electrónica de potencia"
+      ],
+      "projects": [
+        "kelpie",
+        "musik-tool",
+        "voyage",
+        "lithium-battery",
+        "electric-skateboard",
+        "pev-headlight",
+        "microbit-rc-car"
+      ]
+    },
+    {
+      "id": "product-design",
+      "title": "Diseño de productos",
+      "items": [
+        "Figma",
+        "Maquetas UI/UX",
+        "Modelos de negocio",
+        "Presentaciones de proyectos",
+        "Diseño de sistemas"
+      ],
+      "projects": ["planit", "webvault", "personal-portfolio", "event-planner"]
+    },
+    {
+      "id": "cad-spatial",
+      "title": "CAD y diseño espacial",
+      "items": [
+        "AutoCAD",
+        "Fusion360",
+        "Onshape",
+        "Blender",
+        "Renderizado",
+        "Composición",
+        "Fotorrealismo"
+      ],
+      "projects": [
+        "rmgn",
+        "chess-board",
+        "ring-design",
+        "house-design",
+        "bus-shelter",
+        "portable-monitor",
+        "kitchen-remodeling"
+      ]
+    },
+    {
+      "id": "entrepreneurship",
+      "title": "Emprendimiento",
+      "items": [
+        "Desarrollo de startups",
+        "Presentaciones",
+        "Modelos de negocio",
+        "Hackathons",
+        "Junior Achievement"
+      ],
+      "projects": ["planit", "voyage", "ornaprints", "focusify", "nbc-bullorbust"]
+    },
+    {
+      "id": "music-interaction",
+      "title": "Música e interacción",
+      "items": [
+        "Música original",
+        "Instrumentos interactivos",
+        "Electrónica en tiempo real",
+        "Interacción en el navegador"
+      ],
+      "projects": ["rmgn", "musik-tool"]
+    }
+  ]
+}

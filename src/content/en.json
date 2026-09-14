@@ -1,0 +1,702 @@
+{
+  "profile": {
+    "name": "Matias Suxo",
+    "role": "AI platform developer",
+    "summary": "I build AI tools, web applications, and the occasional circuit board. Currently developing AI platforms at the University of Ottawa.",
+    "email": "",
+    "location": "Ottawa, Canada",
+    "education": "Honours BSc Computer Science, Management and Entrepreneurship Option, French Immersion Stream",
+    "educationPeriod": "Sep 2023–Dec 2027 expected",
+    "educationDetails": "Dean's Honours List, 2023–present.",
+    "links": [
+      { "label": "Personal site", "url": "https://matiass.ca/" },
+      { "label": "LinkedIn", "url": "https://www.linkedin.com/in/matias-suxo/" },
+      { "label": "GitHub", "url": "https://github.com/matias-io" }
+    ]
+  },
+  "experiences": [
+    {
+      "id": "uottawa-ai",
+      "organization": "University of Ottawa",
+      "role": "AI Platform Developer",
+      "period": "Sep 2025–present",
+      "summary": "Developing AI platforms and agentic applications for university use.",
+      "details": [
+        "Part-time from Sep 2025 to Jan 2026; full-time contract from Jan 2026 to present.",
+        "Works across multi-agent orchestration, retrieval, privacy-aware workflows and platform integration.",
+        "Public project work includes uOttawa Chat, Altura and the uOGenAI initiative."
+      ],
+      "skills": [
+        "AI platforms",
+        "Multi-agent systems",
+        "RAG",
+        "Privacy-aware retrieval",
+        "Governance",
+        "Azure OpenAI"
+      ],
+      "projects": ["altura", "retrieval-service", "uogenai"]
+    },
+    {
+      "id": "uottawa-it",
+      "organization": "University of Ottawa",
+      "role": "Software Development | IT Operations",
+      "period": "May–Sep 2025",
+      "summary": "Full-stack software development and IT operations across institutional systems.",
+      "details": [
+        "Full-stack development across Laravel, Next.js, NestJS and Docker.",
+        "Supported on-premises IT operations alongside software development."
+      ],
+      "skills": ["Laravel", "Next.js", "NestJS", "Docker", "IT operations"],
+      "projects": []
+    },
+    {
+      "id": "kelpie",
+      "organization": "Kelpie Robotics",
+      "role": "Electrical & Embedded Developer",
+      "period": "Sep 2024–present",
+      "summary": "Electrical and embedded development for an underwater robotics club.",
+      "details": [
+        "Works on EDA and PCBA for underwater robotics systems.",
+        "Connects electrical design, embedded development and mechanical integration in a collaborative club project."
+      ],
+      "skills": ["EDA", "PCBA", "KiCad", "Embedded systems", "Underwater robotics"],
+      "projects": ["kelpie"]
+    },
+    {
+      "id": "uosu",
+      "organization": "University of Ottawa Students' Union",
+      "role": "Member, Board of Directors",
+      "period": "Feb 2025–present",
+      "summary": "Elected Engineering representative contributing to student governance.",
+      "details": [
+        "Serves the Engineering seat on the elected board.",
+        "Committee work includes finance, services and clubs."
+      ],
+      "skills": ["Governance", "Finance", "Services", "Clubs"],
+      "projects": []
+    },
+    {
+      "id": "voyage",
+      "organization": "Voyage",
+      "role": "Founder",
+      "period": "May 2024–Mar 2025",
+      "summary": "Personal electric-vehicle initiative combining hardware, software and sustainable transport ideas.",
+      "details": [
+        "Explored electric propulsion, power electronics, web interfaces and personal electric vehicles.",
+        "Paused in Mar 2025 due to research opportunities and studies.",
+        "Runner-up at RevUp24."
+      ],
+      "skills": ["Electric propulsion", "Power electronics", "Web development", "Entrepreneurship"],
+      "projects": ["voyage", "electric-skateboard", "pev-headlight", "lithium-battery"]
+    },
+    {
+      "id": "capital-tech",
+      "organization": "Capital Technology Network",
+      "role": "Director-at-Large",
+      "period": "Apr 2026–present",
+      "summary": "Board service as a director-at-large for the 2026–27 term.",
+      "details": ["Serves on the Capital Technology Network board for the 2026–27 term."],
+      "skills": ["Board service", "Technology community"],
+      "projects": []
+    },
+    {
+      "id": "city-ottawa",
+      "organization": "City of Ottawa",
+      "role": "Lifeguard / Instructor",
+      "period": "Dec 2021–Dec 2023",
+      "summary": "Delivered aquatic safety, instruction and public-facing service in Ottawa.",
+      "details": ["Worked as a lifeguard and instructor from Dec 2021 to Dec 2023."],
+      "skills": ["Instruction", "Public safety", "Communication"],
+      "projects": []
+    },
+    {
+      "id": "stem-outreach",
+      "organization": "University of Ottawa STEM Camp",
+      "role": "Assistant",
+      "period": "Jul–Aug 2022",
+      "summary": "Volunteered with a university STEM camp during summer 2022.",
+      "details": ["Supported the University of Ottawa STEM Camp as an assistant volunteer."],
+      "skills": ["STEM outreach", "Instruction", "Teamwork"],
+      "projects": []
+    }
+  ],
+  "projects": [
+    {
+      "id": "elvyn",
+      "title": "Elvyn",
+      "summary": "Bilingual patient simulation platform for nursing education and research.",
+      "category": "AI & software",
+      "details": [
+        "An RMGN education and research prototype for practising nursing interviews in English and French.",
+        "Learners prepare for assigned scenarios, speak with simulated patients and submit structured feedback.",
+        "The project is not clinical software, a diagnostic tool or a patient record."
+      ],
+      "skills": [
+        "Next.js",
+        "TypeScript",
+        "Cloudflare Workers",
+        "D1",
+        "Clerk",
+        "LiveAvatar",
+        "Privacy"
+      ],
+      "links": [{ "label": "RMGN", "url": "https://rmgn.ca/" }],
+      "image": "/media/elvyn-scenarios-current.webp",
+      "featured": true
+    },
+    {
+      "id": "altura",
+      "title": "Altura / uOttawa Chat",
+      "summary": "A supervised multi-agent assistant for uOttawa services, study support and campus questions.",
+      "category": "AI & software",
+      "details": [
+        "An active-development chat interface with a supervised parent and five specialist agents.",
+        "Uses Microsoft Agent Framework and Azure OpenAI for the parent, Study Coach and Software Finder, with Copilot Studio specialists.",
+        "Users approve specialist handoffs, while public-data tools remain read-only."
+      ],
+      "skills": [
+        "Python",
+        "Next.js",
+        "Microsoft Agent Framework",
+        "Azure OpenAI",
+        "Copilot Studio",
+        "AG-UI"
+      ],
+      "links": [
+        {
+          "label": "Project page",
+          "url": "https://devops.uottawa.ca/emerging-technologies/ai-programme/altura"
+        }
+      ],
+      "image": "/media/elvyn-preflight-current.webp",
+      "featured": true
+    },
+    {
+      "id": "retrieval-service",
+      "title": "Knowledge Retrieval Service",
+      "summary": "Search service for private knowledge bases with separate query and indexing processes.",
+      "category": "AI & software",
+      "details": [
+        "A NestJS API and indexing worker for private knowledge bases in Qdrant.",
+        "NestJS API and worker share a pipeline for parsing, chunking, embeddings and refreshes.",
+        "Supports text and vector queries with collection-scoped read access. Refreshes publish complete generations only after validation."
+      ],
+      "skills": [
+        "NestJS",
+        "TypeScript",
+        "Qdrant",
+        "Redis",
+        "BullMQ",
+        "AWS Bedrock",
+        "Azure OpenAI",
+        "JWT"
+      ],
+      "links": [],
+      "featured": true
+    },
+    {
+      "id": "uogenai",
+      "title": "uOGenAI",
+      "summary": "University of Ottawa generative-AI platform work presented at an applied medical AI summit.",
+      "category": "AI & software",
+      "details": [
+        "A University of Ottawa generative-AI platform with student-facing tools, agent interfaces and controlled knowledge resources.",
+        "The initiative spans RAG, privacy-aware retrieval, governance and platform integration.",
+        "A public presentation connected the work to the Ottawa Applied Medical AI Summit."
+      ],
+      "skills": ["RAG", "Medical AI", "Privacy", "Governance", "System integration"],
+      "links": [
+        {
+          "label": "Presentation post",
+          "url": "https://www.linkedin.com/feed/update/urn:li:activity:7464726694080311296/"
+        }
+      ],
+      "featured": true
+    },
+    {
+      "id": "focusify",
+      "title": "Focusify",
+      "summary": "Layer2 Ethereum task platform and winner at UOttaHack7 2025.",
+      "category": "AI & software",
+      "details": [
+        "A decentralized task platform built around Layer2 Ethereum.",
+        "Winner at UOttaHack7 2025."
+      ],
+      "skills": ["Ethereum", "Layer2", "Decentralized applications", "Product development"],
+      "links": [],
+      "featured": true
+    },
+    {
+      "id": "nbc-bullorbust",
+      "title": "NBC BullorBust",
+      "summary": "AI simulator for financial literacy using market headlines; QHacks 2025 runner-up.",
+      "category": "AI & software",
+      "details": [
+        "An AI simulator for financial literacy using market-headline scenarios.",
+        "QHacks 2025 runner-up."
+      ],
+      "skills": ["AI applications", "Financial literacy", "Simulation", "Product development"],
+      "links": [],
+      "featured": true
+    },
+    {
+      "id": "print-hub",
+      "title": "Print Hub",
+      "summary": "Docker dashboard for managing multiple 3D-printing services from one entry point.",
+      "category": "Robotics & hardware",
+      "details": [
+        "Centralizes OctoPrint, Klipper and Bambu printer services behind one dashboard.",
+        "Uses Docker Compose, service discovery and a single entry point for local printer infrastructure."
+      ],
+      "skills": ["Docker", "Docker Compose", "OctoPrint", "Klipper", "Nginx"],
+      "links": [{ "label": "GitHub", "url": "https://github.com/matias-io/print-hub" }]
+    },
+    {
+      "id": "ai-racer",
+      "title": "AI RACER",
+      "summary": "Real-time platform for adversarial AI evaluation, RAG experiments and competitive play.",
+      "category": "AI & software",
+      "details": [
+        "Combines stateful LLM conversations, retrieval and reranking with live races and spectating.",
+        "Uses Cloudflare Workers, D1, Vectorize, Workers AI, Durable Objects and WebSockets.",
+        "Includes JWT authentication, global chat and a leaderboard."
+      ],
+      "skills": [
+        "Cloudflare Workers",
+        "D1",
+        "Vectorize",
+        "Workers AI",
+        "Durable Objects",
+        "WebSockets",
+        "RAG",
+        "JWT"
+      ],
+      "links": [{ "label": "GitHub", "url": "https://github.com/matias-io/ai-racer" }]
+    },
+    {
+      "id": "rmgn",
+      "title": "Reimagine Media",
+      "summary": "Independent creative practice spanning technology, music and spatial design.",
+      "category": "Design & music",
+      "details": [
+        "A public home for technology, music, spatial design and work in progress.",
+        "The site combines an interactive sculpture, an original instrument, architectural films and the Elvyn prototype."
+      ],
+      "skills": ["Creative technology", "Music", "Spatial design", "Web interaction", "Three.js"],
+      "links": [{ "label": "Website", "url": "https://rmgn.ca/" }],
+      "image": "/media/house-study.webp",
+      "featured": true
+    },
+    {
+      "id": "planit",
+      "title": "PlanIt: Tourism Management Platform",
+      "summary": "Tourism-management concept combining product design, business modelling and pitch work.",
+      "category": "Design & music",
+      "details": [
+        "A tourism platform concept for attractions, events and underrepresented niches.",
+        "Combined Figma, UI/UX mockups, business-model presentations and startup pitch work.",
+        "Identified in the public source as a SolutionsLabTourism2024 winner."
+      ],
+      "skills": ["Figma", "UI/UX", "Business modelling", "Pitching", "Startup development"],
+      "links": [
+        {
+          "label": "Project post",
+          "url": "https://www.linkedin.com/feed/update/urn:li:activity:7263767273868324864/"
+        }
+      ],
+      "featured": true
+    },
+    {
+      "id": "webvault",
+      "title": "WebVault",
+      "summary": "Bookmark platform concept built around saving, organizing and retrieving links.",
+      "category": "AI & software",
+      "details": [
+        "React, Next.js, Tailwind and NoSQL/Mongo were listed in the original project record."
+      ],
+      "skills": ["React", "Next.js", "Tailwind", "NoSQL", "Mongo"],
+      "links": []
+    },
+    {
+      "id": "voyage",
+      "title": "Voyage",
+      "summary": "Electric-propulsion and power-electronics initiative for sustainable personal transport.",
+      "category": "Robotics & hardware",
+      "details": [
+        "The original record combines web interfaces, electric propulsion and power electronics."
+      ],
+      "skills": ["Electric propulsion", "Power electronics", "Web development", "Pitching"],
+      "links": []
+    },
+    {
+      "id": "musik-tool",
+      "title": "MusiK Tool",
+      "summary": "Real-time music performance platform combining ESP32 hardware and C++.",
+      "category": "Design & music",
+      "details": [
+        "The original record combines ESP32 hardware, C++, PlatformIO and interactive music experiences."
+      ],
+      "skills": ["C++", "ESP32", "PlatformIO", "Real-time electronics", "EDA"],
+      "links": []
+    },
+    {
+      "id": "kelpie",
+      "title": "Kelpie Underwater Robotics",
+      "summary": "Collaborative underwater-robotics project spanning PCB design and mechanical systems.",
+      "category": "Robotics & hardware",
+      "details": [
+        "The original record describes a completed club initiative using KiCad PCB design and mechanical systems."
+      ],
+      "skills": ["PCBA", "KiCad", "EDA", "Underwater robotics"],
+      "links": [{ "label": "Kelpie Robotics", "url": "https://kelpierobotics.com/" }]
+    },
+    {
+      "id": "ornaprints",
+      "title": "OrnaPrints: JA Company",
+      "summary": "Junior Achievement company combining CAD, laser cutting and FDM printing.",
+      "category": "Robotics & hardware",
+      "details": ["The original record describes custom 3D-printed ornaments and designs."],
+      "skills": ["CAD", "FDM", "3D printing", "Vector graphics", "Laser cutting"],
+      "links": []
+    },
+    {
+      "id": "p2p-file-sharing",
+      "title": "P2P File Sharing Platform",
+      "summary": "Encrypted peer-to-peer file platform using Java, Spring Boot and React.",
+      "category": "AI & software",
+      "details": [
+        "The original record describes distributed encrypted file management with a React/Next.js frontend and Java/Spring Boot backend."
+      ],
+      "skills": ["Java", "Spring Boot", "React", "Next.js", "Tailwind", "P2P"],
+      "links": [
+        {
+          "label": "Devpost",
+          "url": "https://devpost.com/software/distributed-encrypted-peer-to-peer-file-management-platform"
+        }
+      ]
+    },
+    {
+      "id": "event-planner",
+      "title": "Event Planner Management System",
+      "summary": "Android event-planning application using Firebase, serverless functions and CircleCI.",
+      "category": "AI & software",
+      "details": [
+        "The original record describes mobile event organization, Firebase data management and automated builds/tests."
+      ],
+      "skills": [
+        "Android",
+        "Firebase",
+        "Serverless functions",
+        "CircleCI",
+        "CRUD",
+        "Systems design"
+      ],
+      "links": [{ "label": "GitHub", "url": "https://github.com/JadenF404/EAMS-Android-Project" }]
+    },
+    {
+      "id": "connect4",
+      "title": "Connect4 Game Platform",
+      "summary": "JavaFX desktop game built around MVC architecture and interactive play.",
+      "category": "AI & software",
+      "details": [
+        "The original record describes a Java desktop application with JavaFX and MVC architecture."
+      ],
+      "skills": ["Java", "JavaFX", "MVC", "Desktop applications"],
+      "links": [{ "label": "GitHub", "url": "https://github.com/matias-io/Connect4-JavaFX" }]
+    },
+    {
+      "id": "personal-portfolio",
+      "title": "Personal Portfolio",
+      "summary": "Portfolio site built with React, Next.js, Tailwind and serverless technology.",
+      "category": "AI & software",
+      "details": [
+        "The original record describes a portfolio for presenting web-technology projects and skills."
+      ],
+      "skills": ["React", "Next.js", "Tailwind", "Serverless", "UI/UX"],
+      "links": []
+    },
+    {
+      "id": "word-guess",
+      "title": "Word Guess SPA",
+      "summary": "Vanilla JavaScript single-page word game designed for quick replayability.",
+      "category": "AI & software",
+      "details": [
+        "The original record describes a clean, fast and interactive word-guessing experience."
+      ],
+      "skills": ["Vanilla JavaScript", "SPA", "Web development"],
+      "links": [{ "label": "GitHub", "url": "https://github.com/matias-io/wordguess" }]
+    },
+    {
+      "id": "banking-spa",
+      "title": "Banking SPA",
+      "summary": "Vanilla JavaScript banking simulation with responsive interactive screens.",
+      "category": "AI & software",
+      "details": [
+        "The original record describes a simplified banking simulation and dynamic responsive interface."
+      ],
+      "skills": ["Vanilla JavaScript", "SPA", "Responsive design"],
+      "links": []
+    },
+    {
+      "id": "lithium-battery",
+      "title": "Lithium ion Battery",
+      "summary": "18650 battery-pack project combining spot welding, CAD enclosures and 3D printing.",
+      "category": "Robotics & hardware",
+      "details": [
+        "The original record emphasizes battery-pack reliability, enclosure design and safety."
+      ],
+      "skills": ["Lithium-ion", "18650", "Spot welding", "CAD", "3D printing"],
+      "links": []
+    },
+    {
+      "id": "electric-skateboard",
+      "title": "Electric Skateboard",
+      "summary": "Mechatronics build combining brushless motors, battery management and 3D-printed parts.",
+      "category": "Robotics & hardware",
+      "details": [
+        "The original record describes brushless DC motors, CAD-designed components and power electronics."
+      ],
+      "skills": [
+        "Mechatronics",
+        "Brushless DC motors",
+        "Lithium-ion",
+        "Soldering",
+        "CAD",
+        "3D printing"
+      ],
+      "links": []
+    },
+    {
+      "id": "pev-headlight",
+      "title": "PEV Headlight System",
+      "summary": "ESP32 headlight controller combining high-power LEDs, Bluetooth and sensors.",
+      "category": "Robotics & hardware",
+      "details": [
+        "The original record describes sensor-based automation and Bluetooth connectivity for personal electric vehicles."
+      ],
+      "skills": ["ESP32", "C++", "PlatformIO", "Bluetooth", "Sensors", "Power LEDs"],
+      "links": []
+    },
+    {
+      "id": "microbit-rc-car",
+      "title": "Microbit RC Car",
+      "summary": "Micro:Bit remote-control car using motor drivers, TypeScript and an 18650 battery.",
+      "category": "Robotics & hardware",
+      "details": [
+        "The original record describes a responsive remote-control car built with Micro:Bit controllers and motor drivers."
+      ],
+      "skills": ["Micro:Bit", "TypeScript", "Motor drivers", "L293D", "18650"],
+      "links": [{ "label": "GitHub", "url": "https://github.com/matias-io/MicroBit-Tilt-RC-car" }]
+    },
+    {
+      "id": "chess-board",
+      "title": "Chess Board",
+      "summary": "Parametric CAD and Blender study combining modelling, rendering and animation.",
+      "category": "Design & music",
+      "details": [
+        "The original record describes a photorealistic chess-set design with compositing and animation."
+      ],
+      "skills": ["CAD", "Onshape", "Blender", "Rendering", "Compositing", "Photorealism"],
+      "links": [
+        {
+          "label": "Portfolio project",
+          "url": "https://mattiassuxo.wixsite.com/matiasportfolio/single-project"
+        }
+      ]
+    },
+    {
+      "id": "ring-design",
+      "title": "Ring Design",
+      "summary": "Parametric ring study combining Onshape, Blender, CNC routing and 3D printing.",
+      "category": "Design & music",
+      "details": [
+        "The original record describes customizable ring modelling, rendering and fabrication."
+      ],
+      "skills": ["CAD", "Onshape", "Blender", "CNC routing", "3D printing", "Rendering"],
+      "links": [
+        {
+          "label": "Portfolio project",
+          "url": "https://mattiassuxo.wixsite.com/matiasportfolio/copy-of-chess-game-pieces"
+        }
+      ]
+    },
+    {
+      "id": "house-design",
+      "title": "House Design",
+      "summary": "Architectural CAD and photorealistic visualization using Fusion360 and AutoCAD.",
+      "category": "Design & music",
+      "details": [
+        "The original record describes custom house designs with animation and rendering."
+      ],
+      "skills": ["CAD", "Fusion360", "AutoCAD", "Blender", "Rendering", "Architecture"],
+      "links": [
+        {
+          "label": "Portfolio project",
+          "url": "https://mattiassuxo.wixsite.com/matiasportfolio/copy-of-ring-design"
+        }
+      ]
+    },
+    {
+      "id": "bus-shelter",
+      "title": "Bus Shelter",
+      "summary": "Photorealistic CAD and Blender study for redesigned urban infrastructure.",
+      "category": "Design & music",
+      "details": [
+        "The original record describes a practical urban-design concept with compositing and animation."
+      ],
+      "skills": ["CAD", "Blender", "Rendering", "Compositing", "Photorealism"],
+      "links": [
+        {
+          "label": "Portfolio project",
+          "url": "https://mattiassuxo.wixsite.com/matiasportfolio/copy-of-house-designs"
+        }
+      ]
+    },
+    {
+      "id": "portable-monitor",
+      "title": "Portable Monitor",
+      "summary": "Compact monitor-enclosure study designed for practical 3D printing.",
+      "category": "Design & music",
+      "details": [
+        "The original record describes parametric enclosure design with a focus on usability and portability."
+      ],
+      "skills": ["CAD", "Onshape", "Blender", "Parametric design", "3D printing"],
+      "links": [
+        {
+          "label": "Portfolio project",
+          "url": "https://mattiassuxo.wixsite.com/matiasportfolio/copy-of-bus-shelter"
+        }
+      ]
+    },
+    {
+      "id": "kitchen-remodeling",
+      "title": "Kitchen Remodeling",
+      "summary": "Interior-design study combining Fusion360, AutoCAD and photorealistic rendering.",
+      "category": "Design & music",
+      "details": [
+        "The original record describes practical remodeling concepts with architectural visualization."
+      ],
+      "skills": ["Fusion360", "AutoCAD", "CAD", "Rendering", "Architecture", "Photorealism"],
+      "links": [
+        {
+          "label": "Portfolio project",
+          "url": "https://mattiassuxo.wixsite.com/matiasportfolio/copy-of-diy-monitor"
+        }
+      ],
+      "image": "/media/kitchen-overview.webp"
+    }
+  ],
+  "skills": [
+    {
+      "id": "ai-platforms",
+      "title": "AI platforms",
+      "items": [
+        "AI platform development",
+        "Multi-agent systems",
+        "RAG",
+        "Privacy-aware retrieval",
+        "Governance",
+        "Azure OpenAI"
+      ],
+      "projects": ["elvyn", "altura", "retrieval-service", "uogenai", "focusify", "nbc-bullorbust"]
+    },
+    {
+      "id": "web-applications",
+      "title": "Web applications",
+      "items": ["TypeScript", "React", "Next.js", "Node.js", "Laravel", "NestJS", "Docker"],
+      "projects": [
+        "elvyn",
+        "altura",
+        "retrieval-service",
+        "webvault",
+        "p2p-file-sharing",
+        "event-planner",
+        "personal-portfolio"
+      ]
+    },
+    {
+      "id": "retrieval-data",
+      "title": "Retrieval and data systems",
+      "items": [
+        "Qdrant",
+        "Embeddings",
+        "Redis",
+        "BullMQ",
+        "Collection-scoped access",
+        "Atomic refreshes"
+      ],
+      "projects": ["retrieval-service", "uogenai", "elvyn"]
+    },
+    {
+      "id": "embedded-robotics",
+      "title": "Embedded and robotics",
+      "items": ["KiCad", "EDA", "PCBA", "ESP32", "C++", "PlatformIO", "Power electronics"],
+      "projects": [
+        "kelpie",
+        "musik-tool",
+        "voyage",
+        "lithium-battery",
+        "electric-skateboard",
+        "pev-headlight",
+        "microbit-rc-car"
+      ]
+    },
+    {
+      "id": "product-design",
+      "title": "Product design",
+      "items": [
+        "Figma",
+        "UI/UX mockups",
+        "Business modelling",
+        "Pitch presentations",
+        "Systems design"
+      ],
+      "projects": ["planit", "webvault", "personal-portfolio", "event-planner"]
+    },
+    {
+      "id": "cad-spatial",
+      "title": "CAD and spatial design",
+      "items": [
+        "AutoCAD",
+        "Fusion360",
+        "Onshape",
+        "Blender",
+        "Rendering",
+        "Compositing",
+        "Photorealism"
+      ],
+      "projects": [
+        "rmgn",
+        "chess-board",
+        "ring-design",
+        "house-design",
+        "bus-shelter",
+        "portable-monitor",
+        "kitchen-remodeling"
+      ]
+    },
+    {
+      "id": "entrepreneurship",
+      "title": "Entrepreneurship",
+      "items": [
+        "Startup development",
+        "Pitching",
+        "Business-model presentations",
+        "Hackathons",
+        "Junior Achievement"
+      ],
+      "projects": ["planit", "voyage", "ornaprints", "focusify", "nbc-bullorbust"]
+    },
+    {
+      "id": "music-interaction",
+      "title": "Music and interaction",
+      "items": [
+        "Original music",
+        "Interactive instruments",
+        "Real-time electronics",
+        "Browser interaction"
+      ],
+      "projects": ["rmgn", "musik-tool"]
+    }
+  ]
+}
