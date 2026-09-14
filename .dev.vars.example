@@ -1,0 +1,2 @@
+# Local-only Worker variables for `npm run preview`.
+ENVIRONMENT=development
