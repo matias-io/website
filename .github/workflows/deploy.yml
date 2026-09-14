@@ -8,10 +8,6 @@ on:
 permissions:
   contents: read
 
-concurrency:
-  group: portfolio-release
-  cancel-in-progress: false
-
 jobs:
   deploy:
     # Keep push and manual deployments skipped until the target account and domain are ready.
@@ -19,6 +15,9 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 45
     environment: production
+    concurrency:
+      group: portfolio-release
+      cancel-in-progress: false
     steps:
       - uses: actions/checkout@v7
         with:
