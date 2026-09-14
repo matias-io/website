@@ -5,6 +5,8 @@ import { useState } from 'react';
 import { ArrowUpRight, ArrowRight, Search, Copy, Check } from 'lucide-react';
 import { usePortfolio } from '@/i18n/provider';
 import { ContactForm } from '@/features/contact/contact-form';
+import { MediaViewer } from '@/components/media-viewer';
+import { Reveal } from '@/components/reveal';
 
 export function ProjectDetail({ id }: { id: string }) {
   const { content, t } = usePortfolio();
@@ -18,37 +20,49 @@ export function ProjectDetail({ id }: { id: string }) {
       </h2>
       <p className="detail-lead">{project.summary}</p>
       {project.image && (
-        <figure className="project-image">
-          <Image src={project.image} alt={project.title} width={1200} height={760} priority />
-          <figcaption>{project.title}</figcaption>
-        </figure>
+        <Reveal>
+          <MediaViewer
+            src={project.image}
+            alt={project.title}
+            caption={project.title}
+            width={1200}
+            height={760}
+            priority
+          />
+        </Reveal>
       )}
-      <section id="overview" className="detail-section">
-        <h3>{t('overview')}</h3>
-        {project.details.map((paragraph) => (
-          <p key={paragraph}>{paragraph}</p>
-        ))}
-      </section>
-      <section id="skills" className="detail-section">
-        <h3>{t('used')}</h3>
-        <ul className="tools-list">
-          {project.skills.map((skill) => (
-            <li key={skill}>{skill}</li>
+      <Reveal>
+        <section id="overview" className="detail-section">
+          <h3>{t('overview')}</h3>
+          {project.details.map((paragraph) => (
+            <p key={paragraph}>{paragraph}</p>
           ))}
-        </ul>
-      </section>
-      {project.links.length > 0 && (
-        <section className="detail-section">
-          <h3>{t('sourceIntro')}</h3>
-          <div className="source-links">
-            {project.links.map((link) => (
-              <a key={link.url} href={link.url} target="_blank" rel="noreferrer">
-                {link.label}
-                <ArrowUpRight />
-              </a>
-            ))}
-          </div>
         </section>
+      </Reveal>
+      <Reveal delay={35}>
+        <section id="skills" className="detail-section">
+          <h3>{t('used')}</h3>
+          <ul className="tools-list">
+            {project.skills.map((skill) => (
+              <li key={skill}>{skill}</li>
+            ))}
+          </ul>
+        </section>
+      </Reveal>
+      {project.links.length > 0 && (
+        <Reveal delay={70}>
+          <section className="detail-section">
+            <h3>{t('sourceIntro')}</h3>
+            <div className="source-links">
+              {project.links.map((link) => (
+                <a key={link.url} href={link.url} target="_blank" rel="noreferrer">
+                  {link.label}
+                  <ArrowUpRight />
+                </a>
+              ))}
+            </div>
+          </section>
+        </Reveal>
       )}
       <Link className="text-link detail-more" href="/projects/" scroll={false}>
         {t('moreProjects')}
@@ -70,40 +84,46 @@ export function ExperienceDetail({ id }: { id: string }) {
       </h2>
       <p className="detail-subtitle">{item.role}</p>
       <p className="detail-lead">{item.summary}</p>
-      <section className="detail-section" id="overview">
-        <h3>{t('overview')}</h3>
-        {item.details.map((paragraph) => (
-          <p key={paragraph}>{paragraph}</p>
-        ))}
-      </section>
-      {item.skills.length > 0 && (
-        <section className="detail-section" id="skills">
-          <h3>{t('used')}</h3>
-          <ul className="tools-list">
-            {item.skills.map((skill) => (
-              <li key={skill}>{skill}</li>
-            ))}
-          </ul>
+      <Reveal>
+        <section className="detail-section" id="overview">
+          <h3>{t('overview')}</h3>
+          {item.details.map((paragraph) => (
+            <p key={paragraph}>{paragraph}</p>
+          ))}
         </section>
+      </Reveal>
+      {item.skills.length > 0 && (
+        <Reveal delay={35}>
+          <section className="detail-section" id="skills">
+            <h3>{t('used')}</h3>
+            <ul className="tools-list">
+              {item.skills.map((skill) => (
+                <li key={skill}>{skill}</li>
+              ))}
+            </ul>
+          </section>
+        </Reveal>
       )}
       {item.projects.length > 0 && (
-        <section className="detail-section">
-          <h3>{t('related')}</h3>
-          <div className="related-projects">
-            {item.projects.map((id) => {
-              const project = content.projects.find((p) => p.id === id);
-              return project ? (
-                <Link href={`/projects/${id}/`} key={id} scroll={false}>
-                  <span>
-                    {project.title}
-                    <small>{project.summary}</small>
-                  </span>
-                  <ArrowUpRight />
-                </Link>
-              ) : null;
-            })}
-          </div>
-        </section>
+        <Reveal delay={70}>
+          <section className="detail-section">
+            <h3>{t('related')}</h3>
+            <div className="related-projects">
+              {item.projects.map((id) => {
+                const project = content.projects.find((p) => p.id === id);
+                return project ? (
+                  <Link href={`/projects/${id}/`} key={id} scroll={false}>
+                    <span>
+                      {project.title}
+                      <small>{project.summary}</small>
+                    </span>
+                    <ArrowUpRight />
+                  </Link>
+                ) : null;
+              })}
+            </div>
+          </section>
+        </Reveal>
       )}
     </article>
   );
@@ -117,16 +137,18 @@ export function ExperienceIndex() {
         {t('experience')}
       </h2>
       <div className="all-experience">
-        {content.experiences.map((item) => (
-          <Link href={`/experience/${item.id}/`} key={item.id} scroll={false}>
-            <span className="detail-meta">{item.period}</span>
-            <h3>
-              {item.organization}
-              <ArrowUpRight />
-            </h3>
-            <p className="role">{item.role}</p>
-            <p>{item.summary}</p>
-          </Link>
+        {content.experiences.map((item, index) => (
+          <Reveal key={item.id} delay={Math.min(index * 20, 100)}>
+            <Link href={`/experience/${item.id}/`} scroll={false}>
+              <span className="detail-meta">{item.period}</span>
+              <h3>
+                {item.organization}
+                <ArrowUpRight />
+              </h3>
+              <p className="role">{item.role}</p>
+              <p>{item.summary}</p>
+            </Link>
+          </Reveal>
         ))}
       </div>
     </article>
@@ -182,17 +204,19 @@ export function ProjectIndex() {
         ))}
       </div>
       <div className="project-index">
-        {visible.map((project) => (
-          <Link href={`/projects/${project.id}/`} scroll={false} key={project.id}>
-            <div>
-              <h3>
-                {project.title}
-                <ArrowUpRight />
-              </h3>
-              <p>{project.summary}</p>
-              <span>{project.skills.slice(0, 4).join(' · ')}</span>
-            </div>
-          </Link>
+        {visible.map((project, index) => (
+          <Reveal key={project.id} delay={Math.min(index * 15, 90)}>
+            <Link href={`/projects/${project.id}/`} scroll={false}>
+              <div>
+                <h3>
+                  {project.title}
+                  <ArrowUpRight />
+                </h3>
+                <p>{project.summary}</p>
+                <span>{project.skills.slice(0, 4).join(' · ')}</span>
+              </div>
+            </Link>
+          </Reveal>
         ))}
       </div>
       {!visible.length && <p className="empty-results">{t('noProjects')}</p>}
@@ -209,25 +233,27 @@ export function SkillsPage() {
       </h2>
       <div className="skill-groups">
         {content.skills.map((group) => (
-          <section className="detail-section" id={group.id} key={group.id}>
-            <h3>{group.title}</h3>
-            <ul className="tools-list">
-              {group.items.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
-            </ul>
-            <div className="skill-evidence">
-              {group.projects.map((id) => {
-                const project = content.projects.find((item) => item.id === id);
-                return project ? (
-                  <Link key={id} href={`/projects/${id}/`} scroll={false}>
-                    {project.title}
-                    <ArrowUpRight />
-                  </Link>
-                ) : null;
-              })}
-            </div>
-          </section>
+          <Reveal key={group.id}>
+            <section className="detail-section" id={group.id}>
+              <h3>{group.title}</h3>
+              <ul className="tools-list">
+                {group.items.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+              <div className="skill-evidence">
+                {group.projects.map((id) => {
+                  const project = content.projects.find((item) => item.id === id);
+                  return project ? (
+                    <Link key={id} href={`/projects/${id}/`} scroll={false}>
+                      {project.title}
+                      <ArrowUpRight />
+                    </Link>
+                  ) : null;
+                })}
+              </div>
+            </section>
+          </Reveal>
         ))}
       </div>
     </article>
@@ -250,13 +276,15 @@ export function ContactPage() {
         {t('contactTitle')}
       </h2>
       <p className="detail-lead">{t('contactIntro')}</p>
-      <Image
-        className="contact-portrait"
-        src="/media/matias-classroom.webp"
-        alt={t('photoAlt')}
-        width={540}
-        height={500}
-      />
+      <Reveal>
+        <Image
+          className="contact-portrait"
+          src="/media/matias-editorial.webp"
+          alt="Matias Suxo"
+          width={1200}
+          height={800}
+        />
+      </Reveal>
       <ContactForm />
       <div className="contact-links">
         {content.profile.email && (

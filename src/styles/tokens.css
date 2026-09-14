@@ -8,7 +8,8 @@
   --accent: #455d90;
   --hover: #f0f3f7;
   --shadow: 0 20px 70px #151e3114;
-  --font-body: 'DM Sans Variable', sans-serif;
+  --font-body: 'Inter Variable', 'Inter', sans-serif;
+  --font-console: 'Zen Kaku Gothic New', sans-serif;
   --font-mono-family: 'IBM Plex Mono', monospace;
   --selection: #aec7f56b;
   --backdrop: #151a284a;

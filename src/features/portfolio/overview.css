@@ -1,4 +1,28 @@
 @layer components {
+  .profile-identity {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    margin-bottom: 16px;
+  }
+  .profile-identity .location {
+    margin: 0;
+  }
+  .profile-headshot {
+    width: 49px;
+    height: 49px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 1px solid var(--line);
+  }
+  .is-compact .profile-headshot {
+    width: 36px;
+    height: 36px;
+  }
+  .is-compact .profile-identity {
+    gap: 10px;
+    margin-bottom: 13px;
+  }
   .intro {
     position: relative;
     padding-top: 25px;
@@ -70,6 +94,33 @@
   }
   .overview-section {
     margin-top: 37px;
+  }
+  .compact-section-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    border-bottom: 1px solid var(--line);
+    padding: 13px 0;
+    color: var(--muted);
+    font-size: 12px;
+  }
+  .compact-section-link:hover {
+    color: var(--accent);
+  }
+  .compact-section-link svg {
+    width: 14px;
+    height: 14px;
+  }
+  .compact-contact-info {
+    display: grid;
+    gap: 4px;
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.5;
+  }
+  .compact-contact-info a:hover {
+    color: var(--accent);
   }
   .section-heading {
     display: flex;

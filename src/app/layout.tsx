@@ -1,7 +1,9 @@
 import type { Metadata } from 'next';
 import { PortfolioProviders } from '@/features/portfolio/shell';
-import '@fontsource-variable/dm-sans';
+import '@fontsource-variable/inter';
 import '@fontsource/ibm-plex-mono/400.css';
+import '@fontsource/zen-kaku-gothic-new/latin-300.css';
+import '@fontsource/zen-kaku-gothic-new/latin-400.css';
 import './globals.css';
 import '@/features/contact/contact-form.css';
 

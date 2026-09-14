@@ -71,7 +71,7 @@
     bottom: 10px;
     left: 0;
     right: 0;
-    font: 6px var(--font-body);
+    font: 6px var(--font-console);
     color: #a8b9d0;
     letter-spacing: 0.2px;
   }
@@ -214,6 +214,7 @@
     width: 128px;
     padding: 14px 7px;
     font-size: 13px;
+    font-family: var(--font-console);
     transition:
       color 0.2s,
       transform 0.2s;
@@ -273,6 +274,7 @@
   .console-caption {
     text-align: center;
     font-size: 11px;
+    font-family: var(--font-console);
     color: #8f9cad;
     position: relative;
     margin-top: 38px;
@@ -295,67 +297,5 @@
     border: 1px solid #71819955;
     border-radius: 2px;
     padding: 0 4px;
-  }
-  .boot-sequence {
-    position: fixed;
-    inset: 0;
-    background: #101621;
-    z-index: 100;
-    animation: boot-leave 1.25s ease-in-out forwards;
-    pointer-events: none;
-    color: #eef3ff;
-  }
-  .boot-center {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: 21px;
-  }
-  .boot-center svg {
-    width: 63px;
-    height: 63px;
-    animation: boot-mark 1s cubic-bezier(0.2, 0.7, 0.3, 1) both;
-  }
-  .boot-center span {
-    font: 12px var(--font-mono);
-    letter-spacing: 1.2px;
-    animation: boot-mark 0.75s 0.12s both;
-  }
-  .boot-sequence > button {
-    position: absolute;
-    bottom: 36px;
-    right: 40px;
-    pointer-events: auto;
-    font-size: 11px;
-    color: #aab5c8;
-  }
-  .boot-sequence .ribbon-scene {
-    opacity: 0.6;
-  }
-  @keyframes boot-mark {
-    0% {
-      opacity: 0;
-      filter: blur(8px);
-      transform: scale(0.9);
-    }
-    50%,
-    100% {
-      opacity: 1;
-      filter: blur(0);
-      transform: scale(1);
-    }
-  }
-  @keyframes boot-leave {
-    0%,
-    66% {
-      opacity: 1;
-    }
-    100% {
-      opacity: 0;
-      visibility: hidden;
-    }
   }
 }

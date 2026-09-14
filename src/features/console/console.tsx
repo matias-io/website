@@ -1,5 +1,5 @@
 'use client';
-import { useEffect, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import {
   BriefcaseBusiness,
@@ -159,55 +159,6 @@ export function ConsoleDevice() {
           </div>
         </div>
       </dialog>
-    </>
-  );
-}
-
-export function BootSequence() {
-  const { t } = usePortfolio();
-  const { play } = useSound();
-  const [active, setActive] = useState(false);
-  const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
-  useEffect(() => {
-    let frame = 0;
-    try {
-      if (
-        !sessionStorage.getItem('matias.intro') &&
-        !matchMedia('(prefers-reduced-motion: reduce)').matches
-      ) {
-        frame = requestAnimationFrame(() => {
-          sessionStorage.setItem('matias.intro', 'seen');
-          setActive(true);
-          timer.current = setTimeout(() => setActive(false), 1250);
-        });
-      }
-    } catch {}
-    return () => {
-      cancelAnimationFrame(frame);
-      if (timer.current) clearTimeout(timer.current);
-    };
-  }, []);
-  function replay() {
-    if (timer.current) clearTimeout(timer.current);
-    setActive(true);
-    play('boot');
-    timer.current = setTimeout(() => setActive(false), 1250);
-  }
-  return (
-    <>
-      <button className="replay-button" onClick={replay}>
-        {t('replay')}
-      </button>
-      {active && (
-        <div className="boot-sequence" aria-label={t('introLabel')}>
-          <RibbonScene />
-          <div className="boot-center">
-            <Mark />
-            <span>Matias Suxo</span>
-          </div>
-          <button onClick={() => setActive(false)}>{t('skip')}</button>
-        </div>
-      )}
     </>
   );
 }

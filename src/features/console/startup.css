@@ -1,0 +1,195 @@
+@layer components {
+  .startup-overlay {
+    --startup-ink: #eff4ff;
+    --startup-base: #060a12;
+    --startup-glow: #253e70;
+    position: fixed;
+    inset: 0;
+    z-index: 150;
+    overflow: hidden;
+    color: var(--startup-ink);
+    background: var(--startup-base);
+    font-family: var(--font-console);
+    isolation: isolate;
+    transition:
+      opacity 600ms ease,
+      visibility 600ms;
+  }
+  .startup-overlay[data-active='false'] {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+  .startup-overlay::before {
+    content: '';
+    position: absolute;
+    inset: -25%;
+    z-index: -1;
+    background: radial-gradient(ellipse at 56% 56%, var(--startup-glow), transparent 58%);
+    animation: startup-light 4200ms ease both;
+  }
+  .startup-overlay::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(transparent 49.7%, #abc8ff05 50%, transparent 50.3%);
+    opacity: 0.35;
+  }
+  .startup-overlay .ribbon-scene {
+    opacity: 0;
+    animation: startup-wave 3000ms 350ms both ease;
+  }
+  .startup-center {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 4vh;
+    gap: 27px;
+  }
+  .startup-center > svg {
+    width: 69px;
+    height: 69px;
+    filter: drop-shadow(0 0 18px #a8caff30);
+    animation: startup-mark 1800ms 180ms both cubic-bezier(0.2, 0.7, 0.3, 1);
+  }
+  .startup-center > span:not(.startup-icons) {
+    font-size: clamp(21px, 2.1vw, 29px);
+    line-height: 1;
+    font-weight: 300;
+    letter-spacing: 0.22em;
+    text-indent: 0.22em;
+    text-shadow: 0 0 20px #c4d7ff35;
+    animation: startup-name 1800ms 400ms both;
+  }
+  .startup-icons {
+    position: absolute;
+    top: calc(50% + 106px);
+    display: flex;
+    gap: clamp(35px, 5vw, 78px);
+    align-items: center;
+    color: var(--startup-ink);
+  }
+  .startup-icons svg {
+    width: 27px;
+    height: 27px;
+    stroke-width: 1.05;
+    opacity: 0;
+    filter: drop-shadow(0 0 12px #c4d7ff60);
+  }
+  .startup-overlay[data-stage='menu'] .startup-icons svg,
+  .startup-overlay[data-stage='reveal'] .startup-icons svg {
+    animation: startup-icon 1000ms 200ms both cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .startup-icons svg:nth-child(2) {
+    animation-delay: 420ms !important;
+  }
+  .startup-icons svg:nth-child(3) {
+    animation-delay: 640ms !important;
+  }
+  .startup-icons svg:nth-child(4) {
+    animation-delay: 860ms !important;
+  }
+  .startup-overlay[data-stage='reveal'] {
+    opacity: 0;
+  }
+  .startup-mute {
+    position: absolute;
+    right: max(28px, env(safe-area-inset-right));
+    bottom: max(28px, env(safe-area-inset-bottom));
+    width: 44px;
+    height: 44px;
+    display: grid;
+    place-items: center;
+    color: #bdcce3;
+    opacity: 0.8;
+    border-radius: 50%;
+  }
+  .startup-mute:hover {
+    opacity: 1;
+    background: #ffffff0a;
+  }
+  .startup-mute svg {
+    width: 19px;
+    height: 19px;
+  }
+  @keyframes startup-light {
+    0% {
+      opacity: 0;
+      transform: scale(0.8);
+    }
+    50%,
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  @keyframes startup-wave {
+    0% {
+      opacity: 0;
+      transform: scaleY(0.3) translateY(35px);
+    }
+    45%,
+    100% {
+      opacity: 0.85;
+      transform: scaleY(1) translateY(0);
+    }
+  }
+  @keyframes startup-mark {
+    0% {
+      opacity: 0;
+      transform: scale(0.94);
+      filter: blur(7px);
+    }
+    65%,
+    100% {
+      opacity: 1;
+      transform: scale(1);
+      filter: blur(0);
+    }
+  }
+  @keyframes startup-name {
+    0% {
+      opacity: 0;
+      filter: blur(4px);
+    }
+    75%,
+    100% {
+      opacity: 0.95;
+      filter: blur(0);
+    }
+  }
+  @keyframes startup-icon {
+    from {
+      opacity: 0;
+      translate: 9px 0;
+      filter: blur(3px);
+    }
+    to {
+      opacity: 0.8;
+      translate: 0 0;
+      filter: blur(0);
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .startup-overlay::before,
+    .startup-overlay::after,
+    .startup-icons,
+    .startup-overlay .ribbon-scene {
+      display: none;
+    }
+    .startup-center > svg,
+    .startup-center > span {
+      animation: none;
+      opacity: 1;
+    }
+  }
+  @media print {
+    .startup-overlay {
+      display: none;
+    }
+  }
+}

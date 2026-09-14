@@ -4,14 +4,21 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { ThemeProvider, useTheme } from 'next-themes';
 import { AnimatePresence, motion, useReducedMotion } from 'motion/react';
-import { ArrowLeft, Moon, Sun, Volume2, VolumeX, MessageCircle } from 'lucide-react';
+import { ArrowLeft, Moon, Sun, MessageCircle, Volume2, VolumeX } from 'lucide-react';
 import { usePortfolio, LanguageProvider } from '@/i18n/provider';
 import { SoundProvider, useSound } from '@/features/audio/audio-provider';
 import { Overview } from './overview';
 import { Mark } from '@/components/mark';
-import { BootSequence } from '@/features/console/console';
 import { AssistantDrawer } from '@/features/assistant/assistant-drawer';
+import { StartupGate } from '@/features/console/startup-gate';
 import type { Locale } from '@/content/types';
+import {
+  getOverviewHref,
+  getOverviewSection,
+  readOverviewPosition,
+  rememberOverviewPosition,
+  type OverviewSection,
+} from './navigation';
 
 const subscribeToHydration = () => () => {};
 
@@ -33,7 +40,9 @@ export function PortfolioProviders({ children }: { children: ReactNode }) {
     >
       <LanguageProvider>
         <SoundProvider>
-          <PortfolioShell>{children}</PortfolioShell>
+          <StartupGate>
+            <PortfolioShell>{children}</PortfolioShell>
+          </StartupGate>
         </SoundProvider>
       </LanguageProvider>
     </ThemeProvider>
@@ -43,7 +52,7 @@ function PortfolioShell({ children }: { children: ReactNode }) {
   const path = usePathname();
   const compact = path !== '/';
   const { t, locale, setLocale } = usePortfolio();
-  const { enabled, toggle, play } = useSound();
+  const { play, enabled, toggle } = useSound();
   const { resolvedTheme, setTheme } = useTheme();
   const hydrated = useSyncExternalStore(
     subscribeToHydration,
@@ -68,18 +77,31 @@ function PortfolioShell({ children }: { children: ReactNode }) {
         anchor.classList.add('citation-highlight');
         cleanupHighlight = setTimeout(() => anchor.classList.remove('citation-highlight'), 1600);
       } else {
-        element?.scrollTo({ top: 0 });
-        if (!compact || matchMedia('(max-width: 760px)').matches)
-          window.scrollTo({ top: 0, behavior: 'instant' });
+        const position = readOverviewPosition();
+        if (compact) {
+          if (element) element.scrollTop = 0;
+        } else {
+          const targetY = position?.windowY ?? 0;
+          document.documentElement.scrollTop = targetY;
+          document.body.scrollTop = targetY;
+        }
         element?.querySelector<HTMLElement>('.detail-title')?.focus({ preventScroll: true });
       }
     }
-    const frame = requestAnimationFrame(focusContent);
-    window.addEventListener('hashchange', focusContent);
+    let frame = requestAnimationFrame(() => {
+      frame = requestAnimationFrame(focusContent);
+    });
+    function scheduleFocus() {
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(() => {
+        frame = requestAnimationFrame(focusContent);
+      });
+    }
+    window.addEventListener('hashchange', scheduleFocus);
     return () => {
       cancelAnimationFrame(frame);
       clearTimeout(cleanupHighlight);
-      window.removeEventListener('hashchange', focusContent);
+      window.removeEventListener('hashchange', scheduleFocus);
     };
   }, [path, compact, reduced]);
   function theme() {
@@ -87,6 +109,11 @@ function PortfolioShell({ children }: { children: ReactNode }) {
     setTheme(dark ? 'light' : 'dark');
     play('select');
   }
+  function rememberOverviewNavigation(section: OverviewSection) {
+    if (compact) return;
+    rememberOverviewPosition(section, window.scrollY);
+  }
+  const currentSection = getOverviewSection(path);
   return (
     <>
       <a
@@ -105,6 +132,14 @@ function PortfolioShell({ children }: { children: ReactNode }) {
           <span>Matias Suxo</span>
         </Link>
         <div className="site-settings">
+          <button
+            className="sound-toggle"
+            onClick={toggle}
+            aria-label={enabled ? t('soundOff') : t('soundOn')}
+            aria-pressed={enabled}
+          >
+            {enabled ? <Volume2 size={17} /> : <VolumeX size={17} />}
+          </button>
           <select
             aria-label={t('language')}
             value={locale}
@@ -124,20 +159,12 @@ function PortfolioShell({ children }: { children: ReactNode }) {
           >
             {dark ? <Sun size={17} /> : <Moon size={17} />}
           </button>
-          <button
-            className="sound-toggle"
-            onClick={toggle}
-            aria-label={t('soundLabel')}
-            aria-pressed={enabled}
-          >
-            {enabled ? <Volume2 size={17} /> : <VolumeX size={17} />}
-            <span>{enabled ? t('soundOn') : t('soundOff')}</span>
-          </button>
         </div>
       </header>
       <main className={`workspace ${compact ? 'detail-open' : ''}`}>
+        {!compact && children}
         <div id="portfolio-overview" className="overview-scroll" tabIndex={-1}>
-          <Overview compact={compact} />
+          <Overview compact={compact} onNavigate={rememberOverviewNavigation} />
         </div>
         <AnimatePresence mode="wait" initial={false}>
           {compact && (
@@ -150,7 +177,11 @@ function PortfolioShell({ children }: { children: ReactNode }) {
               transition={{ duration: reduced ? 0 : 0.28, ease: [0.22, 1, 0.36, 1] }}
             >
               <div className="detail-toolbar">
-                <Link href="/" scroll={false} onClick={() => play('close')}>
+                <Link
+                  href={getOverviewHref(currentSection ?? 'experience')}
+                  scroll={false}
+                  onClick={() => play('close')}
+                >
                   <ArrowLeft size={16} />
                   {t('back')}
                 </Link>
@@ -179,7 +210,6 @@ function PortfolioShell({ children }: { children: ReactNode }) {
         </AnimatePresence>
       </main>
       <footer className="site-footer">
-        <BootSequence />
         <button
           className="assistant-launcher"
           onClick={() => {

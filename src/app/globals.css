@@ -3,6 +3,7 @@
 @import '../features/portfolio/overview.css';
 @import '../features/portfolio/detail.css';
 @import '../features/console/console.css';
+@import '../features/console/startup.css';
 @import '../features/assistant/assistant.css';
 
 @layer base, components, responsive;
@@ -168,7 +169,7 @@
     color: var(--ink);
   }
   .sound-toggle {
-    min-width: 109px;
+    min-width: 36px;
   }
   .workspace {
     max-width: 678px;
@@ -192,7 +193,7 @@
     height: 79px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-end;
     padding: 8px 54px 0;
     background: linear-gradient(to bottom, transparent, var(--paper) 28%);
     pointer-events: none;
@@ -200,14 +201,6 @@
   }
   .site-footer button {
     pointer-events: auto;
-  }
-  .replay-button {
-    font: 10px var(--font-mono);
-    color: var(--faint);
-    padding: 10px 0;
-  }
-  .replay-button:hover {
-    color: var(--accent);
   }
   .assistant-launcher {
     display: flex;
@@ -424,9 +417,6 @@
       padding: 10px 12px;
       gap: 7px;
     }
-    .replay-button {
-      font-size: 11px;
-    }
     .ai-label {
       font-size: 11px;
       padding-left: 6px;
@@ -489,9 +479,6 @@
     .contact-links span {
       min-width: 55px;
     }
-    .boot-sequence > button {
-      right: 25px;
-    }
   }
   @media (max-width: 390px) {
     .intro-device {
@@ -517,10 +504,6 @@
     .assistant-launcher {
       max-width: 245px;
     }
-    .replay-button {
-      max-width: 65px;
-      text-align: left;
-    }
   }
   @media (prefers-reduced-motion: reduce) {
     *,
@@ -530,9 +513,6 @@
       animation-iteration-count: 1 !important;
       transition-duration: 0.001ms !important;
       scroll-behavior: auto !important;
-    }
-    .boot-sequence {
-      display: none;
     }
     .console-device:hover {
       transform: none;
@@ -547,8 +527,7 @@
     .intro-device,
     .detail-toolbar,
     .assistant-dialog,
-    .console-dialog,
-    .boot-sequence {
+    .console-dialog {
       display: none !important;
     }
     .workspace,
