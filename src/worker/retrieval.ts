@@ -2,7 +2,7 @@ import type { ChatRequest, ChatResponse, ChatSource } from '../shared/chat';
 import type { SearchChunk, TrustedDocument, WorkerEnv } from './types';
 import { isRecord, RequestError } from './validation';
 
-export const CHAT_MODEL = '@cf/meta/llama-3.1-8b-instruct-fast' as const;
+export const CHAT_MODEL = '@cf/meta/llama-3.3-70b-instruct-fp8-fast' as const;
 
 async function withDeadline<T>(operation: Promise<T>, milliseconds: number): Promise<T> {
   let timer: ReturnType<typeof setTimeout> | undefined;
@@ -149,7 +149,7 @@ export async function answerQuestion(
   const knowledge = env.KNOWLEDGE;
   const search = () =>
     knowledge.search({
-      query: input.message,
+      messages: [...(input.history ?? []), { role: 'user', content: input.message }],
       ai_search_options: {
         retrieval: {
           retrieval_type: 'hybrid',
@@ -159,7 +159,12 @@ export async function answerQuestion(
           return_on_failure: true,
           filters: { locale: { $eq: input.locale } },
         },
-        query_rewrite: { enabled: false },
+        query_rewrite: {
+          enabled: true,
+          model: '@cf/meta/llama-3.1-8b-instruct-fast',
+          rewrite_prompt:
+            'Preserve self-contained questions. Use conversation history only to resolve references in the latest question. Preserve names and language. Return only the search query; do not answer it.',
+        },
         reranking: { enabled: false },
         cache: { enabled: false },
       },
@@ -188,7 +193,6 @@ export async function answerQuestion(
     'Use only facts supported by these sources. Do not invent dates, credentials, results, employers, availability, personal details, or project status.',
     'Keep acronyms as written unless the sources explicitly define them. Omit projects unrelated to the question.',
     'A project belongs to a requested field only when a source explicitly connects that project to the field. Being listed beside an AI project does not make a web, networking or design project an AI project.',
-    'The portfolio category "AI & software" includes ordinary software. That category alone does not establish any AI capability; use the project description.',
     "For a named project, use that project's own source for its purpose and technologies. A general skill page lists skills across Matias's work, not the stack of every related project. Never transfer a technology from a general skill list to a named project.",
     "Distinguish Matias's contribution from a team's work. Never promise employment terms, services, or commitments on his behalf.",
     'Return a JSON object with a claims array. Include up to four concise claims that directly answer the question. Each claim has plain text and sourceIds containing the supporting source IDs. The application adds citations; do not write citation markup, headings, lists, bold text or links inside text.',

@@ -19,14 +19,19 @@ if (prune && createInstance)
   throw new Error('--prune cannot create an instance. Synchronize and deploy first.');
 const account = process.env.CLOUDFLARE_ACCOUNT_ID ?? 'd017fa417783a5e8da010c5789f5c94f';
 const instance = process.env.KNOWLEDGE_INSTANCE ?? 'matiass-public';
+const gateway = process.env.AI_GATEWAY_ID ?? 'matiass-assistant';
 const token = process.env.AI_SEARCH_API_TOKEN ?? process.env.CLOUDFLARE_API_TOKEN;
 const namespace = 'default';
 const prefix = `https://api.cloudflare.com/client/v4/accounts/${account}/ai-search/namespaces/${namespace}/instances`;
 const base = `${prefix}/${encodeURIComponent(instance)}`;
 const release = JSON.parse(await readFile(resolve(root, '.local/knowledge/release.json'), 'utf8'));
 
-if (!/^[a-f0-9]{32}$/.test(account) || !/^[a-z0-9_]+(?:-[a-z0-9_]+)*$/.test(instance)) {
-  throw new Error('Invalid Cloudflare account ID or AI Search instance name.');
+if (
+  !/^[a-f0-9]{32}$/.test(account) ||
+  !/^[a-z0-9_]+(?:-[a-z0-9_]+)*$/.test(instance) ||
+  !/^[a-z0-9_]+(?:-[a-z0-9_]+)*$/.test(gateway)
+) {
+  throw new Error('Invalid Cloudflare account ID, AI Search instance name or gateway name.');
 }
 if (!Array.isArray(release.documents) || release.documents.length < 4)
   throw new Error('Build the public knowledge collection before syncing.');
@@ -113,6 +118,7 @@ if (!configuration) {
     headers: { 'content-type': 'application/json' },
     body: JSON.stringify({
       id: instance,
+      ai_gateway_id: gateway,
       embedding_model: '@cf/baai/bge-m3',
       index_method: { vector: true, keyword: true },
       chunk_size: 384,
@@ -133,6 +139,10 @@ if (!configuration) {
 }
 
 const settings = configuration.result;
+if (settings.ai_gateway_id !== gateway)
+  throw new Error(
+    `Connect AI Search to the configured ${gateway} gateway before syncing so indexing and retrieval use the portfolio's privacy and budget settings.`,
+  );
 if (settings.public_endpoint_params?.enabled === true)
   throw new Error(
     "Disable the AI Search public endpoint before syncing. Public endpoints bypass this site's Turnstile gate.",

@@ -143,7 +143,7 @@
       "id": "elvyn",
       "title": "Elvyn",
       "summary": "Plataforma bilingüe de simulación de pacientes para formación de enfermería e investigación.",
-      "category": "IA y software",
+      "category": "Sistemas de IA",
       "details": [
         "Prototipo educativo y de investigación de RMGN para practicar entrevistas de enfermería en inglés y francés.",
         "Los estudiantes preparan escenarios, hablan con pacientes simulados y envían comentarios estructurados.",
@@ -171,7 +171,7 @@
       "id": "altura",
       "title": "Altura / uOttawa Chat",
       "summary": "Asistente multiagente supervisado para servicios, estudios y preguntas de la comunidad de Ottawa.",
-      "category": "IA y software",
+      "category": "Sistemas de IA",
       "details": [
         "Interfaz de chat en desarrollo activo con un agente principal supervisado y cinco agentes especialistas.",
         "Usa Microsoft Agent Framework y Azure OpenAI para el agente principal, Study Coach y Software Finder, junto con especialistas de Copilot Studio.",
@@ -192,7 +192,7 @@
       "id": "retrieval-service",
       "title": "Servicio de búsqueda de conocimiento",
       "summary": "Servicio de búsqueda para bases privadas con procesos separados de consulta e indexación.",
-      "category": "IA y software",
+      "category": "Sistemas de IA",
       "details": [
         "API de NestJS y proceso de indexación para bases de conocimiento privadas en Qdrant.",
         "La API de NestJS y el proceso de indexación comparten un flujo de análisis, segmentación, embeddings y actualización.",
@@ -215,7 +215,7 @@
       "id": "uogenai",
       "title": "uOGenAI",
       "summary": "Trabajo en una plataforma de IA generativa de la Universidad de Ottawa presentado en una cumbre de IA médica aplicada.",
-      "category": "IA y software",
+      "category": "Sistemas de IA",
       "details": [
         "Plataforma de IA generativa de la Universidad de Ottawa con herramientas para estudiantes, interfaces con agentes y recursos controlados.",
         "La iniciativa abarca RAG, búsqueda que respeta la privacidad, gobernanza e integración de plataformas.",
@@ -234,7 +234,7 @@
       "id": "focusify",
       "title": "Focusify",
       "summary": "Plataforma de tareas Layer2 Ethereum, ganadora de UOttaHack7 2025.",
-      "category": "IA y software",
+      "category": "Software",
       "details": [
         "Plataforma descentralizada de tareas construida sobre Layer2 Ethereum.",
         "Ganadora de UOttaHack7 2025."
@@ -247,7 +247,7 @@
       "id": "nbc-bullorbust",
       "title": "NBC BullorBust",
       "summary": "Simulador de alfabetización financiera con IA y titulares de mercado; finalista de QHacks 2025.",
-      "category": "IA y software",
+      "category": "Sistemas de IA",
       "details": [
         "Simulador de IA para alfabetización financiera mediante escenarios basados en titulares de mercado.",
         "Finalista de QHacks 2025."
@@ -282,7 +282,7 @@
       "id": "ai-racer",
       "title": "AI RACER",
       "summary": "Plataforma en tiempo real para evaluar IA de forma adversarial, experimentar con RAG y competir.",
-      "category": "IA y software",
+      "category": "Sistemas de IA",
       "details": [
         "Combina conversaciones LLM con estado, búsqueda y reranking, carreras en vivo y espectadores.",
         "Usa Cloudflare Workers, D1, Vectorize, Workers AI, Durable Objects y WebSockets.",
@@ -352,7 +352,7 @@
       "id": "webvault",
       "title": "WebVault",
       "summary": "Concepto de plataforma para guardar, organizar y recuperar marcadores.",
-      "category": "IA y software",
+      "category": "Software",
       "details": ["El registro original menciona React, Next.js, Tailwind y NoSQL/Mongo."],
       "skills": ["React", "Next.js", "Tailwind", "NoSQL", "Mongo"],
       "links": []
@@ -413,7 +413,7 @@
       "id": "p2p-file-sharing",
       "title": "Plataforma de intercambio de archivos P2P",
       "summary": "Plataforma de archivos cifrados entre pares con Java, Spring Boot y React.",
-      "category": "IA y software",
+      "category": "Software",
       "details": [
         "El registro original describe gestión distribuida de archivos cifrados con frontend React/Next.js y backend Java/Spring Boot."
       ],
@@ -429,7 +429,7 @@
       "id": "event-planner",
       "title": "Sistema de gestión de eventos",
       "summary": "Aplicación Android para eventos con Firebase, funciones serverless y CircleCI.",
-      "category": "IA y software",
+      "category": "Software",
       "details": [
         "El registro original describe organización móvil de eventos, gestión de datos con Firebase y automatización de compilaciones y pruebas."
       ],
@@ -452,7 +452,7 @@
       "id": "connect4",
       "title": "Plataforma de juego Connect4",
       "summary": "Juego de escritorio con JavaFX basado en una arquitectura MVC y juego interactivo.",
-      "category": "IA y software",
+      "category": "Software",
       "details": [
         "El registro original describe una aplicación Java de escritorio con JavaFX y arquitectura MVC."
       ],
@@ -468,7 +468,7 @@
       "id": "personal-portfolio",
       "title": "Portfolio personal",
       "summary": "Sitio portfolio creado con React, Next.js, Tailwind y tecnología serverless.",
-      "category": "IA y software",
+      "category": "Software",
       "details": [
         "El registro original describe un portfolio para presentar proyectos y habilidades web."
       ],
@@ -479,7 +479,7 @@
       "id": "word-guess",
       "title": "Word Guess SPA",
       "summary": "Juego de palabras en JavaScript nativo diseñado para partidas rápidas y repetibles.",
-      "category": "IA y software",
+      "category": "Software",
       "details": [
         "El registro original describe una experiencia clara, rápida e interactiva para adivinar palabras."
       ],
@@ -495,7 +495,7 @@
       "id": "banking-spa",
       "title": "Banking SPA",
       "summary": "Simulación bancaria en JavaScript nativo con pantallas adaptables e interactivas.",
-      "category": "IA y software",
+      "category": "Software",
       "details": [
         "El registro original describe una simulación bancaria sencilla y una interfaz dinámica y adaptable."
       ],

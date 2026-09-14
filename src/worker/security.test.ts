@@ -246,7 +246,7 @@ describe('source integrity', () => {
     expect(bindings.AI?.run).not.toHaveBeenCalled();
   });
 
-  it('keeps a new short question independent of the previous search topic', async () => {
+  it('passes distinct conversation messages for native follow-up resolution', async () => {
     const bindings = env();
     await answerQuestion(
       {
@@ -258,7 +258,12 @@ describe('source integrity', () => {
       [page],
     );
     expect(bindings.KNOWLEDGE?.search).toHaveBeenCalledWith(
-      expect.objectContaining({ query: 'What is Elvyn?' }),
+      expect.objectContaining({
+        messages: [
+          { role: 'user', content: 'Tell me about robotics.' },
+          { role: 'user', content: 'What is Elvyn?' },
+        ],
+      }),
     );
   });
 

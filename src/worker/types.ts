@@ -17,7 +17,7 @@ export interface SearchChunk {
 
 export interface KnowledgeBinding {
   search(input: {
-    query: string;
+    messages: Array<{ role: 'user' | 'assistant'; content: string }>;
     ai_search_options: {
       retrieval: {
         retrieval_type: 'hybrid';
@@ -27,7 +27,7 @@ export interface KnowledgeBinding {
         return_on_failure: true;
         filters: { locale: { $eq: ChatLocale } };
       };
-      query_rewrite: { enabled: false };
+      query_rewrite: { enabled: true; model: string; rewrite_prompt: string };
       reranking: { enabled: false };
       cache: { enabled: false };
     };

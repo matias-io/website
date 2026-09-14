@@ -134,7 +134,7 @@
       "id": "elvyn",
       "title": "Elvyn",
       "summary": "Bilingual patient simulation platform for nursing education and research.",
-      "category": "AI & software",
+      "category": "AI systems",
       "details": [
         "An RMGN education and research prototype for practising nursing interviews in English and French.",
         "Learners prepare for assigned scenarios, speak with simulated patients and submit structured feedback.",
@@ -162,7 +162,7 @@
       "id": "altura",
       "title": "Altura / uOttawa Chat",
       "summary": "A supervised multi-agent assistant for uOttawa services, study support and campus questions.",
-      "category": "AI & software",
+      "category": "AI systems",
       "details": [
         "An active-development chat interface with a supervised parent and five specialist agents.",
         "Uses Microsoft Agent Framework and Azure OpenAI for the parent, Study Coach and Software Finder, with Copilot Studio specialists.",
@@ -183,7 +183,7 @@
       "id": "retrieval-service",
       "title": "Knowledge Retrieval Service",
       "summary": "Search service for private knowledge bases with separate query and indexing processes.",
-      "category": "AI & software",
+      "category": "AI systems",
       "details": [
         "A NestJS API and indexing worker for private knowledge bases in Qdrant.",
         "NestJS API and worker share a pipeline for parsing, chunking, embeddings and refreshes.",
@@ -206,7 +206,7 @@
       "id": "uogenai",
       "title": "uOGenAI",
       "summary": "University of Ottawa generative-AI platform work presented at an applied medical AI summit.",
-      "category": "AI & software",
+      "category": "AI systems",
       "details": [
         "A University of Ottawa generative-AI platform with student-facing tools, agent interfaces and controlled knowledge resources.",
         "The initiative spans RAG, privacy-aware retrieval, governance and platform integration.",
@@ -225,7 +225,7 @@
       "id": "focusify",
       "title": "Focusify",
       "summary": "Layer2 Ethereum task platform and winner at UOttaHack7 2025.",
-      "category": "AI & software",
+      "category": "Software",
       "details": [
         "A decentralized task platform built around Layer2 Ethereum.",
         "Winner at UOttaHack7 2025."
@@ -238,7 +238,7 @@
       "id": "nbc-bullorbust",
       "title": "NBC BullorBust",
       "summary": "AI simulator for financial literacy using market headlines; QHacks 2025 runner-up.",
-      "category": "AI & software",
+      "category": "AI systems",
       "details": [
         "An AI simulator for financial literacy using market-headline scenarios.",
         "QHacks 2025 runner-up."
@@ -268,7 +268,7 @@
       "id": "ai-racer",
       "title": "AI RACER",
       "summary": "Real-time platform for adversarial AI evaluation, RAG experiments and competitive play.",
-      "category": "AI & software",
+      "category": "AI systems",
       "details": [
         "Combines stateful LLM conversations, retrieval and reranking with live races and spectating.",
         "Uses Cloudflare Workers, D1, Vectorize, Workers AI, Durable Objects and WebSockets.",
@@ -332,7 +332,7 @@
       "id": "webvault",
       "title": "WebVault",
       "summary": "Bookmark platform concept built around saving, organizing and retrieving links.",
-      "category": "AI & software",
+      "category": "Software",
       "details": [
         "React, Next.js, Tailwind and NoSQL/Mongo were listed in the original project record."
       ],
@@ -390,7 +390,7 @@
       "id": "p2p-file-sharing",
       "title": "P2P File Sharing Platform",
       "summary": "Encrypted peer-to-peer file platform using Java, Spring Boot and React.",
-      "category": "AI & software",
+      "category": "Software",
       "details": [
         "The original record describes distributed encrypted file management with a React/Next.js frontend and Java/Spring Boot backend."
       ],
@@ -406,7 +406,7 @@
       "id": "event-planner",
       "title": "Event Planner Management System",
       "summary": "Android event-planning application using Firebase, serverless functions and CircleCI.",
-      "category": "AI & software",
+      "category": "Software",
       "details": [
         "The original record describes mobile event organization, Firebase data management and automated builds/tests."
       ],
@@ -429,7 +429,7 @@
       "id": "connect4",
       "title": "Connect4 Game Platform",
       "summary": "JavaFX desktop game built around MVC architecture and interactive play.",
-      "category": "AI & software",
+      "category": "Software",
       "details": [
         "The original record describes a Java desktop application with JavaFX and MVC architecture."
       ],
@@ -445,7 +445,7 @@
       "id": "personal-portfolio",
       "title": "Personal Portfolio",
       "summary": "Portfolio site built with React, Next.js, Tailwind and serverless technology.",
-      "category": "AI & software",
+      "category": "Software",
       "details": [
         "The original record describes a portfolio for presenting web-technology projects and skills."
       ],
@@ -456,7 +456,7 @@
       "id": "word-guess",
       "title": "Word Guess SPA",
       "summary": "Vanilla JavaScript single-page word game designed for quick replayability.",
-      "category": "AI & software",
+      "category": "Software",
       "details": [
         "The original record describes a clean, fast and interactive word-guessing experience."
       ],
@@ -472,7 +472,7 @@
       "id": "banking-spa",
       "title": "Banking SPA",
       "summary": "Vanilla JavaScript banking simulation with responsive interactive screens.",
-      "category": "AI & software",
+      "category": "Software",
       "details": [
         "The original record describes a simplified banking simulation and dynamic responsive interface."
       ],

@@ -145,7 +145,7 @@
       "id": "elvyn",
       "title": "Elvyn",
       "summary": "Plateforme bilingue de simulation de patients pour la formation infirmière et la recherche.",
-      "category": "IA et logiciel",
+      "category": "Systèmes d’IA",
       "details": [
         "Prototype d’éducation et de recherche de RMGN pour pratiquer des entrevues infirmières en français et en anglais.",
         "Les apprenants préparent des scénarios, parlent avec des patients simulés et soumettent une rétroaction structurée.",
@@ -173,7 +173,7 @@
       "id": "altura",
       "title": "Altura / uOttawa Chat",
       "summary": "Assistant multiagent supervisé pour les services, les études et les questions de la communauté d’Ottawa.",
-      "category": "IA et logiciel",
+      "category": "Systèmes d’IA",
       "details": [
         "Interface de clavardage en développement actif avec un agent parent supervisé et cinq agents spécialisés.",
         "Utilise Microsoft Agent Framework et Azure OpenAI pour le parent, Study Coach et Software Finder, avec des spécialistes Copilot Studio.",
@@ -194,7 +194,7 @@
       "id": "retrieval-service",
       "title": "Service de recherche de connaissances",
       "summary": "Service de recherche pour bases privées avec processus distincts de requêtes et d’indexation.",
-      "category": "IA et logiciel",
+      "category": "Systèmes d’IA",
       "details": [
         "API NestJS et processus d’indexation pour des bases de connaissances privées dans Qdrant.",
         "L’API NestJS et le processus d’indexation partagent un pipeline d’analyse, de segmentation, d’intégration vectorielle et d’actualisation.",
@@ -217,7 +217,7 @@
       "id": "uogenai",
       "title": "uOGenAI",
       "summary": "Travail sur une plateforme d’IA générative de l’Université d’Ottawa présenté à un sommet d’IA médicale appliquée.",
-      "category": "IA et logiciel",
+      "category": "Systèmes d’IA",
       "details": [
         "Plateforme d’IA générative de l’Université d’Ottawa avec outils étudiants, interfaces agentiques et ressources contrôlées.",
         "L’initiative porte sur le RAG, la recherche respectueuse de la vie privée, la gouvernance et l’intégration de plateformes.",
@@ -236,7 +236,7 @@
       "id": "focusify",
       "title": "Focusify",
       "summary": "Plateforme de tâches Layer2 Ethereum, gagnante de UOttaHack7 2025.",
-      "category": "IA et logiciel",
+      "category": "Logiciels",
       "details": [
         "Plateforme de tâches décentralisée construite autour de Layer2 Ethereum.",
         "Gagnant de UOttaHack7 2025."
@@ -249,7 +249,7 @@
       "id": "nbc-bullorbust",
       "title": "NBC BullorBust",
       "summary": "Simulateur IA de littératie financière fondé sur des manchettes; finaliste de QHacks 2025.",
-      "category": "IA et logiciel",
+      "category": "Systèmes d’IA",
       "details": [
         "Simulateur IA de littératie financière fondé sur des scénarios de manchettes financières.",
         "Finaliste de QHacks 2025."
@@ -284,7 +284,7 @@
       "id": "ai-racer",
       "title": "AI RACER",
       "summary": "Plateforme temps réel pour l’évaluation adversariale de l’IA, le RAG et la compétition.",
-      "category": "IA et logiciel",
+      "category": "Systèmes d’IA",
       "details": [
         "Réunit conversations LLM avec état, recherche et reranking, courses en direct et observation des parties.",
         "Utilise Cloudflare Workers, D1, Vectorize, Workers AI, Durable Objects et WebSockets.",
@@ -354,7 +354,7 @@
       "id": "webvault",
       "title": "WebVault",
       "summary": "Concept de plateforme pour enregistrer, organiser et retrouver des signets.",
-      "category": "IA et logiciel",
+      "category": "Logiciels",
       "details": ["La fiche originale mentionne React, Next.js, Tailwind et NoSQL/Mongo."],
       "skills": ["React", "Next.js", "Tailwind", "NoSQL", "Mongo"],
       "links": []
@@ -417,7 +417,7 @@
       "id": "p2p-file-sharing",
       "title": "Plateforme de partage de fichiers P2P",
       "summary": "Plateforme de fichiers chiffrés pair à pair utilisant Java, Spring Boot et React.",
-      "category": "IA et logiciel",
+      "category": "Logiciels",
       "details": [
         "La fiche originale décrit une gestion distribuée de fichiers chiffrés avec frontend React/Next.js et backend Java/Spring Boot."
       ],
@@ -433,7 +433,7 @@
       "id": "event-planner",
       "title": "Système de gestion d’événements",
       "summary": "Application Android de planification d’événements utilisant Firebase, fonctions serverless et CircleCI.",
-      "category": "IA et logiciel",
+      "category": "Logiciels",
       "details": [
         "La fiche originale décrit l’organisation d’événements mobiles, la gestion Firebase et l’automatisation des tests et compilations."
       ],
@@ -456,7 +456,7 @@
       "id": "connect4",
       "title": "Plateforme de jeu Connect4",
       "summary": "Jeu de bureau JavaFX fondé sur une architecture MVC et une expérience interactive.",
-      "category": "IA et logiciel",
+      "category": "Logiciels",
       "details": [
         "La fiche originale décrit une application Java de bureau avec JavaFX et une architecture MVC."
       ],
@@ -472,7 +472,7 @@
       "id": "personal-portfolio",
       "title": "Portfolio personnel",
       "summary": "Site portfolio construit avec React, Next.js, Tailwind et des technologies serverless.",
-      "category": "IA et logiciel",
+      "category": "Logiciels",
       "details": [
         "La fiche originale décrit un portfolio présentant des projets et compétences web."
       ],
@@ -483,7 +483,7 @@
       "id": "word-guess",
       "title": "Word Guess SPA",
       "summary": "Jeu de mots en JavaScript natif conçu pour des parties rapides et rejouables.",
-      "category": "IA et logiciel",
+      "category": "Logiciels",
       "details": [
         "La fiche originale décrit une expérience de devinettes de mots claire, rapide et interactive."
       ],
@@ -499,7 +499,7 @@
       "id": "banking-spa",
       "title": "Banking SPA",
       "summary": "Simulation bancaire en JavaScript natif avec écrans interactifs et adaptatifs.",
-      "category": "IA et logiciel",
+      "category": "Logiciels",
       "details": [
         "La fiche originale décrit une simulation bancaire simplifiée et une interface dynamique et adaptative."
       ],
