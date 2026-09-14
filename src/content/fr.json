@@ -673,7 +673,7 @@
         "Gouvernance",
         "Azure OpenAI"
       ],
-      "projects": ["elvyn", "altura", "retrieval-service", "uogenai", "focusify", "nbc-bullorbust"]
+      "projects": ["elvyn", "altura", "retrieval-service", "uogenai", "nbc-bullorbust"]
     },
     {
       "id": "web-applications",
@@ -700,7 +700,7 @@
         "Accès par collection",
         "Actualisations atomiques"
       ],
-      "projects": ["retrieval-service", "uogenai", "elvyn"]
+      "projects": ["retrieval-service", "uogenai"]
     },
     {
       "id": "embedded-robotics",

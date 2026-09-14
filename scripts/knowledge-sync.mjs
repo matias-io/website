@@ -303,10 +303,10 @@ if (
   );
 }
 if (prune) {
-  for (const item of removed) {
+  await runConcurrently(removed, 4, async (item) => {
     await request(`${base}/items/${encodeURIComponent(item.id)}`, { method: 'DELETE' });
     console.log(`Removed stale managed document ${item.key}.`);
-  }
+  });
   console.log(
     `Knowledge finalized: ${release.contentHash.slice(0, 12)}. Retrieval verified; ${removed.length} stale owned documents removed.`,
   );

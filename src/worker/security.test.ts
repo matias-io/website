@@ -246,6 +246,22 @@ describe('source integrity', () => {
     expect(bindings.AI?.run).not.toHaveBeenCalled();
   });
 
+  it('keeps a new short question independent of the previous search topic', async () => {
+    const bindings = env();
+    await answerQuestion(
+      {
+        ...valid,
+        message: 'What is Elvyn?',
+        history: [{ role: 'user', content: 'Tell me about robotics.' }],
+      },
+      bindings,
+      [page],
+    );
+    expect(bindings.KNOWLEDGE?.search).toHaveBeenCalledWith(
+      expect.objectContaining({ query: 'What is Elvyn?' }),
+    );
+  });
+
   it('reports an empty failed retrieval as unavailable evidence, not an unsupported question', async () => {
     const bindings = env({
       KNOWLEDGE: { search: vi.fn(async () => ({ chunks: [], errors: [{ code: 'timeout' }] })) },
